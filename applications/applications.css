@@ -1,0 +1,50 @@
+.app-title {
+    margin-bottom: -4.8em;
+    position: relative;
+    z-index: 9999;
+}
+
+
+/*
+.carousel-inner {
+    overflow: initial;
+}
+*/
+
+.fluid-carousel {
+    padding: 0;
+}
+
+.carousel {
+    background: linear-gradient(to right, yellow, white, yellow);
+    position: relative;
+    height: 60vh;
+    margin-bottom: 2em;
+}
+
+.item {
+    height: calc(60vh - 1em);
+}
+
+.item img {
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 0 1em 8em 1em;
+}
+
+.carousel-indicators li {
+    border: none;
+    border-radius: 50%;
+    background-color: #000000;
+    box-shadow: inset 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-indicators .active {
+    background-color: #ffff00;
+}
