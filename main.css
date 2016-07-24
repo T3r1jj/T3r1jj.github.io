@@ -28,8 +28,13 @@
     background-color: yellow;
 }
 
+.navbar-default .navbar-header li,
 .navbar-default .navbar-header li a,
-.navbar-default .navbar-header li a:hover {
+.navbar-default .navbar-header li a:link,
+.navbar-default .navbar-header li a:visited,
+.navbar-default .navbar-header li a:hover,
+.navbar-default .navbar-header li a:focus,
+.navbar-default .navbar-header li a.active {
     color: yellow;
 }
 
