@@ -3,7 +3,7 @@ window.cookieconsent_options = {
     "dismiss": "Got it!",
     "learnMore": "More info",
     "link": "https://sites.google.com/site/t3r1jjprivacypolicy/",
-    "theme": "http:/cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/dark-floating.css"
+    "theme": "//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/dark-floating.css"
 };
 
 (function (i, s, o, g, r, a, m) {
