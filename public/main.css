@@ -1,0 +1,74 @@
+.body {
+    font-family: 'Roboto Slab', serif;
+}
+
+.navbar {
+    background-color: black;
+    font-family: 'Walter Turncoat', cursive;
+    font-size: 1.2em;
+}
+
+.navbar-static-top {
+    border-style: solid;
+    border-bottom: thick solid yellow;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+
+.navbar-left>li:hover,
+.navbar-right>li:hover {
+    background-color: #E7E7E7;
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+    background-color: yellow;
+}
+
+.navbar-default .navbar-header li,
+.navbar-default .navbar-header li a,
+.navbar-default .navbar-header li a:link,
+.navbar-default .navbar-header li a:visited,
+.navbar-default .navbar-header li a:hover,
+.navbar-default .navbar-header li a:focus,
+.navbar-default .navbar-header li a.active {
+    color: yellow;
+}
+
+.navbar-header .under-construction {
+    color: darkgrey;
+    font-size: 0.8em;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.featured {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    font-family: 'Walter Turncoat', cursive;
+}
+
+.buttons-container {
+    text-align: center;
+}
+
+.btn {
+    font-family: 'Walter Turncoat', cursive;
+}
+
+.btn-medium {
+    font-size: 1.2em;
+}
+
+.btn-small {
+    font-weight: bold;
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}

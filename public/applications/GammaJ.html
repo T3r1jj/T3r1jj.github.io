@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>T3r1jj - GammaJ app</title>
+    <meta name="description" content="GammaJ - monitor color adjustment tool.">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="./applications.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Walter+Turncoat" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../ga.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-static-top" id="navbar" style="margin:0">
+        <div class="container">
+            <ul class="nav navbar-nav navbar-header">
+                <li><a href="../index.html">Distribution
+                    <span class="under-construction">(Under construction)</span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="https://T3r1jj.github.io">Developer</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="../applications.html">Applications</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <div class="container app-title">
+        <div class="row">
+            <div class="col-sm-12 featured">
+                GammaJ
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid fluid-carousel">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            </ol>
+
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="https://i.imgur.com/l2PLlhI.png" class="img-responsive center-block" alt="GammaJ - assisted color correction">
+                    <div class="carousel-caption">
+                        <h4 style="color:black">Assisted color adjustment</h3>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://i.imgur.com/sKQcXvI.png" class="img-responsive center-block" alt="GGammaJ - manual color correction">
+                    <div class="carousel-caption">
+                        <h4 style="color:black">Manual color adjustment</h3>
+                    </div>
+                </div>
+                                <div class="item">
+                    <img src="https://i.imgur.com/5xIZmUJ.png" class="img-responsive center-block" alt="GGammaJ - settings">
+                    <div class="carousel-caption">
+                        <h4 style="color:black">Settings</h3>
+                    </div>
+                </div>
+                                <div class="item">
+                    <img src="https://i.imgur.com/gCzOqLP.png" class="img-responsive center-block" alt="GGammaJ - color palette">
+                    <div class="carousel-caption">
+                        <h4 style="color:black">Color palette</h3>
+                    </div>
+                </div>
+            </div>
+
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+    </div>
+    
+        <div class="container body">
+        <div class="row">
+            <div class="col-sm-8 text-justify">
+                <h3 style="margin-top: 0;">Gamma ramp editor</h3>
+                    &emsp;&emsp;&emsp;GammaJ is a free color adjustment tool for monitors. It allows to set up own gamma ratio, contrast, brightness and color temperature. It is possible to achieve the effect of "gaming glasses" in few easy steps. RGB channels can be separated and inverted. Aside from assisted configuration (through preset functions connected with user input) there is also a possibility of manual color adjustment. It allows to draw ramp directly on canvas using mouse or input direct ramp values through ramp table.
+                <h3>Functionalities</h3>
+                <ul>
+                    <li>Color correction:</li>
+                    <ul>
+                        <li>Assisted adjustment of:</li>
+                        <ul>
+                            <li>Gamma</li>
+                            <li>Contrast "unilateral"</li>
+                            <li>Contrast (2) "bilateral"</li>
+                            <li>Brightness</li>
+                            <li>Temperature</li>
+                            <li>sRGB Temperature correction</li>
+                        </ul>
+                        <li>Manual adjustment of gamma ramp through:</li>
+                        <ul>
+                            <li>Drawing ramp on canvas</li>
+                            <li>Table ramp input</li>
+                        </ul>
+                        <li>Color inversion</li>
+                        <li>Separable RGB channels</li>
+                    </ul>
+                    <li>Customized color profiles</li>
+                    <li>Multiple monitor support</li>
+                    <li>Global hotkeys</li>
+                    <li>System tray</li>
+                </ul>
+                <h3>Installation</h3>
+                    &emsp;&emsp;&emsp;GammaJ requires system restart after first run to enable customized gamma ramps.
+                <h3>Device gamma ramp</h3>
+                    &emsp;&emsp;&emsp;Device gamma ramp consists of 3x256 (number of RGB channels x amount of values for channel) DAC (digital-analog-converter) values in the range of 0 to 65535. In other words, gamma ramp contains mappings between RGB values in computer memory and digital-analog-converter (DAC) values on the basis of which a specific color is displayed on the monitor. Therefore, input in the table from manual color adjustment should be in the range of 0 to 65535. The default gamma ramp contains linear values.
+                <img src="https://i.imgur.com/wqdbmxy.png" title="Device gamma ramp" style="margin:auto; display:block;" />
+                <h3>Color profiles</h3>
+                    &emsp;&emsp;&emsp;Custom gamma ramps both for assisted and manual adjustment can be saved to .properties file. All files with .properties extension (color profiles) from the same directory as GammaJ.exe will be loaded upon application start.
+                <h3>Hotkeys</h3>
+                    &emsp;&emsp;&emsp;GammaJ allows user to define own hotkeys for changing between color profiles. To let user change color profile even when the application has neither focus nor is in tray hotkeys are registered as "global". This means that other applications will not receive input when the hotkey is pressed (even when focused). Thus, it is recommended to save color profiles with uncommon hotkeys instead of basic (A/B/C/etc.) keys. By default CTRL+SHIFT+R is registered as reset key in case of loading or setting nondistinc gamma settings and can be changed in application settings.
+                <h3>Troubleshooting</h3>
+                    &emsp;&emsp;&emsp;By default GammaJ opens recently used profiles for each display. If an indistinct color profile is loaded and you dont remember the reset hotkey you can press alt+f4 (exit the application) and delete either "indistinct_profile".properties or (if you don't know which profile it is) delete GammaJ.ini (which also contains other settings). As a last resort (when you can't see anything) you can always restart operating system and display colors will be back to normal.
+                    <br/><br/>
+                    Fully customized gamma ramps require a system registry entry which by default should be added in the process of installation. After installation a system restart is needed in order for it to load new entry. Not all direct color video boards support loadable gamma ramps in hardware.
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-12 text-justify well buttons-container">
+                        <a href="https://adf.ly/14178809/gammaj-link-1" class="btn btn-primary btn-small">Download</a>
+                        <a href="https:/github.com/T3r1jj/GammaJ" class="btn btn-info btn-small">Source code</a>
+                        <a href="https:/github.com/T3r1jj/GammaJ/issues" class="btn btn-warning btn-small">Bug report</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 text-justify well">
+                        <h4>GammaJ</h4>
+                        <ul>
+                            <li>Version: v1.0.3-beta 2016/07/23 (free)</li>
+                            <li>Size: 2.49 MB</li>
+                            <li>MD5: 4d96536925d3a25ed8e75d07182c4d64</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 text-justify well">
+                        <h4>Requirements</h4>
+                        <ul>
+                            <li>
+                                Operating system: Windows 2000 Professional / Windows 2000 Server <b>or newer</b>
+                            </li>
+                            <li>
+                                Java Runtime Environment (JRE) 1.7 or higher version
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 text-justify well">
+                        <h4>Hotkeys</h4>
+                        <ul>
+                            <li>
+                                Default reset: CTRL+SHIFT+R
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 text-justify well buttons-container">
+                        <a href="https://www.paypal.me/T3r1jj" class="btn btn-danger btn-medium">Donate</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
