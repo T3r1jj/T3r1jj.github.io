@@ -72,3 +72,27 @@
     display: flex;
     align-items: center;
 }
+
+.navbar .background-top {
+    background-color: yellow;
+    height: 3em;
+    width: 100%;
+    position: absolute;
+    z-index: -9999;
+}
+
+.navbar .angled-background-top {
+    background-color: transparent;
+    bottom: -7.95em;
+    height: 0;
+    width: 100%;
+    border-top: 5em solid yellow;
+    border-right: 100vw solid transparent;
+    position: absolute;
+    z-index: -9999;
+}
+
+.container {
+    z-index: 9999;
+    position: relative;
+}
