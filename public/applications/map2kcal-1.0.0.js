@@ -85,13 +85,13 @@ RouteLoader.prototype.finishLoadingModule = function (loadedModule, errorStatus)
             }
         }
     }
+    this.loaded["loadingCallback"] = true;
+    this.loadedModules = this.loaded;
+    delete(this.loaded);
     if (this.onLoadingFinished != null) {
         this.onLoadingFinished();
-        this.loaded["loadingCallback"] = true;
-        this.loadedModules = this.loaded;
-        delete(this.loaded);
-        return true;
     }
+    return true;
 }
 
 RouteLoader.prototype.createRouteFromGpx = function (e) {
@@ -129,7 +129,9 @@ RouteLoader.prototype.loadApi = function () {
 
 RouteLoader.prototype.loadRouteData = function (weatherCallback = this.weatherCallback, routeInfoCallback = this.routeInfoCallback, elevationsCallback = this.elevationsCallback, mapCallback = this.mapCallback) {
     initializeLoading(this);
-    mapCallback();
+    if (mapCallback != null) {
+        mapCallback();
+    }
     this.loadElevations(elevationsCallback);
     this.getRouteInfo(routeInfoCallback);
     this.getWeather(weatherCallback);
@@ -159,12 +161,16 @@ RouteLoader.prototype.loadElevations = function (elevationsCallback) {
         if (status !== "OK") {
             routeLoader.route.elevations = null;
             routeLoader.route.processElevations();
-            elevationsCallback(status);
+            if (elevationsCallback != null) {
+                elevationsCallback(status);
+            }
             routeLoader.finishLoadingModule("elevations", status);
         } else {
             routeLoader.route.elevations = elevations;
             routeLoader.route.processElevations();
-            elevationsCallback();
+            if (elevationsCallback != null) {
+                elevationsCallback();
+            }
             routeLoader.finishLoadingModule("elevations");
         }
     }
@@ -175,7 +181,11 @@ RouteLoader.prototype.getRouteInfo = function (routeInfoCallback) {
         dLat = routeLoader.route.bbox.maxLat - routeLoader.route.bbox.minLat,
         dLng = routeLoader.route.bbox.maxLng - routeLoader.route.bbox.maxLat;
     if (dLat * dLng > this.osmMaxDAngleSquare) {
-        routeInfoCallback("Data limited to " + this.osmMaxDAngleSquare + "square angle of route bounding box due to big data size");
+        var sizeError = "Data limited to " + this.osmMaxDAngleSquare + "square angle of route bounding box due to big data size";
+        if (routeInfoCallback != null) {
+            routeInfoCallback(sizeError);
+        }
+        routeLoader.finishLoadingModule("routeInfo", sizeError);
         return;
     }
     return getResponse("http://overpass-api.de/api/xapi?way[bbox=" + routeLoader.route.bbox.minLng + "," + routeLoader.route.bbox.minLat + "," + routeLoader.route.bbox.maxLng + "," + routeLoader.route.bbox.maxLat +
@@ -188,10 +198,14 @@ RouteLoader.prototype.getRouteInfo = function (routeInfoCallback) {
                 try {
                     roadsInfoJson = xmlToJson(data);
                     routeLoader.route.parseOsmData(roadsInfoJson);
-                    routeInfoCallback();
+                    if (routeInfoCallback != null) {
+                        routeInfoCallback();
+                    }
                     routeLoader.finishLoadingModule("routeInfo");
                 } catch (parsingError) {
-                    routeInfoCallback(parsingError);
+                    if (routeInfoCallback != null) {
+                        routeInfoCallback(parsingError);
+                    }
                     routeLoader.finishLoadingModule("routeInfo", parsingError);
                 }
             }
@@ -207,7 +221,9 @@ RouteLoader.prototype.getWeather = function (weatherCallback) {
             if (error != null) {
                 routeLoader.route.weather = new Weather();
                 routeLoader.route.processWeatherExercise();
-                weatherCallback(error);
+                if (weatherCallback != null) {
+                    weatherCallback(error);
+                }
                 routeLoader.finishLoadingModule("weather", error);
             } else {
                 try {
@@ -222,12 +238,16 @@ RouteLoader.prototype.getWeather = function (weatherCallback) {
                     routeLoader.route.weather = new Weather(pressure, temperature, humidity, windSpeed, windAngle);
                     parseWeatherDetails(routeLoader.route.weather, data);
                     routeLoader.route.processWeatherExercise();
-                    weatherCallback();
+                    if (weatherCallback != null) {
+                        weatherCallback();
+                    }
                     routeLoader.finishLoadingModule("weather");
                 } catch (parsingError) {
                     routeLoader.route.weather = new Weather();
                     routeLoader.route.processWeatherExercise();
-                    weatherCallback(parsingError);
+                    if (weatherCallback != null) {
+                        weatherCallback(parsingError);
+                    }
                     routeLoader.finishLoadingModule("weather", parsingError);
                 }
 
@@ -407,7 +427,6 @@ Route.prototype.calculateEnergy = function () {
     var aDistance = aTotalDistance;
 
     var negativeE = 0;
-    this.Pa = 0;
 
     for (var i = 0; i < this.sections.length; i++) {
         this.sections[i].headwind = this.weather.calculateHeadwind(this.sections[i].angle);
