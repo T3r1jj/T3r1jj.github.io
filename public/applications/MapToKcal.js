@@ -403,7 +403,8 @@ function loadAttributions() {
 function loadLicenses() {
     var div = document.getElementById("attribution");
     var licenses = routeLoader.getLicenses();
-    var output = 'Licenses:\r\n\r\n\r\n';
+    var output = 'Application license:\r\nCopyright 2016 Damian Terlecki\r\n\r\nUnless required by applicable law or agreed to in writing, software\r\ndistributed under the License is distributed on an "AS IS" BASIS,\r\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.'
+    output += '\r\n\r\n\r\n\r\nOther licenses:\r\n\r\n\r\n';
     for (key in licenses) {
         if (licenses.hasOwnProperty(key)) {
             output += key + '\r\n' + licenses[key] + '\r\n\r\n\r\n';
