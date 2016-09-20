@@ -154,7 +154,8 @@ function displayMap() {
         geodesic: true,
         strokeColor: "#FF0000",
         strokeOpacity: 1.0,
-        strokeWeight: 2
+        strokeWeight: 2,
+        zIndex: 100
     });
 
     routePolyline.setMap(map);

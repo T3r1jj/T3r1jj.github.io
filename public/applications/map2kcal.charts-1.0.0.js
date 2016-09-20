@@ -55,6 +55,10 @@ var ChartDrawer = function (width = 500, height = 150, route, gMap) {
     };
     this.gMap = gMap;
     this.route = route;
+    this.strokeColor = '#FFFF00';
+    this.strokeOpacity = 1.0;
+    this.strokeWeight = 5;
+    this.zIndex = 200;
 }
 
 ChartDrawer.prototype.createCustomHtmlTooltip = function (name0, value0, unit0, name1, value1, unit1) {
@@ -84,7 +88,8 @@ ChartDrawer.prototype.plotElevation = function (elevationId) {
         elevations = route.elevations,
         chartDiv = document.getElementById(elevationId),
         chart = new google.visualization.AreaChart(chartDiv),
-        data = new google.visualization.DataTable();
+        data = new google.visualization.DataTable(),
+        chartDrawer = this;
     data.addColumn("number", "Distance [km]");
     data.addColumn("number", "Elevation [m]");
     data.addColumn(this.tooltipColumn);
@@ -118,9 +123,10 @@ ChartDrawer.prototype.plotElevation = function (elevationId) {
         dot = new google.maps.Polyline({
             path: [coordinate, coordinate],
             geodesic: true,
-            strokeColor: '#00FF00',
-            strokeOpacity: 1.0,
-            strokeWeight: 5
+            strokeColor: chartDrawer.strokeColor,
+            strokeOpacity: chartDrawer.strokeOpacity,
+            strokeWeight: chartDrawer.strokeWeight * 2,
+            zIndex: chartDrawer.zIndex
         });
         dot.setMap(gMap);
     }
@@ -137,6 +143,7 @@ ChartDrawer.prototype.plotHighways = function (highwaysId) {
         highways = route.getHighways(),
         chartDiv = document.getElementById(highwaysId),
         chart = new google.visualization.BarChart(chartDiv),
+        chartDrawer = this,
 
         highwayNames = [],
         highwayPercentages = [],
@@ -184,9 +191,10 @@ ChartDrawer.prototype.plotHighways = function (highwaysId) {
                 var line = new google.maps.Polyline({
                     path: [route.coordinates[i], route.coordinates[i + 1]],
                     geodesic: true,
-                    strokeColor: '#00FF00',
-                    strokeOpacity: 1.0,
-                    strokeWeight: 5
+                    strokeColor: chartDrawer.strokeColor,
+                    strokeOpacity: chartDrawer.strokeOpacity,
+                    strokeWeight: chartDrawer.strokeWeight,
+                    zIndex: chartDrawer.zIndex
                 });
                 line.setMap(gMap);
                 lines.push(line);
@@ -210,6 +218,7 @@ ChartDrawer.prototype.plotSurfaces = function (surfacesId) {
         surfaces = route.getSurfaces(),
         chartDiv = document.getElementById(surfacesId),
         chart = new google.visualization.BarChart(chartDiv),
+        chartDrawer = this,
 
         surfaceNames = [],
         surfacePercentages = [],
@@ -256,9 +265,10 @@ ChartDrawer.prototype.plotSurfaces = function (surfacesId) {
                 var line = new google.maps.Polyline({
                     path: [route.coordinates[i], route.coordinates[i + 1]],
                     geodesic: true,
-                    strokeColor: '#00FF00',
-                    strokeOpacity: 1.0,
-                    strokeWeight: 5
+                    strokeColor: chartDrawer.strokeColor,
+                    strokeOpacity: chartDrawer.strokeOpacity,
+                    strokeWeight: chartDrawer.strokeWeight,
+                    zIndex: chartDrawer.zIndex
                 });
                 line.setMap(gMap);
                 lines.push(line);
@@ -281,7 +291,8 @@ ChartDrawer.prototype.plotHeadwind = function (headwindId) {
         gMap = this.gMap,
         chartDiv = document.getElementById(headwindId),
         chart = new google.visualization.AreaChart(chartDiv),
-        data = new google.visualization.DataTable();
+        data = new google.visualization.DataTable(),
+        chartDrawer = this;
     data.addColumn("number", "Distance [km]");
     data.addColumn("number", "Headwind (positive) [km/h]");
     data.addColumn(this.tooltipColumn);
@@ -323,9 +334,10 @@ ChartDrawer.prototype.plotHeadwind = function (headwindId) {
         line = new google.maps.Polyline({
             path: [route.coordinates[event.row], route.coordinates[event.row + 1]],
             geodesic: true,
-            strokeColor: '#00FF00',
-            strokeOpacity: 1.0,
-            strokeWeight: 5
+            strokeColor: chartDrawer.strokeColor,
+            strokeOpacity: chartDrawer.strokeOpacity,
+            strokeWeight: chartDrawer.strokeWeight,
+            zIndex: chartDrawer.zIndex
         });
         line.setMap(gMap);
     }
@@ -342,7 +354,8 @@ ChartDrawer.prototype.plotCrosswind = function (crosswindId) {
         gMap = this.gMap,
         chartDiv = document.getElementById(crosswindId),
         chart = new google.visualization.AreaChart(chartDiv),
-        data = new google.visualization.DataTable();
+        data = new google.visualization.DataTable(),
+        chartDrawer = this;
     data.addColumn("number", "Distance [km]");
     data.addColumn("number", "Crosswind (from left) [km/h]");
     data.addColumn(this.tooltipColumn);
@@ -388,9 +401,10 @@ ChartDrawer.prototype.plotCrosswind = function (crosswindId) {
         line = new google.maps.Polyline({
             path: [route.coordinates[event.row], route.coordinates[event.row + 1]],
             geodesic: true,
-            strokeColor: '#00FF00',
-            strokeOpacity: 1.0,
-            strokeWeight: 5
+            strokeColor: chartDrawer.strokeColor,
+            strokeOpacity: chartDrawer.strokeOpacity,
+            strokeWeight: chartDrawer.strokeWeight,
+            zIndex: chartDrawer.zIndex
         });
         line.setMap(gMap);
     }
@@ -407,7 +421,8 @@ ChartDrawer.prototype.plotKcal = function (kcalId) {
         gMap = this.gMap,
         chartDiv = document.getElementById(kcalId),
         chart = new google.visualization.AreaChart(chartDiv),
-        data = new google.visualization.DataTable();
+        data = new google.visualization.DataTable(),
+        chartDrawer = this;
     data.addColumn("number", "Distance [km]");
     data.addColumn("number", "kcal");
     data.addColumn(this.tooltipColumn);
@@ -453,9 +468,10 @@ ChartDrawer.prototype.plotKcal = function (kcalId) {
         subRoute = new google.maps.Polyline({
             path: lines,
             geodesic: true,
-            strokeColor: '#00FF00',
-            strokeOpacity: 1.0,
-            strokeWeight: 5
+            strokeColor: chartDrawer.strokeColor,
+            strokeOpacity: chartDrawer.strokeOpacity,
+            strokeWeight: chartDrawer.strokeWeight,
+            zIndex: chartDrawer.zIndex
         });
         subRoute.setMap(gMap);
     }
@@ -481,16 +497,27 @@ ChartDrawer.prototype.plotE = function (PId) {
         unitDescription = " of total absolute energy",
 
         data = google.visualization.arrayToDataTable([
-          ["Energy", "kcal", this.tooltipColumn],
-          ["Air drag", percEd, this.createCustomHtmlTooltip("Air drag", percEd.toFixed(2), unit + unitDescription, "Air drag energy", jouleToKcal(this.route.energy.Ed).toFixed(3), " kcal")],
-          [this.route.exercise.name, percEr, this.createCustomHtmlTooltip(this.route.exercise.name, percEr.toFixed(2), unit + unitDescription, this.route.exercise.name + " energy", jouleToKcal(this.route.energy.Er).toFixed(3), " kcal")],
-          ["Climbing", percEs, this.createCustomHtmlTooltip("Climbing", percEs.toFixed(2), unit + unitDescription, "Climbing energy", jouleToKcal(this.route.energy.Es).toFixed(3), " kcal")],
-          ["Acceleration", percEa, this.createCustomHtmlTooltip("Acceleration", percEa.toFixed(2), unit + unitDescription, "Acceleration energy", jouleToKcal(this.route.energy.Ea).toFixed(3), " kcal")]
+          ["Energy", "kcal", this.tooltipColumn, {
+                role: 'style'
+            }],
+          ["Air drag", percEd, this.createCustomHtmlTooltip("Air drag", percEd.toFixed(2), unit + unitDescription, "Air drag energy", jouleToKcal(this.route.energy.Ed).toFixed(3), " kcal"), ''],
+          [this.route.exercise.name, percEr, this.createCustomHtmlTooltip(this.route.exercise.name, percEr.toFixed(2), unit + unitDescription, this.route.exercise.name + " energy", jouleToKcal(this.route.energy.Er).toFixed(3), " kcal"), ''],
+          ["Climbing", percEs, this.createCustomHtmlTooltip("Climbing", percEs.toFixed(2), unit + unitDescription, "Climbing energy", jouleToKcal(this.route.energy.Es).toFixed(3), " kcal"), ''],
+          ["Acceleration", percEa, this.createCustomHtmlTooltip("Acceleration", percEa.toFixed(2), unit + unitDescription, "Acceleration energy", jouleToKcal(this.route.energy.Ea).toFixed(3), " kcal"), '']
         ]);
     data.sort([{
         column: 1,
         desc: true
     }]);
+
+    data.setCell(0, 3, "red");
+    data.setCell(1, 3, "orange");
+    data.setCell(2, 3, "yellow");
+    if (percEr > 0) {
+        data.setCell(3, 3, "green");
+    } else {
+        data.setCell(3, 3, "blue");
+    }
 
     var options = {
         title: "Energy portions",
