@@ -63,7 +63,7 @@ RouteLoader.prototype.getAttributions = function () {
             "//overpass-api.de/"
         ],
         map2kcal: [
-            "RouteJS",
+            "map2kcal",
             "//github.com/T3r1jj/map2kcal"
         ]
     }
