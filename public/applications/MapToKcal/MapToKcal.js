@@ -41,6 +41,8 @@ function invertRoute() {
     if (routeLoader.route != null) {
         routeLoader.route.invert();
         displayRecalculatedData();
+        chartDrawer.startLabel.setPosition(routeLoader.route.coordinates[0]);
+        chartDrawer.endLabel.setPosition(routeLoader.route.coordinates[routeLoader.route.coordinates.length - 1]);
     }
 }
 
@@ -73,6 +75,7 @@ function handleFileSelect(evt) {
                 routeLoader.loadApi();
             } catch (error) {
                 displayError("Not a .gpx file (" + error + ")");
+                showLoading(false);
             }
         };
         reader.readAsText(file);
@@ -159,6 +162,19 @@ function displayMap() {
     });
 
     routePolyline.setMap(map);
+    chartDrawer.startLabel = new google.maps.Marker({
+        position: routeLoader.route.coordinates[0],
+        map: map,
+        icon: "http://www.google.com/mapfiles/dd-start.png",
+        animation: google.maps.Animation.DROP
+    });
+    chartDrawer.endLabel = new google.maps.Marker({
+        position: routeLoader.route.coordinates[routeLoader.route.coordinates.length - 1],
+        map: map,
+        icon: "http://www.google.com/mapfiles/dd-end.png",
+        animation: google.maps.Animation.DROP
+    });
+
     displaySuccess("Loaded Google Maps");
 }
 
