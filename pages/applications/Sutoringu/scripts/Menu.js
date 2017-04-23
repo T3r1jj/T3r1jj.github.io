@@ -58,7 +58,7 @@
                 document.getElementById('modal').style.display = "block";
                 document.getElementById('modal-content').innerHTML =
                     "<div id='author' style='font-size: 1.5em;text-align: center;'>" +
-                    "<img src='assets/images/favicon.ico' style='width: 64px;height: 64px;margin-bottom: 16px'/></br>" +
+                    "<img src='Sutoringu/assets/images/favicon.ico' style='width: 64px;height: 64px;margin-bottom: 16px'/></br>" +
                     "<b>Sutoringu v1.0.0</br>Created by <a href='https://t3r1jj.github.io'>Damian Terlecki</a></b>" +
                     "<div id='author-loader' class='author-loader' style='margin-left: auto;margin-right:auto;margin-top: 8px;'></div></br>" +
                     "<div style='text-align: center'><b>Attributions; build on:</b>" +
