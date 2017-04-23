@@ -1,0 +1,159 @@
+html, body, #game {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    display: table;
+    overflow-x: hidden;
+    background-color: #fff;
+    background-image: url("assets/images/sakura1.png"), url("assets/images/sakura2.png");
+    background-position: right top, left bottom;
+    background-repeat: no-repeat;
+}
+
+#game {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#forfeit {
+    margin-top: 8px;
+    visibility: hidden;
+}
+
+canvas {
+    display: block;
+    margin: auto;
+    position: relative;
+    z-index: 200;
+}
+
+#textInput {
+    margin-top: 8px;
+    padding: 4px;
+    font-size: 24px;
+    text-align: center;
+    visibility: hidden;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 500;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 #808080;
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #808080;
+    width: 800px;
+    overflow-y: auto;
+}
+
+.modal-content div {
+    padding: 15px;
+    max-height: 600px;
+}
+
+.close {
+    color: #666;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.author-loader {
+    border: 8px solid #f4f4f4;
+    border-top: 8px solid pink;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@font-face {
+    font-family: 'Molle';
+    src: url('assets/fonts/Molle/Molle-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Candal';
+    src: url('assets/fonts/Candal/Candal.ttf');
+}
+
+#preload-font-Molle {
+    font-family: 'Molle', cursive;
+    text-indent: -9999px;
+    font-size: 0;
+}
+
+#preload-font-Candal {
+    font-family: 'Candal', sans-serif;
+    text-indent: -9999px;
+    font-size: 0;
+}
+
+.leaf {
+    border-bottom-left-radius: 300px;
+    border-top-right-radius: 300px;
+    background-color: pink;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 100;
+}
+
+@media (min-height: 800px) and (min-width: 1400px) {
+
+    .leaf-top {
+        margin-top: -360px;
+        width: 200px;
+        height: 100px;
+    }
+
+    .leaf-bottom {
+        margin-top: +280px;
+        width: 100px;
+        height: 200px;
+    }
+
+    .leaf-left {
+        margin-left: -420px;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .leaf-right {
+        margin-left: 420px;
+        transform: translate(-50%, -50%) rotate(135deg) scaleX(-1);
+    }
+}
