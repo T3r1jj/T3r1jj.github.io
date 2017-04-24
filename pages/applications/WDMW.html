@@ -35,6 +35,7 @@
         }
     </style>
     <script src='https://content.jwplatform.com/libraries/XzpPgIpP.js'></script>
+    <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
 </head>
 <body>
 <h1>Play the music and guess the author name and title by checking info.</h1>
@@ -47,10 +48,13 @@
 </div>
 <div id="info"></div>
 <div id="footer">
+    <div id="counter"></div>
     <hr>
     Created for educational purposes, build on:
     </br>
     - <a href="https://github.com/jwplayer/jwplayer">JW Player</a> (CC BY-NC-SA 3.0)
+    </br>
+    - <a href="https://responsivevoice.org/">ResponsiveVoice JS</a> (free for non-commercial)
     </br>
     - <a href="https://www.youtube.com/">Youtube videos</a>
 </div>
@@ -58,82 +62,136 @@
     const audios = [{
         "id": "R1GwvPzzK1k",
         "author": "Modest Musorgski",
-        "title": "Promenada"
+        "title": "Promenada",
+        "lang": "PL"
     }, {
         "id": "0QwFwC67yD4",
         "author": "Modest Musorgski",
-        "title": "Taniec kurcząt w skorupkach"
+        "title": "Taniec kurcząt w skorupkach",
+        "lang": "PL"
     }, {
         "id": "tO5p-gNyVlo",
         "author": "Modest Musorgski",
-        "title": "Chatka na kurzej stopce"
+        "title": "Chatka na kurzej stopce",
+        "lang": "PL"
     }, {
         "id": "CvFH_6DNRCY",
         "author": "Claude Debussy",
-        "title": "Światło księżyca"
+        "title": "Światło księżyca",
+        "lang": "PL"
     }, {
         "id": "Ncz-D1Vf13M",
         "author": "Claude Debussy",
-        "title": "Preludium do popołudnia fauna"
-    }, {"id": "I9CMPOz1SaQ", "author": "Maurycy Ravel", "title": "Bolero"}, {
+        "title": "Preludium do popołudnia fauna",
+        "lang": "PL"
+    }, {
+        "id": "I9CMPOz1SaQ",
+        "author": "Maurycy Ravel",
+        "title": "Bolero",
+        "lang": "PL"
+    }, {
         "id": "S-Xm7s9eGxU",
         "author": "Erik Satie",
-        "title": "Gymnopedie No. 1"
+        "title": "Gymnopedie No. 1",
+        "lang": "ENG"
     }, {
         "id": "IUAF3abGY2M",
         "author": "Erik Satie",
-        "title": "Gnossienne No 1"
+        "title": "Gnossienne No 1",
+        "lang": "ENG"
     }, {
         "id": "Dp3BlFZWJNA",
         "author": "Krzysztof Penderecki",
-        "title": "Tren Ofiarom Hiroszimy"
+        "title": "Tren Ofiarom Hiroszimy",
+        "lang": "PL"
     }, {
         "id": "gkcosqj1CaY",
         "author": "Wojciech Kilar",
-        "title": "Orawa"
+        "title": "Orawa",
+        "lang": "PL"
     }, {
         "id": "_8gQ2twjLeQ",
         "author": "Wojciech Kilar",
-        "title": "Muz. do filmu \"Ziemia obiecana\" reż. A. Wajda"
+        "title": "Muzyka do filmu \"Ziemia obiecana\" Andrzeja Wajda",
+        "lang": "PL"
     }, {
         "id": "zB7PFrKj7LU",
         "author": "Wojciech Kilar",
-        "title": "Muz. do filmu \"Przypadek\" K.Kieślowski"
+        "title": "Muzyka do filmu \"Przypadek\" Kieślowskiego",
+        "lang": "PL"
     }, {
         "id": "P1894JRqbsc",
         "author": "Scott Joplin",
-        "title": "Maple Leaf Rag"
+        "title": "Maple Leaf Rag",
+        "lang": "ENG"
     }, {
         "id": "wgBWGR0E83Y",
         "author": "Bessie Smith",
-        "title": "Black water Blues"
+        "title": "Black water Blues",
+        "lang": "ENG"
     }, {
         "id": "gke3u-OI118",
         "author": "B.B. King",
-        "title": "Blues man"
+        "title": "Blues man",
+        "lang": "ENG"
     }, {
         "id": "PwpriGltf9g",
         "author": "King Oliver's Creole Jazz Band",
-        "title": "Dipper Mouth Blues"
+        "title": "Dipper Mouth Blues",
+        "lang": "ENG"
     }, {
         "id": "xO3k-S_pqK4",
         "author": "Louis Armstrong",
-        "title": "Wild Man Blues"
+        "title": "Wild Man Blues",
+        "lang": "ENG"
     }, {
         "id": "CIYS9EQWkXg",
         "author": "George Gershwin",
-        "title": "Let's Call The Whole Thing Off"
+        "title": "Let's Call The Whole Thing Off",
+        "lang": "ENG"
+    }, {
+        "id": "TrytKuC3Z_o",
+        "author": "Duke Ellington",
+        "title": "Satin Doll",
+        "lang": "ENG"
+    }, {
+        "id": "gOlpcJhNyDI",
+        "author": "Duke Ellington",
+        "title": "C Jam Blues",
+        "lang": "ENG"
+    }, {
+        "id": "r2S1I_ien6A",
+        "author": "Louis Prima",
+        "title": "Sing, sing, sing. (wykonanie Benny Goodman)",
+        "lang": "ENG"
+    }, {
+        "id": "n92ATE3IgIs",
+        "author": "Glenn Miller",
+        "title": "Moonlight Serenade",
+        "lang": "ENG"
+    }, {
+        "id": "jorNp0LQJ5s",
+        "author": "Glenn Miller",
+        "title": "Chattanooga Choo Choo",
+        "lang": "ENG"
     }];
+    const langMap = {"PL": "Polish Female", "ENG": "UK English Male"};
+    const titleMap = {"PL": "Tytuł.", "ENG": "Title."};
+    const authorMap = {"PL": "Autor.", "ENG": "Author."};
+    const itWasMap = {"PL": "To był.", "ENG": "It was."};
+    const speakRateMap = {"PL": 0.75, "ENG": 0.6};
     var permutedAudios = null;
     var currentAudio = null;
     var audioIndex = -1;
     var infoDiv = document.getElementById('info');
+    var counterDiv = document.getElementById('counter');
     var player = null;
     var onNextClick = function () {
         audioIndex++;
         if (audioIndex === permutedAudios.length) {
             infoDiv.innerHTML = "<b>Finished music list</b></br>Press Next to start another randomized music list";
         } else {
+            counterDiv.innerHTML = "<h1><b>" + (audioIndex + 1) + " / " + permutedAudios.length + "</b></h1>";
             if (audioIndex > permutedAudios.length) {
                 permutedAudios = generatePermutation(audios);
                 audioIndex = 0;
@@ -149,7 +207,28 @@
             player.setup({
                 file: getLink(),
                 width: 640,
-                height: 36
+                height: 36,
+                events: {
+                    onComplete: function () {
+                        if (audioIndex <= permutedAudios.length) {
+                            if (audioIndex < permutedAudios.length) {
+                                onInfoClick();
+                                var speechTitle = currentAudio.title;
+                                if (currentAudio.title === 'Sing, sing, sing. (wykonanie Benny Goodman)') {
+                                    speechTitle = 'Sing, sing, sing. (the call Narnia. Benny Goodman)'
+                                }
+                                responsiveVoice.speak(itWasMap[currentAudio.lang] + " " + authorMap[currentAudio.lang] + " - " +
+                                    currentAudio.author + ". " + titleMap[currentAudio.lang] + " - " + speechTitle,
+                                    langMap[currentAudio.lang], {
+                                        rate: speakRateMap[currentAudio.lang],
+                                        onend: onNextClick
+                                    });
+                            } else {
+                                onNextClick();
+                            }
+                        }
+                    }
+                }
             });
             if (!init) {
                 player.play();
