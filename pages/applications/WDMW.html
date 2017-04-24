@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wprowadzenie do muzyki współczesnej</title>
+    <style>
+        div, h1 {
+            text-align: center;
+            margin-top: 32px;
+        }
+
+        #player {
+            margin: auto;
+        }
+
+        #info {
+            font-size: 1.5em;
+        }
+
+        button {
+            width: 200px;
+            margin: 4px;
+            padding: 8px;
+            font-size: 1.5em;
+        }
+
+        #footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .jw-controlbar {
+            background-color: rgba(33, 33, 33, 1) !important;
+        }
+    </style>
+    <script src='https://content.jwplatform.com/libraries/XzpPgIpP.js'></script>
+</head>
+<body>
+<h1>Play the music and guess the author name and title by checking info.</h1>
+<div>
+    <div id="player">Loading the player...</div>
+</div>
+<div>
+    <button type="button" onclick="onNextClick()">Next</button>
+    <button type="button" onclick="onInfoClick()">Show info</button>
+</div>
+<div id="info"></div>
+<div id="footer">
+    <hr>
+    Created for educational purposes, build on:
+    </br>
+    - <a href="https://github.com/jwplayer/jwplayer">JW Player</a> (CC BY-NC-SA 3.0)
+    </br>
+    - <a href="https://www.youtube.com/">Youtube videos</a>
+</div>
+<script>
+    const audios = [{
+        "id": "R1GwvPzzK1k",
+        "author": "Modest Musorgski",
+        "title": "Promenada"
+    }, {
+        "id": "0QwFwC67yD4",
+        "author": "Modest Musorgski",
+        "title": "Taniec kurcząt w skorupkach"
+    }, {
+        "id": "tO5p-gNyVlo",
+        "author": "Modest Musorgski",
+        "title": "Chatka na kurzej stopce"
+    }, {
+        "id": "CvFH_6DNRCY",
+        "author": "Claude Debussy",
+        "title": "Światło księżyca"
+    }, {
+        "id": "Ncz-D1Vf13M",
+        "author": "Claude Debussy",
+        "title": "Preludium do popołudnia fauna"
+    }, {"id": "I9CMPOz1SaQ", "author": "Maurycy Ravel", "title": "Bolero"}, {
+        "id": "S-Xm7s9eGxU",
+        "author": "Erik Satie",
+        "title": "Gymnopedie No. 1"
+    }, {
+        "id": "IUAF3abGY2M",
+        "author": "Erik Satie",
+        "title": "Gnossienne No 1"
+    }, {
+        "id": "Dp3BlFZWJNA",
+        "author": "Krzysztof Penderecki",
+        "title": "Tren Ofiarom Hiroszimy"
+    }, {
+        "id": "gkcosqj1CaY",
+        "author": "Wojciech Kilar",
+        "title": "Orawa"
+    }, {
+        "id": "_8gQ2twjLeQ",
+        "author": "Wojciech Kilar",
+        "title": "Muz. do filmu \"Ziemia obiecana\" reż. A. Wajda"
+    }, {
+        "id": "zB7PFrKj7LU",
+        "author": "Wojciech Kilar",
+        "title": "Muz. do filmu \"Przypadek\" K.Kieślowski"
+    }, {
+        "id": "P1894JRqbsc",
+        "author": "Scott Joplin",
+        "title": "Maple Leaf Rag"
+    }, {
+        "id": "wgBWGR0E83Y",
+        "author": "Bessie Smith",
+        "title": "Black water Blues"
+    }, {
+        "id": "gke3u-OI118",
+        "author": "B.B. King",
+        "title": "Blues man"
+    }, {
+        "id": "PwpriGltf9g",
+        "author": "King Oliver's Creole Jazz Band",
+        "title": "Dipper Mouth Blues"
+    }, {
+        "id": "xO3k-S_pqK4",
+        "author": "Louis Armstrong",
+        "title": "Wild Man Blues"
+    }, {
+        "id": "CIYS9EQWkXg",
+        "author": "George Gershwin",
+        "title": "Let's Call The Whole Thing Off"
+    }];
+    var permutedAudios = null;
+    var currentAudio = null;
+    var audioIndex = -1;
+    var infoDiv = document.getElementById('info');
+    var player = null;
+    var onNextClick = function () {
+        audioIndex++;
+        if (audioIndex === permutedAudios.length) {
+            infoDiv.innerHTML = "<b>Finished music list</b></br>Press Next to start another randomized music list";
+        } else {
+            if (audioIndex > permutedAudios.length) {
+                permutedAudios = generatePermutation(audios);
+                audioIndex = 0;
+            }
+            currentAudio = permutedAudios[audioIndex];
+            infoDiv.innerHTML = "";
+            if (player === null) {
+                var init = true;
+            } else {
+                var init = false;
+            }
+            player = jwplayer("player");
+            player.setup({
+                file: getLink(),
+                width: 640,
+                height: 36
+            });
+            if (!init) {
+                player.play();
+            }
+        }
+    };
+    var onInfoClick = function () {
+        var url = 'https://www.youtube.com/watch?v=' + currentAudio.id;
+        infoDiv.innerHTML = "<b>Author:</b> " + currentAudio.author + "</br><b>Title:</b> " + currentAudio.title +
+            "</br>Link: <a href='" + url + "'>" + url + "</a>";
+        player.resize(640, 360);
+    };
+    var generatePermutation = function (audios) {
+        var permutation = new Array(audios.length);
+        for (var i = 0; i < audios.length; i++) {
+            permutation[i] = audios[i];
+        }
+        for (i = 0; i < permutation.length; i++) {
+            var s = i + Math.floor(Math.random() * (permutation.length - i));
+            var tmp = permutation[i];
+            permutation[i] = permutation[s];
+            permutation[s] = tmp;
+        }
+        return permutation;
+    };
+
+    permutedAudios = generatePermutation(audios);
+    onNextClick();
+    function getLink() {
+        return "//www.youtube.com/watch?v=" + currentAudio.id;
+    }
+</script>
+</body>
+</html>
