@@ -24,10 +24,21 @@
             font-size: 1.5em;
         }
 
-        #footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        footer {
+            text-align: center;
+            margin-top: auto;
+        }
+
+        body {
+            display: flex;
+            margin: 0;
+            height: 100%;
+            flex-direction: column;
+        }
+
+        html {
+            height: 100%;
+            vertical-align: bottom;
         }
 
         .jw-controlbar {
@@ -47,7 +58,7 @@
     <button type="button" onclick="onInfoClick()">Show info</button>
 </div>
 <div id="info"></div>
-<div id="footer">
+<footer>
     <div id="counter"></div>
     <hr>
     Created for educational purposes, build on:
@@ -57,7 +68,7 @@
     - <a href="https://responsivevoice.org/">ResponsiveVoice JS</a> (free for non-commercial)
     </br>
     - <a href="https://www.youtube.com/">Youtube videos</a>
-</div>
+</footer>
 <script>
     const audios = [{
         "id": "R1GwvPzzK1k",
