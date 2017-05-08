@@ -185,6 +185,26 @@
         "author": "Glenn Miller",
         "title": "Chattanooga Choo Choo",
         "lang": "ENG"
+    }, {
+        "id": "fsAMAIaas94",
+        "author": "Charlie Parker",
+        "title": "Ornithology",
+        "lang": "ENG"
+    }, {
+        "id": "ryNtmkfeJk4",
+        "author": "Charlie Parker",
+        "title": "Now's The Time",
+        "lang": "ENG"
+    }, {
+        "id": "PHdU5sHigYQ",
+        "author": "Paul Desmond",
+        "title": "Take five",
+        "lang": "ENG"
+    }, {
+        "id": "NDB4K5zCcfk",
+        "author": "Dave Brubeck",
+        "title": "Unsquare dance",
+        "lang": "ENG"
     }];
     const langMap = {"PL": "Polish Female", "ENG": "UK English Male"};
     const titleMap = {"PL": "Tytuł.", "ENG": "Title."};
@@ -202,11 +222,11 @@
         if (audioIndex === permutedAudios.length) {
             infoDiv.innerHTML = "<b>Finished music list</b></br>Press Next to start another randomized music list";
         } else {
-            counterDiv.innerHTML = "<h1><b>" + (audioIndex + 1) + " / " + permutedAudios.length + "</b></h1>";
             if (audioIndex > permutedAudios.length) {
                 permutedAudios = generatePermutation(audios);
                 audioIndex = 0;
             }
+            counterDiv.innerHTML = "<h1><b>" + (audioIndex + 1) + " / " + permutedAudios.length + "</b></h1>";
             currentAudio = permutedAudios[audioIndex];
             infoDiv.innerHTML = "";
             if (player === null) {
