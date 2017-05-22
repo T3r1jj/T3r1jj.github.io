@@ -272,11 +272,8 @@
                                         onend: onNextClick
                                     });
                             } else {
-                                responsiveVoice.speak("KONIEC",
-                                    langMap["PL"], {
-                                        rate: speakRateMap["PL"],
-                                        onend: onNextClick
-                                    });
+                                responsiveVoice.speak("END OF THE LIST");
+                                onNextClick();
                             }
                         }
                     }
