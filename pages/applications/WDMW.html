@@ -236,6 +236,10 @@
         audioIndex++;
         if (audioIndex === permutedAudios.length) {
             infoDiv.innerHTML = "<b>Finished music list</b></br>Press Next to start another randomized music list";
+            responsiveVoice.speak("KONIEC",
+                langMap["PL"], {
+                    rate: speakRateMap["ENG"]
+                });
         } else {
             if (audioIndex > permutedAudios.length) {
                 permutedAudios = generatePermutation(audios);
@@ -256,29 +260,19 @@
                 height: 36,
                 events: {
                     onComplete: function () {
-                        if (audioIndex <= permutedAudios.length) {
-                            if (audioIndex < permutedAudios.length) {
-                                onInfoClick();
-                                var speechTitle = currentAudio.title;
-                                if (currentAudio.title === 'Sing, sing, sing. (wykonanie Benny Goodman)') {
-                                    speechTitle = 'Sing, sing, sing. (the call Narnia. Benny Goodman)'
-                                } else if (currentAudio.title === 'My Funny Valentine (Wykonanie Miles Davis)') {
-                                    speechTitle = 'My Funny Valentine (the call Narnia. Miles Davis)'
-                                }
-                                responsiveVoice.speak(itWasMap[currentAudio.lang] + " " + authorMap[currentAudio.lang] + " - " +
-                                    currentAudio.author + ". " + titleMap[currentAudio.lang] + " - " + speechTitle,
-                                    langMap[currentAudio.lang], {
-                                        rate: speakRateMap[currentAudio.lang],
-                                        onend: onNextClick
-                                    });
-                            } else {
-                                responsiveVoice.speak("KONIEC",
-                                    langMap["PL"], {
-                                        rate: speakRateMap["PL"],
-                                        onend: onNextClick
-                                    });
-                            }
+                        onInfoClick();
+                        var speechTitle = currentAudio.title;
+                        if (currentAudio.title === 'Sing, sing, sing. (wykonanie Benny Goodman)') {
+                            speechTitle = 'Sing, sing, sing. (the call Narnia. Benny Goodman)'
+                        } else if (currentAudio.title === 'My Funny Valentine (Wykonanie Miles Davis)') {
+                            speechTitle = 'My Funny Valentine (the call Narnia. Miles Davis)'
                         }
+                        responsiveVoice.speak(itWasMap[currentAudio.lang] + " " + authorMap[currentAudio.lang] + " - " +
+                            currentAudio.author + ". " + titleMap[currentAudio.lang] + " - " + speechTitle,
+                            langMap[currentAudio.lang], {
+                                rate: speakRateMap[currentAudio.lang],
+                                onend: onNextClick
+                            });
                     }
                 }
             });
