@@ -205,6 +205,21 @@
         "author": "Dave Brubeck",
         "title": "Unsquare dance",
         "lang": "ENG"
+    }, {
+        "id": "k94zDsJ-JMU",
+        "author": "Miles Davis",
+        "title": "Milestones",
+        "lang": "ENG"
+    }, {
+        "id": "zqNTltOGh5c",
+        "author": "Miles Davis",
+        "title": "So What",
+        "lang": "ENG"
+    }, {
+        "id": "OCqZE6oBSsQ",
+        "author": "Richard Rodgers",
+        "title": "My Funny Valentine (Wykonanie Miles Davis)",
+        "lang": "ENG"
     }];
     const langMap = {"PL": "Polish Female", "ENG": "UK English Male"};
     const titleMap = {"PL": "Tytuł.", "ENG": "Title."};
@@ -247,6 +262,8 @@
                                 var speechTitle = currentAudio.title;
                                 if (currentAudio.title === 'Sing, sing, sing. (wykonanie Benny Goodman)') {
                                     speechTitle = 'Sing, sing, sing. (the call Narnia. Benny Goodman)'
+                                } else if (currentAudio.title === 'My Funny Valentine (Wykonanie Miles Davis)') {
+                                    speechTitle = 'My Funny Valentine (the call Narnia. Miles Davis)'
                                 }
                                 responsiveVoice.speak(itWasMap[currentAudio.lang] + " " + authorMap[currentAudio.lang] + " - " +
                                     currentAudio.author + ". " + titleMap[currentAudio.lang] + " - " + speechTitle,
@@ -255,7 +272,11 @@
                                         onend: onNextClick
                                     });
                             } else {
-                                onNextClick();
+                                responsiveVoice.speak("KONIEC",
+                                    langMap["PL"], {
+                                        rate: speakRateMap["PL"],
+                                        onend: onNextClick
+                                    });
                             }
                         }
                     }
