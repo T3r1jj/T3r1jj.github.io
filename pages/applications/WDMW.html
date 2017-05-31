@@ -245,6 +245,11 @@
         "author": "Philip Glass",
         "title": "The Truman Show",
         "lang": "ENG"
+    }, {
+        "id": "EnjtQQQaDKo",
+        "author": "James Last",
+        "title": "The Lonely Shepherd (wykonanie Gheorghe Zamfir)",
+        "lang": "ENG"
     }];
     const langMap = {"PL": "Polish Female", "ENG": "UK English Male"};
     const titleMap = {"PL": "Tytuł.", "ENG": "Title."};
@@ -288,9 +293,11 @@
                         onInfoClick();
                         var speechTitle = currentAudio.title;
                         if (currentAudio.title === 'Sing, sing, sing. (wykonanie Benny Goodman)') {
-                            speechTitle = 'Sing, sing, sing. (the call Narnia. Benny Goodman)'
+                            speechTitle = 'Sing, sing, sing. (the call Narnia. Benny Goodman)';
                         } else if (currentAudio.title === 'My Funny Valentine (Wykonanie Miles Davis)') {
-                            speechTitle = 'My Funny Valentine (the call Narnia. Miles Davis)'
+                            speechTitle = 'My Funny Valentine (the call Narnia. Miles Davis)';
+                        } else if (currentAudio.title === 'The Lonely Shepherd (wykonanie Gheorghe Zamfir)') {
+                            speechTitle = 'The Lonely Shepherd (the call Narnia. Gheorghe Zamfir)';
                         }
                         responsiveVoice.speak(itWasMap[currentAudio.lang] + " " + authorMap[currentAudio.lang] + " - " +
                             currentAudio.author + ". " + titleMap[currentAudio.lang] + " - " + speechTitle,
