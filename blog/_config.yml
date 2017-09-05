@@ -7,12 +7,15 @@ title: T3r1jj apps
 subtitle:
 description:
 author: T3r1jj
-language: en
+language: [en, pl]
+i18n:
+  type: [page, post]
+  generator: [index, archive, category, tag]
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://T3r1jj.gitlab.io
 root: /
 permalink: :title/
 permalink_defaults:
@@ -28,7 +31,7 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
-new_post_name: :title.md # File name of new posts
+new_post_name: :lang/:title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
@@ -79,6 +82,12 @@ archive_generator:
     yearly: false
     monthly: false
     daily: false
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
