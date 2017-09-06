@@ -5,7 +5,11 @@ db.json
 public/
 .deploy*/
 
-# modified
 !node_modules/
 node_modules/*
 !node_modules/hexo-generator-feed/
+!node_modules/hexo-generator-sitemap/
+!node_modules/hexo-generator-archive/
+!node_modules/hexo-generator-i18n/
+!node_modules/hexo-renderer-jade/
+!node_modules/hexo-generator-tipue-search-json/

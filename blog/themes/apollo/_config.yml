@@ -1,0 +1,17 @@
+menu:
+    Blog: /
+    Archive: /archives/
+    GitHub: https://github.com/T3r1jj
+    Rss: /atom.xml
+favicon: /favicon.png
+logo: /logo.png
+
+# Comment
+disqus: T3r1jj
+
+# Analytics
+# google-analytics:
+ga:
+
+# Copyright Information
+startyear: 2015
