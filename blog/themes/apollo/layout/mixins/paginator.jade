@@ -2,10 +2,10 @@ mixin home()
     - var prev = page.prev_link
     - var next = page.next_link
     .paginator
-        if page.prev
-            a.prev(href=url_for(prev))!= __('prev')
         if page.next
             a.next(href=url_for(next))!= __('next')
+        if page.prev
+            a.prev(href=url_for(prev))!= __('prev')
 
 mixin post()
     - var prev = page.prev ? page.prev : false;
@@ -19,7 +19,7 @@ mixin post()
     - next = next ? next.path : false
 
     .paginator
-        if prev
-            a.prev(href=url_for(prev))!= __('prev_post')
         if next
             a.next(href=url_for(next))!= __('next_post')
+        if prev
+            a.prev(href=url_for(prev))!= __('prev_post')

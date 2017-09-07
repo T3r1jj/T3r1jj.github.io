@@ -2,6 +2,9 @@ if theme.disqus
     #disqus_thread
     script.
         var disqus_shortname = '#{theme.disqus}';
+        if ('#{page.lang}' !== '#{config.language}' && '#{page.lang}' !== '#{config.language[0]}') {
+            disqus_shortname += '-#{page.lang}'
+        }
         var disqus_identifier = '#{page.path}';
         var disqus_title = '#{page.title}';
         var disqus_url = '#{config.url}/#{page.path}';

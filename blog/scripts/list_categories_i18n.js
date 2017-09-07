@@ -74,7 +74,7 @@ hexo.extend.helper.register('list_categories_i18n', function listCategoriesHelpe
 
             result += '<li class="' + className + '-list-item' + additionalClassName + '">';
 
-            result += '<a class="' + className + '-list-link' + (isCurrent ? ' current' : '') + '" href="' + self.url_for(cat.path) + suffix + '">';
+            result += '<a class="' + className + '-list-link' + (isCurrent ? ' current' : '') + '" href="' + self.url_for_lang(cat.path) + suffix + '">';
             result += transform ? transform(cat.name) : cat.name;
             result += '</a>';
 
@@ -98,7 +98,7 @@ hexo.extend.helper.register('list_categories_i18n', function listCategoriesHelpe
         prepareQuery(parent).forEach(function (cat, i) {
             if (i || level) result += separator;
 
-            result += '<a class="' + className + '-link" href="' + self.url_for(cat.path) + suffix + '">';
+            result += '<a class="' + className + '-link" href="' + self.url_for_lang(cat.path) + suffix + '">';
             result += transform ? transform(cat.name) : cat.name;
 
             if (showCount) {

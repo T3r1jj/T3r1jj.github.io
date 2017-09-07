@@ -14,16 +14,16 @@ ul.nav.nav-list
     li.nav-list-item
         a.nav-list-link(class="search" href=url_for_lang("/search/") target="_self") <i class="fa fa-search" aria-hidden="true"></i>
     li.nav-list-item
-        select(id="lang" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);")
+        select(id="lang" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" class="fa")
             each lang in config.language
                 option(value=path_for_lang(lang), selected=page.lang === lang, lang=lang) #{__(lang)}
 
 - function path_for_lang(lang) {
-- var path = switch_lang(lang)
-- var index = path.indexOf("index.html");
-- if (index !== -1) {
-- return path.substring(0, index);
-- } else {
-- return path;
-- }
+-   var path = switch_lang(lang)
+-   var index = path.indexOf("index.html");
+-   if (index !== -1) {
+-       return path.substring(0, index);
+-   } else {
+-       return path;
+-   }
 - }
