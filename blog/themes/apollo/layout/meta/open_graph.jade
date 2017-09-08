@@ -1,0 +1,12 @@
+meta(property="og:site_name" content="#{config.title}")
+meta(property="og:title" content="#{page.title ? page.title : config.title}")
+if page.path.endsWith("index.html")
+    meta(property="og:type" content="website")
+else
+    meta(property="og:type" content="article")
+if page.description
+    meta(property="og:description" content="#{page.description}")
+else
+    meta(property="og:description" content="#{config.description}")
+meta(property="og:url" content="#{url.substring(0, url.lastIndexOf('index.html'))}")
+meta(property="og:image" content="#{page.logo ? page.logo : config.url + config.meta.site.logo}")

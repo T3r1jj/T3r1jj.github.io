@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    {% for post in posts %}
+    <url>
+        {% if post.permalink.endsWith('index.html') %}
+            <priority>1.0</priority>
+            <loc>{{ post.permalink.substring(0, post.permalink.indexOf('index.html')) }}</loc>
+            {% for langPost in posts %}
+                {% set postId = post.permalink %}
+                {% set langPostId = langPost.permalink %}
+                {% for lang in config.language %}
+                    {% set postId = postId.replace(lang + '/', '') %}
+                    {% set langPostId = langPostId.replace(lang + '/', '') %}
+                {% endfor %}
+                {% if postId === langPostId %}
+                    <xhtml:link rel="alternate" href="{{ langPost.permalink }}" hreflang="{{ langPost.lang }}" />
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            {% if post.featured %}
+                <priority>0.75</priority>
+            {% else %}
+                <priority>0.5</priority>
+            {% endif %}
+            {% if config.language[0] === post.lang  %}
+                <loc>{{ config.url + config.root + post.path }}</loc>
+            {% else %}
+                <loc>{{ config.url + config.root + post.lang + '/' + post.path }}</loc>
+            {% endif %}
+            {% for langPost in posts %}
+                {% if post.permalink === langPost.permalink %}
+                    {% if config.language[0] === langPost.lang  %}
+                        <xhtml:link rel="alternate" href="{{ config.url + config.root + langPost.path }}" hreflang="{{ langPost.lang }}" />
+                    {% else %}
+                        <xhtml:link rel="alternate" href="{{ config.url + config.root + langPost.lang + '/' + langPost.path }}" hreflang="{{ langPost.lang }}" />
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        {% if post.updated %}
+        <lastmod>{{ post.updated.toISOString() }}</lastmod>
+        {% elif post.date %}
+        <lastmod>{{ post.date.toISOString() }}</lastmod>
+        {% endif %}
+    </url>
+    {% endfor %}
+</urlset>

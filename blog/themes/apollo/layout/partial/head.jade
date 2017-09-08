@@ -1,7 +1,10 @@
 meta(charset="utf-8")
 meta(name="X-UA-Compatible", content="IE=edge")
+meta(name="author", content="#{config.author}")
+include ../meta/open_graph
+include ../meta/twitter
 
-title 
+title
     block site_title
         = config.title
 block description
@@ -11,7 +14,5 @@ meta(name="viewport", content="width=device-width, initial-scale=1")
 link(rel="icon", href=url_for(theme.favicon))
 link(rel="stylesheet", href=url_for("css/apollo.css"))
 link(rel="stylesheet", href=url_for("packages/font-awesome-4.7.0/css/font-awesome.min.css"))
-
-- var xml = config.url + '/atom.xml'
-    link(rel="search", type="application/opensearchdescription+xml", href=xml, title=config.title)
-    
+link(rel="search", type="application/opensearchdescription+xml", href=config.url + '/atom.xml', title=config.title)
+include ../meta/json-ld

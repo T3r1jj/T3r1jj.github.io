@@ -64,7 +64,7 @@ var tipuesearch_i18n = {
         tipuesearch_string_2: 'Rezultaty dla',
         tipuesearch_string_3: 'Zamiast tego wyszukaj',
         tipuesearch_string_4: '1 wynik',
-        tipuesearch_string_5: 'wyniki',
+        tipuesearch_string_5: 'wynik[i/ów]',
         tipuesearch_string_6: 'Poprzednie',
         tipuesearch_string_7: 'Następne',
         tipuesearch_string_8: 'Brak rezultatów',

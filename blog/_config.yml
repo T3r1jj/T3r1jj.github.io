@@ -3,10 +3,21 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: T3r1jj apps
-subtitle:
-description:
+title: T3r1jj website
+subtitle: T3r1jj blog
+description: T3r1jj applications, games and tools
 author: T3r1jj
+meta:
+  author:
+    photo:
+    name: T3r1jj
+    url: https://T3r1jj.github.io
+    same_as:
+      - https://github.com/T3r1jj
+    description: Programmer, developer, freelancer
+    image: https://github.com/T3r1jj.png
+  site:
+    logo: /logo.png
 language: [en, pl]
 i18n:
   type: [page, post]
@@ -88,6 +99,17 @@ feed:
   path: atom.xml
   limit: 10
   hub:
+
+sitemap:
+  path: sitemap.xml
+  template: ./sitemap_template.xml
+
+robots:
+  disallow:
+    - "*/tags/*"
+    - "*/categories/"
+    - "*/search/"
+    - "*/page/"
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

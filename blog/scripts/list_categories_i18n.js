@@ -1,3 +1,4 @@
+// Modified Hexo util
 'use strict';
 hexo.extend.helper.register('list_categories_i18n', function listCategoriesHelper(categories, options) {
     if (!options && (!categories || !categories.hasOwnProperty('length'))) {

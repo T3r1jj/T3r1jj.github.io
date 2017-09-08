@@ -1,0 +1,36 @@
+if page.path.endsWith("index.html")
+    script(type="application/ld+json").
+        {
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            "url": "#{url.substring(0, url.lastIndexOf('index.html'))}",
+            "description": "#{config.description}",
+            "logo": "#{config.url + config.meta.site.logo}",
+            "name": "#{config.title}",
+            "alternateName": "#{config.subtitle}",
+            "author": {
+                "@type": "Person",
+                "name": "#{config.meta.author.name}",
+                "url": "#{config.meta.author.url}",
+                "sameAs": ["#{config.meta.author.same_as.join('", "')}"],
+                "description": "#{config.meta.author.description}"
+                "image": "#{config.meta.author.image}"
+            }
+        }
+else
+    script(type="application/ld+json").
+        {
+            "@context": "http://schema.org",
+            "@type": "Article",
+            "url": "#{url.substring(0, url.lastIndexOf('index.html'))}",
+            "name": "#{page.title}",
+            "description": "#{page.description ? page.description : config.description}",
+            "author": {
+                "@type": "Person",
+                "name": "#{config.meta.author.name}",
+                "url": "#{config.meta.author.url}",
+                "sameAs": ["#{config.meta.author.same_as.join('", "')}"],
+                "description": "#{config.meta.author.description}"
+                "image": "#{config.meta.author.image}"
+            }
+        }

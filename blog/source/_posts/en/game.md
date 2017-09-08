@@ -1,5 +1,5 @@
 ---
-title: Super Game
+title: Super Game ENG
 categories:
     - Game
 tags:

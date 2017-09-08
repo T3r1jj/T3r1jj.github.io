@@ -1,0 +1,5 @@
+meta(name="twitter:card" content="summary_large_image")
+meta(name="twitter:title" content="#{page.title ? page.title : config.title}")
+meta(name="twitter:description" content="#{page.description ? page.description : config.description}")
+meta(name="twitter:url" content="#{url.substring(0, url.lastIndexOf('index.html'))}")
+meta(name="twitter:image:src" content="#{page.logo ? page.logo : config.url + config.meta.site.logo}")

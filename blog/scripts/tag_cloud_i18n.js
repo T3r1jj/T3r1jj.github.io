@@ -1,3 +1,4 @@
+// Modified Hexo util
 'use strict';
 hexo.extend.helper.register('tag_cloud_i18n', function tagcloudHelper(tags, options) {
     // https://github.com/imathis/hsl-picker/blob/master/assets/javascripts/modules/color.coffee
