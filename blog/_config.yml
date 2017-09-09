@@ -28,7 +28,7 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://T3r1jj.github.io
 root: /
-permalink: :title/
+permalink: articles/:title/
 permalink_defaults:
 
 # Directory
@@ -110,6 +110,13 @@ robots:
     - "*/categories/"
     - "*/search/"
     - "*/page/"
+redirects:
+  - from: "/support.html"
+    to: "/support/index.html"
+  - from: "/donate.html"
+    to: "/support/index.html"
+lightgallery:
+  id: lightgallery
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

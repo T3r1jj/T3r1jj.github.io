@@ -1,6 +1,7 @@
 menu:
     Blog: /
     Archive: /archives/
+    Support: /support/
     GitHub: https://github.com/T3r1jj
     Rss: /atom.xml
 favicon: /favicon.png

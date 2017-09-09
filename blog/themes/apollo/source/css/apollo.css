@@ -753,10 +753,20 @@ pre {
 main.container {
   margin: 2em 10px; }
 
+.fotorama__wrap {
+  margin: 0 auto; }
+
+.fotorama__video {
+  margin-bottom: 20px;
+}
+
 @media screen and (min-width: 800px) {
   .wrap {
     width: 800px;
     margin: 0 auto; }
+  .wrap-stretch {
+    width: 100%;
+  }
 
   header {
     padding: 20px 100px; } }

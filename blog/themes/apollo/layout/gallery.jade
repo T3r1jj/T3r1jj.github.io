@@ -1,0 +1,19 @@
+extends partial/layout_base
+
+block container_base
+    main.container
+        .wrap
+            .post
+                article.post-block
+                    h1.post-title
+                        != page.title
+        .wrap.wrap-stretch
+            div.fotorama(data-nav="thumbs", data-allowfullscreen="native", data-hash="true", data-keyboard="true", data-arrows="true",
+            data-click="true", data-trackpad="true", data-swipe="true")
+                each video in page.videos
+                    a(href=asset_url(page, video), data-caption=video.title)
+                each image in page.images
+                    img(src=asset_url(page, image), data-caption=image.title)
+
+block copyright
+    include partial/copyright

@@ -1,16 +1,5 @@
-doctype
-html(lang=config.language)
-    head
-        include head
-    body
-        .wrap
-            header
-                a.logo-link(href=url_for_lang())
-                    img(src=url_for(theme.logo) alt="logo")
-                include nav
-            main.container
+extends layout_base
+block container_base
+    .wrap
+        main.container
             block container
-            footer
-                block pagination
-                block copyright
-        include scripts

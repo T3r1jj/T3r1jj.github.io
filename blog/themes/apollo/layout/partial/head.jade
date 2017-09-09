@@ -14,5 +14,10 @@ meta(name="viewport", content="width=device-width, initial-scale=1")
 link(rel="icon", href=url_for(theme.favicon))
 link(rel="stylesheet", href=url_for("css/apollo.css"))
 link(rel="stylesheet", href=url_for("packages/font-awesome-4.7.0/css/font-awesome.min.css"))
+if page.layout === "gallery"
+    script(src=url_for("/js/jquery-2.2.4.min.js"))
+    link(href=url_for("/packages/fotorama-4.6.4/fotorama.css") rel="stylesheet")
+    script(src=url_for("/packages/fotorama-4.6.4/fotorama.js"))
+
 link(rel="search", type="application/opensearchdescription+xml", href=config.url + '/atom.xml', title=config.title)
 include ../meta/json-ld
