@@ -7,3 +7,4 @@ This site was generated thanks to [Hexo](https://hexo.io/) framework with modifi
 - [hexo-generator-i18n](https://github.com/Jamling/hexo-generator-i18n)
 - [hexo-generator-tipue-search-json](https://github.com/zhouhao/Hexo-Tipue-Search-Json)
 - [jQuery](https://jquery.com/) for [tipue search](//www.tipue.com/search) and [Fotorama](//fotorama.io/)
+- [Aldrich font](https://fonts.google.com/specimen/Aldrich) and [Press Start 2P font](https://fonts.google.com/specimen/Press+Start+2P)

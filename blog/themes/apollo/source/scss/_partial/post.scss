@@ -39,7 +39,7 @@
         margin: 1em 0;
         a:before {
             content: "#";
-            color: #42b983;
+            color: #9400D3;
             position: absolute;
             left: -0.7em;
             top: -4px;
@@ -61,13 +61,13 @@
         font-size: 18px;
     }
     a {
-        color: #42b983;
+        color: #9400D3;
         word-break: break-all;
     }
     blockquote {
         margin: 2em 0;
         padding-left: 20px;
-        border-left: 4px solid #42b983;
+        border-left: 4px solid #9400D3;
     }
     img {
         display: block;
@@ -213,7 +213,7 @@ pre {
     .symbol .string,
     .value,
     .regexp {
-        color: #42b983;
+        color: #9400D3;
     }
     .title {
         color: #83B917;
@@ -242,7 +242,7 @@ pre {
     .apache .cbracket,
     .tex .command,
     .prompt {
-        color: #42b983;
+        color: #9400D3;
     }
     .comment,
     .java .annotation,

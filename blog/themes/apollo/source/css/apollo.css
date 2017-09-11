@@ -355,7 +355,7 @@ th {
 
 ::selection {
   color: #FFFFFF;
-  background-color: #42b983; }
+  background-color: #9400D3; }
 
 html, body {
   width: 100%;
@@ -385,7 +385,7 @@ a, a:active {
 a.nav-list-link.active,
 a.nav-list-link:hover,
 a.post-title-link:hover {
-  border-bottom: 2px solid #42b983; }
+  border-bottom: 2px solid #9400D3; }
 
 hr {
   border: 0; }
@@ -446,7 +446,7 @@ header {
   .home.post-list .post-content > ul {
     list-style: initial; }
   .home.post-list .read-more {
-    color: #42b983; }
+    color: #9400D3; }
 
 .archive {
   max-width: 700px;
@@ -459,11 +459,11 @@ header {
   .archive .post-title-link {
     display: block;
     margin-left: 125px;
-    color: #42b983;
+    color: #9400D3;
     word-break: break-all; }
-    .archive .post-title-link:hover {
+    .archive .post-title-link:hover, .archive .nav-category-list-link:hover, .archive .tag-content a:hover, a.read-more:hover, a.post-category:hover {
       border-bottom: 0;
-      color: #267B54; }
+      color: #ffa500 !important; }
   .archive .post-info {
     float: left;
     width: 125px;
@@ -498,7 +498,7 @@ header {
   margin: 1em 0; }
   .post-content h2 a:before, .post-content h3 a:before, .post-content h4 a:before, .post-content h5 a:before, .post-content h6 a:before {
     content: "#";
-    color: #42b983;
+    color: #9400D3;
     position: absolute;
     left: -0.7em;
     top: -4px;
@@ -511,12 +511,12 @@ header {
 .post-content h4, .post-content h5, .post-content h6 {
   font-size: 18px; }
 .post-content a {
-  color: #42b983;
+  color: #9400D3;
   word-break: break-all; }
 .post-content blockquote {
   margin: 2em 0;
   padding-left: 20px;
-  border-left: 4px solid #42b983; }
+  border-left: 4px solid #9400D3; }
 .post-content img {
   display: block;
   max-width: 100%;
@@ -682,7 +682,7 @@ pre {
   pre .symbol .string,
   pre .value,
   pre .regexp {
-    color: #42b983; }
+    color: #9400D3; }
   pre .title {
     color: #83B917; }
   pre .tag .value,
@@ -709,7 +709,7 @@ pre {
   pre .apache .cbracket,
   pre .tex .command,
   pre .prompt {
-    color: #42b983; }
+    color: #9400D3; }
   pre .comment,
   pre .java .annotation,
   pre .python .decorator,
@@ -737,14 +737,15 @@ pre {
   .paginator .prev, .paginator .next {
     display: inline-block;
     margin: 0 4px;
-    padding: 4px 12px;
+    padding: 4px 12px 0 12px;
+    font-weight: bold;
     border-radius: 4px;
-    border-bottom: 4px solid #3aa373;
+    border-bottom: 4px solid #640097;
     font-size: 14px;
     color: #fff;
-    background-color: #4fc08d; }
+    background-color: #a300e2; }
     .paginator .prev:hover, .paginator .next:hover {
-      background-color: #22bd77; }
+      background-color: #be00ff; }
 
 .ds-thread,
 #disqus_thread {
@@ -824,4 +825,10 @@ footer {
 .datatable {
   padding-top: 10px; }
 
+header .nav-list-item a {
+  font-family: 'Aldrich'; }
+header .nav-list-item select.fa {
+  font-family: 'Aldrich';
+  padding-top: 2px;
+}
 /*# sourceMappingURL=apollo.css.map */

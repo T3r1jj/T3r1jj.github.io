@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: T3r1jj website
+title: T3r1jj
 subtitle: T3r1jj blog
 description: T3r1jj applications, games and tools
 author: T3r1jj
@@ -112,11 +112,9 @@ robots:
     - "*/page/"
 redirects:
   - from: "/support.html"
-    to: "/support/index.html"
+    to: "/support/"
   - from: "/donate.html"
-    to: "/support/index.html"
-lightgallery:
-  id: lightgallery
+    to: "/support/"
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

@@ -1,9 +1,7 @@
 ul.nav.nav-list
     each value, key in theme.menu
         li.nav-list-item
-            - var re = /^(http|https):\/\/*/gi;
-            - var tar = re.test(value) ? "_blank" : "_self"
-            - var act = !re.test(value) && "/"+page.current_url === value
+            - var act = is_same_path("/" + path, value);
             - var label = __(key.toLowerCase()) ? __(key.toLowerCase()) : key
             if key.toLowerCase() === "github"
                 - var ref = url_for(value)
@@ -12,7 +10,10 @@ ul.nav.nav-list
             a.nav-list-link(class={active: act} href=ref target=tar)
                 != label.toUpperCase()
     li.nav-list-item
-        a.nav-list-link(class="search" href=url_for_lang("/search/") target="_self") <i class="fa fa-search" aria-hidden="true"></i>
+        - var searchPath = "/search/"
+        - var act = is_same_path("/" + path, searchPath);
+        - var cls = act? 'active search' : 'search'
+        a.nav-list-link(class=cls href=url_for_lang(searchPath) target="_self") <i class="fa fa-search" aria-hidden="true"></i>
     li.nav-list-item
         select(id="lang" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" class="fa")
             each lang in config.language
