@@ -761,9 +761,9 @@ main.container {
   margin-bottom: 20px;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .wrap {
-    width: 800px;
+    width: 900px;
     margin: 0 auto; }
   .wrap-stretch {
     width: 100%;
