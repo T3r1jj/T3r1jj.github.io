@@ -5,6 +5,7 @@ db.json
 public/
 .deploy*/
 .idea/
+.deploy_git/
 
 !blog/node_modules/
 node_modules/*
