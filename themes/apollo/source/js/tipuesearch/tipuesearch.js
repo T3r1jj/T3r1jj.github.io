@@ -12,7 +12,7 @@ http://www.tipue.com/search
      $.fn.tipuesearch = function(options) {
 
           var set = $.extend( {
-          
+
                'show'                   : 7,
                'newWindow'              : false,
                'showURL'                : true,
@@ -27,9 +27,9 @@ http://www.tipue.com/search
                'contentLocation'        : 'tipuesearch/tipuesearch_content.json',
                'debug'                  : false,
                'lang'                   : 'en'
-          
+
           }, options);
-          
+
           return this.each(function() {
 
                var tipuesearch_in = {
@@ -51,7 +51,7 @@ http://www.tipue.com/search
                                    cont = cont.replace(/\s+/g, ' ');
                                    var desc = $(set.liveDescription, html).text();
                                    desc = desc.replace(/\s+/g, ' ');
-                                                                      
+
                                    var t_1 = html.toLowerCase().indexOf('<title>');
                                    var t_2 = html.toLowerCase().indexOf('</title>', t_1 + 7);
                                    if (t_1 != -1 && t_2 != -1)
@@ -370,7 +370,11 @@ http://www.tipue.com/search
                               {
                                    if (l_o >= start && l_o < set.show + start)
                                    {
-                                        out += '<div class="tipue_search_content_title"><a href="' + found[i].url + '"' + tipue_search_w + '>' +  found[i].title + '</a></div>';
+                                        var url = found[i].url;
+                                        if (options.lang !== 'en' && url.indexOf('/' + options.lang + "/") === -1) {
+                                            url = '/' + options.lang + url;
+                                        }
+                                        out += '<div class="tipue_search_content_title"><a href="' + url + '"' + tipue_search_w + '>' +  found[i].title + '</a></div>';
 
                                         if (set.debug)
                                         {
@@ -389,7 +393,7 @@ http://www.tipue.com/search
 
                                         if (found[i].desc)
                                         {
-                                             var t = found[i].desc.replace(/([,\.!\?])([^\s])/g, "$1 $2")
+                                             var t = found[i].desc.replace(/([,\.!\?])([^\s])/g, "$1 $2").substr(0, set.descriptiveWords*8)
                                              var t_d = t;
                                              t_d = $.trim(t_d);
                                              if (t_d.charAt(t_d.length - 1) != '.')
@@ -483,27 +487,27 @@ http://www.tipue.com/search
                                    out += '<div id="tipue_search_warning">' + tipuesearch_i18n[options.lang].tipuesearch_string_12 + ' ' + set.minimumLength + ' ' + tipuesearch_i18n[options.lang].tipuesearch_string_13 + '</div>';
                               }
                          }
-                    }                
-                    
+                    }
+
                     $('#tipue_search_content').hide();
                     $('#tipue_search_content').html(out);
                     $('#tipue_search_content').slideDown(200);
-                    
+
                     $('#tipue_search_replaced').click(function()
                     {
                          getTipueSearch(0, false);
-                    });                
-               
+                    });
+
                     $('.tipue_search_foot_box').click(function()
                     {
                          var id_v = $(this).attr('id');
                          var id_a = id_v.split('_');
-                    
+
                          getTipueSearch(parseInt(id_a[0]), id_a[1]);
-                    });                                                       
-               }          
-          
+                    });
+               }
+
           });
      };
-   
+
 })(jQuery);
