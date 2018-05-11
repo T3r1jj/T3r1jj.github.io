@@ -10,10 +10,6 @@ hexo.extend.generator.register('robots-generator', function generateRobotsTxt() 
         config.robots.disallow.map(function (disallow) {
             return "Disallow: " + disallow
         }).join("\n") +
-        config.redirects.map(function (redirect) {
-            return "\n" + "Disallow: " + redirect.from
-        }).join("") +
-        "\n" +
         "sitemap: " + config.sitemap.path
     }
 });

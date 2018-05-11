@@ -114,6 +114,8 @@ robots:
     - "*/categories/"
     - "*/search/"
     - "*/page/"
+    - "/support.html"
+    - "/donate.html"
 redirects:
   - from: "/support.html"
     to: "/support/"
