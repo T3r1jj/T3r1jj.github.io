@@ -23,18 +23,15 @@
         {%- else %}
         <priority>0.5</priority>
         {%- endif -%}
-        {%- if config.language[0] === post.lang %}
         <loc>{{ config.url + config.root + post.path }}</loc>
-        {%- else %}
-        <loc>{{ config.url + config.root + post.lang + '/' + post.path }}</loc>
-        {%- endif -%}
         {%- for langPost in posts -%}
         {%- if post.permalink === langPost.permalink -%}
-        {%- if config.language[0] === langPost.lang %}
+        {%- if post.alternatives %}
+        {%- for alternate in post.alternatives -%}
+        <xhtml:link rel="alternate" href="{{ alternate.permalink }}" hreflang="{{ alternate.lang }}"/>
+        {%- endfor -%}
+        {%- else -%}
         <xhtml:link rel="alternate" href="{{ config.url + config.root + langPost.path }}"
-                    hreflang="{{ langPost.lang }}"/>
-        {%- else %}
-        <xhtml:link rel="alternate" href="{{ config.url + config.root + langPost.lang + '/' + langPost.path }}"
                     hreflang="{{ langPost.lang }}"/>
         {%- endif -%}
         {%- endif -%}

@@ -186,6 +186,7 @@ code,
 kbd,
 pre,
 samp {
+  vertical-align: middle;
   font-family: monospace, monospace;
   font-size: 1em; }
 
@@ -525,9 +526,9 @@ header {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.125); }
 .post-content .tip {
   position: relative;
-  margin: 2em 0;
+  margin: 1em 0;
+  border-left: 4px solid #9400D3;
   padding: 12px 24px 12px 30px;
-  border-left: 4px solid #f66;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
   background-color: #f8f8f8; }
@@ -537,7 +538,6 @@ header {
   position: absolute;
   top: 14px;
   left: -12px;
-  content: "!";
   width: 20px;
   height: 20px;
   border-radius: 100%;
@@ -546,8 +546,29 @@ header {
   line-height: 20px;
   font-weight: bold;
   text-align: center;
-  background-color: #f66;
   font-family: 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif; }
+
+.post-content .tip.info {
+  border-left: 4px solid #9400D3;
+}
+.post-content .code.tip:before {
+  background-color: #9400D3;
+  content: "c";
+}
+.post-content .tip.info {
+  border-left: 4px solid #9400D3;
+}
+.post-content .info.tip:before {
+  background-color: #9400D3;
+  content: "i";
+}
+.post-content .tip.warn {
+  border-left: 4px solid #f66;
+}
+.post-content .warn.tip:before {
+  background-color: #f66;
+  content: "!";
+}
 
 #mask {
   position: fixed;
@@ -657,7 +678,18 @@ pre {
 .highlight.cpp .code:after {
   content: 'C++'; }
 
+.post-content .pre.tip {
+  display: block;
+  unicode-bidi: embed;
+  white-space: pre;
+  overflow: auto;
+  font-size: 0.9em;
+  background-color: #f8f8f8;
+  font-family: 'Roboto Mono', Monaco, courier, monospace;
+}
+
 pre {
+  font-size:0.9em;
   color: #525252; }
   pre .function .keyword,
   pre .constant {
@@ -830,5 +862,10 @@ header .nav-list-item a {
 header .nav-list-item select.fa {
   font-family: 'Aldrich';
   padding-top: 2px;
+}
+
+.post-content {
+    text-align: justify;
+    text-justify: inter-word;
 }
 /*# sourceMappingURL=apollo.css.map */
