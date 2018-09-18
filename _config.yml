@@ -123,6 +123,8 @@ redirects:
     to: "/support/"
   - from: "/"
     to: "/en/"
+  - from: "/DistributedFisheryProject/"
+    to: "/en/galleries/DistributedFisheryProject/"
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
