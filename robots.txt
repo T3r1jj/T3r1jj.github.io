@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: */tags/*
+Disallow: */categories/
+Disallow: */search/
+Disallow: */page/
+Disallow: /support.html
+Disallow: /donate.htmlsitemap: sitemap.xml

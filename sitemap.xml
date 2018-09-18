@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <priority>1.0</priority>
+        <loc>http://T3r1jj.github.io/</loc>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/index.html" hreflang="x-default"/>
+        <lastmod>2017-09-07T22:00:00.000Z</lastmod>
+    </url>
+    <url>
+        <priority>1.0</priority>
+        <loc>http://T3r1jj.github.io/pl/archives/</loc>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/archives/index.html" hreflang="pl"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/archives/index.html" hreflang="en"/>
+        <lastmod>2018-09-18T18:30:10.619Z</lastmod>
+    </url>
+    <url>
+        <priority>1.0</priority>
+        <loc>http://T3r1jj.github.io/en/archives/</loc>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/archives/index.html" hreflang="pl"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/archives/index.html" hreflang="en"/>
+        <lastmod>2018-09-18T18:30:20.146Z</lastmod>
+    </url>
+    <url>
+        <priority>1.0</priority>
+        <loc>http://T3r1jj.github.io/en/galleries/DistributedFisheryProject/</loc>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/galleries/DistributedFisheryProject/index.html" hreflang="en"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/galleries/DistributedFisheryProject/index.html" hreflang="pl"/>
+        <lastmod>2018-09-18T18:30:20.146Z</lastmod>
+    </url>
+    <url>
+        <priority>1.0</priority>
+        <loc>http://T3r1jj.github.io/pl/galleries/DistributedFisheryProject/</loc>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/galleries/DistributedFisheryProject/index.html" hreflang="en"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/galleries/DistributedFisheryProject/index.html" hreflang="pl"/>
+        <lastmod>2018-09-18T18:30:10.619Z</lastmod>
+    </url>
+    <url>
+        <priority>1.0</priority>
+        <loc>http://T3r1jj.github.io/support/</loc>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/support/index.html" hreflang="en"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/support/index.html" hreflang="pl"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/support/index.html" hreflang="en"/>
+        <lastmod>2018-09-18T15:56:16.321Z</lastmod>
+    </url>
+    <url>
+        <priority>1.0</priority>
+        <loc>http://T3r1jj.github.io/pl/support/</loc>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/support/index.html" hreflang="en"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/support/index.html" hreflang="pl"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/support/index.html" hreflang="en"/>
+        <lastmod>2018-09-18T15:56:16.321Z</lastmod>
+    </url>
+    <url>
+        <priority>1.0</priority>
+        <loc>http://T3r1jj.github.io/pl/about/</loc>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/about/index.html" hreflang="pl"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/about/index.html" hreflang="en"/>
+        <lastmod>2018-09-18T15:56:16.320Z</lastmod>
+    </url>
+    <url>
+        <priority>1.0</priority>
+        <loc>http://T3r1jj.github.io/pl/search/</loc>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/search/index.html" hreflang="pl"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/search/index.html" hreflang="en"/>
+        <lastmod>2018-09-18T15:56:16.320Z</lastmod>
+    </url>
+    <url>
+        <priority>1.0</priority>
+        <loc>http://T3r1jj.github.io/en/support/</loc>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/support/index.html" hreflang="en"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/support/index.html" hreflang="pl"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/support/index.html" hreflang="en"/>
+        <lastmod>2018-09-18T15:56:16.319Z</lastmod>
+    </url>
+    <url>
+        <priority>1.0</priority>
+        <loc>http://T3r1jj.github.io/en/about/</loc>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/about/index.html" hreflang="pl"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/about/index.html" hreflang="en"/>
+        <lastmod>2018-09-18T15:56:16.318Z</lastmod>
+    </url>
+    <url>
+        <priority>1.0</priority>
+        <loc>http://T3r1jj.github.io/en/search/</loc>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/search/index.html" hreflang="pl"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/search/index.html" hreflang="en"/>
+        <lastmod>2018-09-18T15:56:16.318Z</lastmod>
+    </url>
+    <url>
+        <priority>0.5</priority><loc>http://T3r1jj.github.io/pl/articles/latex-custom-fonts/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/latex-custom-fonts/" hreflang="pl"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/latex-custom-fonts/" hreflang="en"/>
+        <lastmod>2018-09-18T15:56:16.317Z</lastmod>
+    </url>
+    <url>
+        <priority>0.5</priority><loc>http://T3r1jj.github.io/pl/articles/hello-world/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/hello-world/" hreflang="pl"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/hello-world/" hreflang="en"/>
+        <lastmod>2018-09-18T15:56:16.317Z</lastmod>
+    </url>
+    <url>
+        <priority>0.5</priority><loc>http://T3r1jj.github.io/en/articles/latex-custom-fonts/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/latex-custom-fonts/" hreflang="pl"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/latex-custom-fonts/" hreflang="en"/>
+        <lastmod>2018-09-18T15:56:16.316Z</lastmod>
+    </url>
+    <url>
+        <priority>0.5</priority><loc>http://T3r1jj.github.io/en/articles/hello-world/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/hello-world/" hreflang="pl"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/hello-world/" hreflang="en"/>
+        <lastmod>2018-09-18T15:56:16.316Z</lastmod>
+    </url>
+</urlset>

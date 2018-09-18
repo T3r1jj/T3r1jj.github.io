@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en,pl"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="T3r1jj"><meta property="og:site_name" content="T3r1jj"><meta property="og:title" content="Polskie znaki w LaTeX-u (Ubuntu, Times New Roman)"><meta property="og:type" content="article"><meta property="og:description" content="T3r1jj applications, games and tools"><meta property="og:url" content="http://T3r1jj.github.io/pl/articles/latex-custom-fonts/"><meta property="og:image" content="http://T3r1jj.github.io/logo.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Polskie znaki w LaTeX-u (Ubuntu, Times New Roman)"><meta name="twitter:description" content="T3r1jj applications, games and tools"><meta name="twitter:url" content="http://T3r1jj.github.io/pl/articles/latex-custom-fonts/"><meta name="twitter:image:src" content="http://T3r1jj.github.io/logo.png"><title>Polskie znaki w LaTeX-u (Ubuntu, Times New Roman) · T3r1jj</title><meta name="description" content="Polskie znaki w LaTeX-u (Ubuntu, Times New Roman) - T3r1jj"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="/packages/font-awesome-4.7.0/css/font-awesome.min.css"><link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet"><link rel="search" type="application/opensearchdescription+xml" href="http://T3r1jj.github.io/atom.xml" title="T3r1jj"><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "url": "http://T3r1jj.github.io/pl/articles/latex-custom-fonts/",
+    "name": "Polskie znaki w LaTeX-u (Ubuntu, Times New Roman)",
+    "description": "T3r1jj applications, games and tools",
+    "author": {
+        "@type": "Person",
+        "name": "T3r1jj",
+        "url": "https://T3r1jj.github.io",
+        "sameAs": ["https://github.com/T3r1jj"],
+        "description": "Programmer, developer, freelancer"
+        "image": "https://github.com/T3r1jj.png"
+    }
+}</script></head><body><div class="wrap"><header><a href="/pl/" class="logo-link"><img src="/logo.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/pl/" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/pl/archives/" class="nav-list-link">ARCHIWUM</a></li><li class="nav-list-item"><a href="/pl/support/" class="nav-list-link">WSPARCIE</a></li><li class="nav-list-item"><a href="https://github.com/T3r1jj" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/pl/atom.xml" class="nav-list-link">RSS</a></li><li class="nav-list-item"><a href="/pl/search/" target="_self" class="nav-list-link search"><i class="fa fa-search" aria-hidden="true"></i></a></li><li class="nav-list-item"><select id="lang" onchange="this.options[this.selectedIndex].value &amp;&amp; (window.location = this.options[this.selectedIndex].value);" class="fa"><option value="/en/articles/latex-custom-fonts/" lang="en">ENG</option><option value="/pl/articles/latex-custom-fonts/" selected lang="pl">PL</option></select></li></ul></header></div><div class="wrap"><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">Polskie znaki w LaTeX-u (Ubuntu, Times New Roman)</h1><div class="post-info">11 maj 2018<span class="categories"><i class="fa fa-bookmark" aria-hidden="true"></i></span><a href="/pl/categories/LaTeX/" class="post-category">#LaTeX</a></div><div class="post-content"><p>LaTeX jest darmowym systemem składania tekstu (ang. typesetting). Jest ceniony za wiele właściwości takich jak automatyzacja procesu (generowanie bibliografii, odsyłaczy, równań matematycznych). Pozwala na skupienie się na tekście zamiast na jego wyglądzie poprzez wykorzystanie plików ze stylami (np. bibliografii) odpowiednich dla danego czasopisma. Przede wszystkim jest dostępny również na różne dystrybucje Linuxa.</p>
+<a id="more"></a>
+<p>Jednym z problemów, na jakie można napotkać podczas pisania pracy, są wymagania dotyczące użycia określonych czcionek. Standardowo wykorzystuje się następujące paczki zapewniające wsparcie dla polskich znaków:</p>
+<div class="pre tip">\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{polski}
+</div>
+Taka konfiguracja zazwyczaj wystarcza przy założeniu, że pliki kodowane są w systemie UTF-8. Następnie wybieramy czcionkę <code>\usepackage{times}</code>.
+Niestety zarówno przestarzała paczka <em>times</em>, jak i nowsze <em>mathptmx</em>, <em>pslatex</em>, oraz <em>txfonts</em> (<em>newtxtext</em>/<em>newtxmath</em>) wykorzystują tak naprawdę czcionki URW NimbusRomNo9L, które są bardzo podobne do Times Roman. Ponadto mimo tego, że polskie znaki wyświetlane są poprawnie, to podczas kopiowania mogą wystąpić błędy. Warto zwrócić na to uwagę, gdyż w programach antyplagiatowych wyrazy z polskimi literami zostaną nierozpoznane.
+
+<div class="tip warn">
+<div>
+Zażółć gęślą jaźń
+</div>
+<div>
+Zażółć g ̨eśl a  ̨ jaźń
+</div>
+</div>
+
+<p>W celu rozwiązania tego tego problemu można skorzystać z innej czcionki - TeX Gyre Termes: <code>\usepackage{tgtermes}</code>. Z innymi rodzajami czcionek zapoznać się można w bazie wiedzy <a href="https://www.sharelatex.com/learn/Font_typefaces" target="_blank" rel="external">ShareLaTeX</a>.</p>
+<h2 id="Oryginalna-czcionka-Times-New-Roman"><a href="#Oryginalna-czcionka-Times-New-Roman" class="headerlink" title="Oryginalna czcionka Times New Roman"></a>Oryginalna czcionka Times New Roman</h2><p>Najprostszy sposób na załadowanie znanych z Windowsa czcionek na Ubuntu składa się z 3 kroków:</p>
+<ol>
+<li>Instalacja czcionek TrueType Microsoft:
+<code>sudo apt-get install ttf-mscorefonts-installer</code>
+Podczas instalacji pojawi się okno z warunkami udzielenia licencji (Microsoft EULA). Czcionki zostały udostępnione za darmo jednak nie są one
+open-source.</li>
+<li>Zastąpienie paczek <em>inputenc</em> i <em>fontenc</em> następującymi komendami:<pre class="tip">
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+</pre></li>
+<li>Zmiana programu pdflatex na xelatex:<pre class="tip">
+xelatex main.tex
+bibtex main
+xelatex main.tex
+xelatex main.tex
+</pre>
+
+</li>
+</ol>
+<p>W praktyce proces generowania pliku pdf może się nieco wydłużyć. W przypadku innego kodowania plików należy zastosować polecenia <code>\XeTeXinputencoding</code> dla poprzedzającego tekstu bądź <code>\XeTeXdefaultencoding</code> standardowo dla wszystkich plików,
+np. <code>\XeTeXdefaultencoding “cp1250”</code> (kodowanie używane przez Microsoft Windows dla języków środkowoeuropejskich, w tym polskiego).</p>
+<h2 id="Czcionki-niestandardowe"><a href="#Czcionki-niestandardowe" class="headerlink" title="Czcionki niestandardowe"></a>Czcionki niestandardowe</h2><p>Jeśli chcemy użyć czcionek niestandardowych np. Arial Narrow wystarczy przenieść je (rozszerzenie ttf dla czcionek TrueType) do stworzonego katalogu w <code>/usr/share/fonts/</code>.</p>
+</div><p class="post-tags"><i class="fa fa-tags" aria-hidden="true"></i><a href="/pl/tags/latex/">#latex</a><a href="/pl/tags/linux/">#linux</a><a href="/pl/tags/ubuntu/">#ubuntu</a><a href="/pl/tags/times-new-roman/">#times new roman</a><a href="/pl/tags/czcionki/">#czcionki</a><a href="/pl/tags/polskie-znaki/">#polskie znaki</a></p></article></div></main></div><div class="wrap"><footer><div class="paginator"><a href="/pl/articles/hello-world/" class="next">POPRZEDNI</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 't3r1jj-blog';
+if ('pl' !== 'en,pl' && 'pl' !== 'en') {
+    disqus_shortname += '-pl'
+}
+var disqus_identifier = 'pl/articles/latex-custom-fonts/';
+var disqus_title = 'Polskie znaki w LaTeX-u (Ubuntu, Times New Roman)';
+var disqus_url = 'http://T3r1jj.github.io/pl/articles/latex-custom-fonts/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//t3r1jj-blog.disqus.com/count.js" async></script><div class="copyright"><p>© 2015 - 2018 <a href="http://T3r1jj.github.io">T3r1jj</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a>, <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a> and <a href="/pl/about/" target="_blank">others</a>.</p></div></footer></div><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-73928706-5",'auto');ga('send','pageview');</script></body></html>

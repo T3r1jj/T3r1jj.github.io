@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="en,pl"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="T3r1jj"><meta property="og:site_name" content="T3r1jj"><meta property="og:title" content="Diacritics in LaTeX (Ubuntu, Times New Roman)"><meta property="og:type" content="article"><meta property="og:description" content="T3r1jj applications, games and tools"><meta property="og:url" content="http://T3r1jj.github.io/en/articles/latex-custom-fonts/"><meta property="og:image" content="http://T3r1jj.github.io/logo.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Diacritics in LaTeX (Ubuntu, Times New Roman)"><meta name="twitter:description" content="T3r1jj applications, games and tools"><meta name="twitter:url" content="http://T3r1jj.github.io/en/articles/latex-custom-fonts/"><meta name="twitter:image:src" content="http://T3r1jj.github.io/logo.png"><title>Diacritics in LaTeX (Ubuntu, Times New Roman) · T3r1jj</title><meta name="description" content="Diacritics in LaTeX (Ubuntu, Times New Roman) - T3r1jj"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="/packages/font-awesome-4.7.0/css/font-awesome.min.css"><link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet"><link rel="search" type="application/opensearchdescription+xml" href="http://T3r1jj.github.io/atom.xml" title="T3r1jj"><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "url": "http://T3r1jj.github.io/en/articles/latex-custom-fonts/",
+    "name": "Diacritics in LaTeX (Ubuntu, Times New Roman)",
+    "description": "T3r1jj applications, games and tools",
+    "author": {
+        "@type": "Person",
+        "name": "T3r1jj",
+        "url": "https://T3r1jj.github.io",
+        "sameAs": ["https://github.com/T3r1jj"],
+        "description": "Programmer, developer, freelancer"
+        "image": "https://github.com/T3r1jj.png"
+    }
+}</script></head><body><div class="wrap"><header><a href="/en/" class="logo-link"><img src="/logo.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/en/" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/en/archives/" class="nav-list-link">ARCHIVES</a></li><li class="nav-list-item"><a href="/en/support/" class="nav-list-link">SUPPORT</a></li><li class="nav-list-item"><a href="https://github.com/T3r1jj" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/en/atom.xml" class="nav-list-link">RSS</a></li><li class="nav-list-item"><a href="/en/search/" target="_self" class="nav-list-link search"><i class="fa fa-search" aria-hidden="true"></i></a></li><li class="nav-list-item"><select id="lang" onchange="this.options[this.selectedIndex].value &amp;&amp; (window.location = this.options[this.selectedIndex].value);" class="fa"><option value="/en/articles/latex-custom-fonts/" selected lang="en">ENG</option><option value="/pl/articles/latex-custom-fonts/" lang="pl">PL</option></select></li></ul></header></div><div class="wrap"><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">Diacritics in LaTeX (Ubuntu, Times New Roman)</h1><div class="post-info">May 11, 2018<span class="categories"><i class="fa fa-bookmark" aria-hidden="true"></i></span><a href="/en/categories/LaTeX/" class="post-category">#LaTeX</a></div><div class="post-content"><p>LaTeX is a free typesetting system. It is valued for many properties such as automated processing (generating bibliographies, links, mathematical equations). It allows you to focus on the text instead of its appearance by using files with styles (e.g. bibliography) suitable for a given journal. Foremostly, it is also available for various Linux distributions.
+<a id="more"></a></p>
+<p>One of the problems you may encounter while writing an article are the requirements for the use of certain fonts. By default, the following packages are used to provide support for language characters (accents/diacritics):</p>
+<div class="pre tip">\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[your_language]{babel} %e.g. \usepackage[slovak]{babel}
+</div>
+Such configuration usually suffices assuming that the files are encoded in the UTF-8 system. Next choose the font <code>\usepackage{times}</code>. Unfortunately both outdated <em>times</em> and newer <em>mathptmx</em>, <em>pslatex</em> and <em>txfonts</em> (<em>newtxtext</em>/<em>newtxmath</em>) underneath use URW NimbusRomNo9L fonts that are very similar to Times Roman but they are not same. Although language specific characters are displayed correctly, errors may occur during copying. It is worth paying attention to it because in anti-plagiarism programs, words with these letters will be unrecognized.
+<div class="tip warn">
+<div>
+ÁÄĎÉÍĽĹŇÓÔŔŤÚÝáäďéíľĺňóôŕťúý
+</div>
+<div>
+ÁÄĎÉÍL’ĹŇÓÔŔŤÚÝáäd’éíl’ĺňóôŕt’úý
+</div>
+</div>
+
+<p>To solve this problem, you can use a different font - TeX Gyre Termes: <code>\usepackage{tgtermes}</code>. You can read more about other fonts in the <a href="https://www.sharelatex.com/learn/Font_typefaces" target="_blank" rel="external">ShareLaTeX</a> knowledge base.</p>
+<h2 id="Original-Times-New-Roman-font"><a href="#Original-Times-New-Roman-font" class="headerlink" title="Original Times New Roman font"></a>Original Times New Roman font</h2><p>The easiest way to load fonts on Ubuntu known from Windows consists of three steps:</p>
+<ol>
+<li>Installation of TrueType Microsoft fonts:
+<code>sudo apt-get install ttf-mscorefonts-installer</code>
+During the installation process you will be asked to accept Microsoft EULA. The fonts have been made available for free but they are not open-source.</li>
+<li>Replacement <em>inputenc</em> and <em>fontenc</em> packages with the following commands:<pre class="tip">
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+</pre></li>
+<li>Program change from pdflatex to xelatex:<pre class="tip">
+xelatex main.tex
+bibtex main
+xelatex main.tex
+xelatex main.tex
+</pre>
+
+</li>
+</ol>
+<p>W praktyce proces generowania pliku pdf może się nieco wydłużyć. W przypadku innego kodowania plików należy zastosować polecenia <code>\XeTeXinputencoding</code> dla poprzedzającego tekstu bądź <code>\XeTeXdefaultencoding</code> standardowo dla wszystkich plików,
+np. <code>\XeTeXdefaultencoding “cp1250”</code> (kodowanie używane przez Microsoft Windows dla języków środkowoeuropejskich, w tym polskiego).
+In practice, the process of generating a pdf file may be slightly longer. For other file endocings use the <code>\XeTeXinputencoding</code> command for the preceding text or <code>\XeTeXdefaultencoding</code> as a standard for all files, e.g. <code>\XeTeXdefaultencoding “cp1250”</code> (coding used by Microsoft Windows for Central European languages).</p>
+<h2 id="Custom-fonts"><a href="#Custom-fonts" class="headerlink" title="Custom fonts"></a>Custom fonts</h2><p>If you want to use custom fonts like Arial Narrow, just place them (ttf extension for TrueType fonts) in a directory created under <code>/usr/share/fonts/</code>.</p>
+</div><p class="post-tags"><i class="fa fa-tags" aria-hidden="true"></i><a href="/en/tags/latex/">#latex</a><a href="/en/tags/fonts/">#fonts</a><a href="/en/tags/accents/">#accents</a><a href="/en/tags/special-characters/">#special characters</a><a href="/en/tags/diacritics/">#diacritics</a><a href="/en/tags/linux/">#linux</a><a href="/en/tags/ubuntu/">#ubuntu</a><a href="/en/tags/times-new-roman/">#times new roman</a></p></article></div></main></div><div class="wrap"><footer><div class="paginator"><a href="/en/articles/hello-world/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 't3r1jj-blog';
+if ('en' !== 'en,pl' && 'en' !== 'en') {
+    disqus_shortname += '-en'
+}
+var disqus_identifier = 'en/articles/latex-custom-fonts/';
+var disqus_title = 'Diacritics in LaTeX (Ubuntu, Times New Roman)';
+var disqus_url = 'http://T3r1jj.github.io/en/articles/latex-custom-fonts/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//t3r1jj-blog.disqus.com/count.js" async></script><div class="copyright"><p>© 2015 - 2018 <a href="http://T3r1jj.github.io">T3r1jj</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a>, <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a> and <a href="/en/about/" target="_blank">others</a>.</p></div></footer></div><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-73928706-5",'auto');ga('send','pageview');</script></body></html>

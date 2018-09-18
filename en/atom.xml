@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>T3r1jj</title>
+    <subtitle>T3r1jj blog</subtitle>
+    <link href="/en/atom.xml" rel="self"/>
+    
+    <link href="http://T3r1jj.github.io/"/>
+    <updated>2018-09-18T15:56:16.316Z</updated>
+    <id>http://T3r1jj.github.io/</id>
+    
+    <author>
+        <name>T3r1jj</name>
+        
+    </author>
+    
+    <generator uri="http://hexo.io/">Hexo</generator>
+    
+    <entry>
+        <title>Diacritics in LaTeX (Ubuntu, Times New Roman)</title>
+        <link href="http://T3r1jj.github.io/en/articles/latex-custom-fonts/"/>
+        
+        <id>http://T3r1jj.github.io/en/articles/latex-custom-fonts/</id>
+        
+        <published>2018-05-11T10:00:00.000Z</published>
+        <updated>2018-09-18T15:56:16.316Z</updated>
+        
+        <content type="html"><![CDATA[<p>LaTeX is a free typesetting system. It is valued for many properties such as automated processing (generating bibliographies, links, mathematical equations). It allows you to focus on the text instead of its appearance by using files with styles (e.g. bibliography) suitable for a given journal. Foremostly, it is also available for various Linux distributions.
+<a id="more"></a></p>
+<p>One of the problems you may encounter while writing an article are the requirements for the use of certain fonts. By default, the following packages are used to provide support for language characters (accents/diacritics):</p>
+<div class="pre tip">\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[your_language]{babel} %e.g. \usepackage[slovak]{babel}
+</div>
+Such configuration usually suffices assuming that the files are encoded in the UTF-8 system. Next choose the font <code>\usepackage{times}</code>. Unfortunately both outdated <em>times</em> and newer <em>mathptmx</em>, <em>pslatex</em> and <em>txfonts</em> (<em>newtxtext</em>/<em>newtxmath</em>) underneath use URW NimbusRomNo9L fonts that are very similar to Times Roman but they are not same. Although language specific characters are displayed correctly, errors may occur during copying. It is worth paying attention to it because in anti-plagiarism programs, words with these letters will be unrecognized.
+<div class="tip warn">
+<div>
+ÁÄĎÉÍĽĹŇÓÔŔŤÚÝáäďéíľĺňóôŕťúý
+</div>
+<div>
+ÁÄĎÉÍL’ĹŇÓÔŔŤÚÝáäd’éíl’ĺňóôŕt’úý
+</div>
+</div>
+
+<p>To solve this problem, you can use a different font - TeX Gyre Termes: <code>\usepackage{tgtermes}</code>. You can read more about other fonts in the <a href="https://www.sharelatex.com/learn/Font_typefaces" target="_blank" rel="external">ShareLaTeX</a> knowledge base.</p>
+<h2 id="Original-Times-New-Roman-font"><a href="#Original-Times-New-Roman-font" class="headerlink" title="Original Times New Roman font"></a>Original Times New Roman font</h2><p>The easiest way to load fonts on Ubuntu known from Windows consists of three steps:</p>
+<ol>
+<li>Installation of TrueType Microsoft fonts:
+<code>sudo apt-get install ttf-mscorefonts-installer</code>
+During the installation process you will be asked to accept Microsoft EULA. The fonts have been made available for free but they are not open-source.</li>
+<li>Replacement <em>inputenc</em> and <em>fontenc</em> packages with the following commands:<pre class="tip">
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+</pre></li>
+<li>Program change from pdflatex to xelatex:<pre class="tip">
+xelatex main.tex
+bibtex main
+xelatex main.tex
+xelatex main.tex
+</pre>
+
+</li>
+</ol>
+<p>W praktyce proces generowania pliku pdf może się nieco wydłużyć. W przypadku innego kodowania plików należy zastosować polecenia <code>\XeTeXinputencoding</code> dla poprzedzającego tekstu bądź <code>\XeTeXdefaultencoding</code> standardowo dla wszystkich plików,
+np. <code>\XeTeXdefaultencoding “cp1250”</code> (kodowanie używane przez Microsoft Windows dla języków środkowoeuropejskich, w tym polskiego).
+In practice, the process of generating a pdf file may be slightly longer. For other file endocings use the <code>\XeTeXinputencoding</code> command for the preceding text or <code>\XeTeXdefaultencoding</code> as a standard for all files, e.g. <code>\XeTeXdefaultencoding “cp1250”</code> (coding used by Microsoft Windows for Central European languages).</p>
+<h2 id="Custom-fonts"><a href="#Custom-fonts" class="headerlink" title="Custom fonts"></a>Custom fonts</h2><p>If you want to use custom fonts like Arial Narrow, just place them (ttf extension for TrueType fonts) in a directory created under <code>/usr/share/fonts/</code>.</p>
+]]></content>
+        
+        <summary type="html">
+            
+            &lt;p&gt;LaTeX is a free typesetting system. It is valued for many properties such as automated processing (generating bibliographies, links, mathematical equations). It allows you to focus on the text instead of its appearance by using files with styles (e.g. bibliography) suitable for a given journal. Foremostly, it is also available for various Linux distributions.
+            
+        </summary>
+        
+        
+        <category term="LaTeX" scheme="http://T3r1jj.github.io/categories/LaTeX/"/>
+        
+        
+        <category term="latex" scheme="http://T3r1jj.github.io/tags/latex/"/>
+        
+        <category term="fonts" scheme="http://T3r1jj.github.io/tags/fonts/"/>
+        
+        <category term="accents" scheme="http://T3r1jj.github.io/tags/accents/"/>
+        
+        <category term="special characters" scheme="http://T3r1jj.github.io/tags/special-characters/"/>
+        
+        <category term="diacritics" scheme="http://T3r1jj.github.io/tags/diacritics/"/>
+        
+        <category term="linux" scheme="http://T3r1jj.github.io/tags/linux/"/>
+        
+        <category term="ubuntu" scheme="http://T3r1jj.github.io/tags/ubuntu/"/>
+        
+        <category term="times new roman" scheme="http://T3r1jj.github.io/tags/times-new-roman/"/>
+        
+        
+    </entry>
+    
+    <entry>
+        <title>Hello World</title>
+        <link href="http://T3r1jj.github.io/en/articles/hello-world/"/>
+        
+        <id>http://T3r1jj.github.io/en/articles/hello-world/</id>
+        
+        <published>2017-09-07T10:43:21.000Z</published>
+        <updated>2018-09-18T15:56:16.316Z</updated>
+        
+        <content type="html"><![CDATA[<p>Welcome! 
+<a id="more"></a>
+The site has been updated to a new version in the form of a non obliging blog. New articles will won’t appear too often, only when I’ll have something interesting to share. Furthermore, in the archives I will include some galleries from applications which I developed.</p>
+]]></content>
+        
+        <summary type="html">
+            
+            &lt;p&gt;Welcome!
+            
+        </summary>
+        
+        
+        <category term="General" scheme="http://T3r1jj.github.io/categories/General/"/>
+        
+        
+        <category term="this site" scheme="http://T3r1jj.github.io/tags/this-site/"/>
+        
+        
+    </entry>
+    
+</feed>

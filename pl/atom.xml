@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>T3r1jj</title>
+    <subtitle>T3r1jj blog</subtitle>
+    <link href="/pl/atom.xml" rel="self"/>
+    
+    <link href="http://T3r1jj.github.io/"/>
+    <updated>2018-09-18T15:56:16.317Z</updated>
+    <id>http://T3r1jj.github.io/</id>
+    
+    <author>
+        <name>T3r1jj</name>
+        
+    </author>
+    
+    <generator uri="http://hexo.io/">Hexo</generator>
+    
+    <entry>
+        <title>Polskie znaki w LaTeX-u (Ubuntu, Times New Roman)</title>
+        <link href="http://T3r1jj.github.io/pl/articles/latex-custom-fonts/"/>
+        
+        <id>http://T3r1jj.github.io/pl/pl/articles/latex-custom-fonts/</id>
+        
+        <published>2018-05-11T10:00:01.000Z</published>
+        <updated>2018-09-18T15:56:16.317Z</updated>
+        
+        <content type="html"><![CDATA[<p>LaTeX jest darmowym systemem składania tekstu (ang. typesetting). Jest ceniony za wiele właściwości takich jak automatyzacja procesu (generowanie bibliografii, odsyłaczy, równań matematycznych). Pozwala na skupienie się na tekście zamiast na jego wyglądzie poprzez wykorzystanie plików ze stylami (np. bibliografii) odpowiednich dla danego czasopisma. Przede wszystkim jest dostępny również na różne dystrybucje Linuxa.</p>
+<a id="more"></a>
+<p>Jednym z problemów, na jakie można napotkać podczas pisania pracy, są wymagania dotyczące użycia określonych czcionek. Standardowo wykorzystuje się następujące paczki zapewniające wsparcie dla polskich znaków:</p>
+<div class="pre tip">\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{polski}
+</div>
+Taka konfiguracja zazwyczaj wystarcza przy założeniu, że pliki kodowane są w systemie UTF-8. Następnie wybieramy czcionkę <code>\usepackage{times}</code>.
+Niestety zarówno przestarzała paczka <em>times</em>, jak i nowsze <em>mathptmx</em>, <em>pslatex</em>, oraz <em>txfonts</em> (<em>newtxtext</em>/<em>newtxmath</em>) wykorzystują tak naprawdę czcionki URW NimbusRomNo9L, które są bardzo podobne do Times Roman. Ponadto mimo tego, że polskie znaki wyświetlane są poprawnie, to podczas kopiowania mogą wystąpić błędy. Warto zwrócić na to uwagę, gdyż w programach antyplagiatowych wyrazy z polskimi literami zostaną nierozpoznane.
+
+<div class="tip warn">
+<div>
+Zażółć gęślą jaźń
+</div>
+<div>
+Zażółć g ̨eśl a  ̨ jaźń
+</div>
+</div>
+
+<p>W celu rozwiązania tego tego problemu można skorzystać z innej czcionki - TeX Gyre Termes: <code>\usepackage{tgtermes}</code>. Z innymi rodzajami czcionek zapoznać się można w bazie wiedzy <a href="https://www.sharelatex.com/learn/Font_typefaces" target="_blank" rel="external">ShareLaTeX</a>.</p>
+<h2 id="Oryginalna-czcionka-Times-New-Roman"><a href="#Oryginalna-czcionka-Times-New-Roman" class="headerlink" title="Oryginalna czcionka Times New Roman"></a>Oryginalna czcionka Times New Roman</h2><p>Najprostszy sposób na załadowanie znanych z Windowsa czcionek na Ubuntu składa się z 3 kroków:</p>
+<ol>
+<li>Instalacja czcionek TrueType Microsoft:
+<code>sudo apt-get install ttf-mscorefonts-installer</code>
+Podczas instalacji pojawi się okno z warunkami udzielenia licencji (Microsoft EULA). Czcionki zostały udostępnione za darmo jednak nie są one
+open-source.</li>
+<li>Zastąpienie paczek <em>inputenc</em> i <em>fontenc</em> następującymi komendami:<pre class="tip">
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+</pre></li>
+<li>Zmiana programu pdflatex na xelatex:<pre class="tip">
+xelatex main.tex
+bibtex main
+xelatex main.tex
+xelatex main.tex
+</pre>
+
+</li>
+</ol>
+<p>W praktyce proces generowania pliku pdf może się nieco wydłużyć. W przypadku innego kodowania plików należy zastosować polecenia <code>\XeTeXinputencoding</code> dla poprzedzającego tekstu bądź <code>\XeTeXdefaultencoding</code> standardowo dla wszystkich plików,
+np. <code>\XeTeXdefaultencoding “cp1250”</code> (kodowanie używane przez Microsoft Windows dla języków środkowoeuropejskich, w tym polskiego).</p>
+<h2 id="Czcionki-niestandardowe"><a href="#Czcionki-niestandardowe" class="headerlink" title="Czcionki niestandardowe"></a>Czcionki niestandardowe</h2><p>Jeśli chcemy użyć czcionek niestandardowych np. Arial Narrow wystarczy przenieść je (rozszerzenie ttf dla czcionek TrueType) do stworzonego katalogu w <code>/usr/share/fonts/</code>.</p>
+]]></content>
+        
+        <summary type="html">
+            
+            &lt;p&gt;LaTeX jest darmowym systemem składania tekstu (ang. typesetting). Jest ceniony za wiele właściwości takich jak automatyzacja procesu (generowanie bibliografii, odsyłaczy, równań matematycznych). Pozwala na skupienie się na tekście zamiast na jego wyglądzie poprzez wykorzystanie plików ze stylami (np. bibliografii) odpowiednich dla danego czasopisma. Przede wszystkim jest dostępny również na różne dystrybucje Linuxa.&lt;/p&gt;
+            
+        </summary>
+        
+        
+        <category term="LaTeX" scheme="http://T3r1jj.github.io/pl/categories/LaTeX/"/>
+        
+        
+        <category term="latex" scheme="http://T3r1jj.github.io/pl/tags/latex/"/>
+        
+        <category term="linux" scheme="http://T3r1jj.github.io/pl/tags/linux/"/>
+        
+        <category term="ubuntu" scheme="http://T3r1jj.github.io/pl/tags/ubuntu/"/>
+        
+        <category term="times new roman" scheme="http://T3r1jj.github.io/pl/tags/times-new-roman/"/>
+        
+        <category term="czcionki" scheme="http://T3r1jj.github.io/pl/tags/czcionki/"/>
+        
+        <category term="polskie znaki" scheme="http://T3r1jj.github.io/pl/tags/polskie-znaki/"/>
+        
+        
+    </entry>
+    
+    <entry>
+        <title>Witaj Świecie</title>
+        <link href="http://T3r1jj.github.io/pl/articles/hello-world/"/>
+        
+        <id>http://T3r1jj.github.io/pl/pl/articles/hello-world/</id>
+        
+        <published>2017-09-07T10:43:22.000Z</published>
+        <updated>2018-09-18T15:56:16.317Z</updated>
+        
+        <content type="html"><![CDATA[<p>Witaj na mojej stronie! 
+<a id="more"></a>
+Strona została zaktualizowana do nowej wersji w formie niezobowiązującego bloga. Nowe artykuły nie będą pojawiać się zbyt często, a jedynie gdy będę chciał się podzielić czymś interesującym. W archiwum zamieszczone zostaną również galerie przedstawiające aplikacje, które stworzyłem. </p>
+]]></content>
+        
+        <summary type="html">
+            
+            &lt;p&gt;Witaj na mojej stronie!
+            
+        </summary>
+        
+        
+        <category term="Ogólne" scheme="http://T3r1jj.github.io/pl/categories/Ogolne/"/>
+        
+        
+        <category term="ta strona" scheme="http://T3r1jj.github.io/pl/tags/ta-strona/"/>
+        
+        
+    </entry>
+    
+</feed>
