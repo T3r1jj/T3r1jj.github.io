@@ -96,6 +96,48 @@ In practice, the process of generating a pdf file may be slightly longer. For ot
     </entry>
     
     <entry>
+        <title>Splash! documentation</title>
+        <link href="http://T3r1jj.github.io/en/articles/splash/"/>
+        
+        <id>http://T3r1jj.github.io/en/articles/splash/</id>
+        
+        <published>2017-09-14T10:00:00.000Z</published>
+        <updated>2018-09-19T18:02:14.011Z</updated>
+        
+        <content type="html"><![CDATA[<p><strong>Splash!</strong> is a multiplatform, raster graphics editor inspired by such programs as Photoshop, Gimp and Microsoft Paint. The idea while creating the application was to fill the gap between simple and intuitive Paint and advanced and crude Gimp. The application was written in Java using the Swing library. The main point though, was to learn and use in practice many different design patterns.
+<a id="more"></a></p>
+<p>Below you can check find an <strong>User’s guide</strong> and <strong>selected parts of documentation</strong>. The main point of the latter one is to describe the usage of over 11 design patterns used in the project with UML diagrams - what pattern, why and where has it been used in the project. Some of them might feel forced. Nevertheless, at the time of development their selection contributed to the thought process allowing to draw conclusions at the end of the project. </p>
+<p><a href="splash/Splash-users-guide-EN.pdf">Splash! - User’s guide</a><br><a href="splash/Splash-from-docs-EN.pdf">Splash! - From docs (design patterns)</a></p>
+]]></content>
+        
+        <summary type="html">
+            
+            &lt;p&gt;&lt;strong&gt;Splash!&lt;/strong&gt; is a multiplatform, raster graphics editor inspired by such programs as Photoshop, Gimp and Microsoft Paint. The idea while creating the application was to fill the gap between simple and intuitive Paint and advanced and crude Gimp. The application was written in Java using the Swing library. The main point though, was to learn and use in practice many different design patterns.
+            
+        </summary>
+        
+        
+        <category term="documentation" scheme="http://T3r1jj.github.io/categories/documentation/"/>
+        
+        
+        <category term="desktop" scheme="http://T3r1jj.github.io/tags/desktop/"/>
+        
+        <category term="graphics" scheme="http://T3r1jj.github.io/tags/graphics/"/>
+        
+        <category term="documentation" scheme="http://T3r1jj.github.io/tags/documentation/"/>
+        
+        <category term="application" scheme="http://T3r1jj.github.io/tags/application/"/>
+        
+        <category term="user guide" scheme="http://T3r1jj.github.io/tags/user-guide/"/>
+        
+        <category term="design patterns" scheme="http://T3r1jj.github.io/tags/design-patterns/"/>
+        
+        <category term="UML" scheme="http://T3r1jj.github.io/tags/UML/"/>
+        
+        
+    </entry>
+    
+    <entry>
         <title>Hello World</title>
         <link href="http://T3r1jj.github.io/en/articles/hello-world/"/>
         

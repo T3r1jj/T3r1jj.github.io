@@ -12,14 +12,22 @@
         <loc>http://T3r1jj.github.io/pl/archives/</loc>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/archives/index.html" hreflang="pl"/>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/archives/index.html" hreflang="en"/>
-        <lastmod>2018-09-18T18:30:10.619Z</lastmod>
+        <lastmod>2018-09-19T17:51:51.530Z</lastmod>
     </url>
     <url>
         <priority>1.0</priority>
         <loc>http://T3r1jj.github.io/en/archives/</loc>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/archives/index.html" hreflang="pl"/>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/archives/index.html" hreflang="en"/>
-        <lastmod>2018-09-18T18:30:20.146Z</lastmod>
+        <lastmod>2018-09-19T18:02:14.011Z</lastmod>
+    </url>
+    <url>
+        <priority>0.5</priority><loc>http://T3r1jj.github.io/en/articles/splash/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/splash/" hreflang="en"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/splash/" hreflang="pl"/>
+        <lastmod>2018-09-19T18:02:14.011Z</lastmod>
+    </url>
+    <url>
+        <priority>0.5</priority><loc>http://T3r1jj.github.io/pl/articles/splash/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/splash/" hreflang="en"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/splash/" hreflang="pl"/>
+        <lastmod>2018-09-19T17:51:51.530Z</lastmod>
     </url>
     <url>
         <priority>1.0</priority>
@@ -37,26 +45,19 @@
     </url>
     <url>
         <priority>1.0</priority>
-        <loc>http://T3r1jj.github.io/support/</loc>
-        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/support/index.html" hreflang="en"/>
-        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/support/index.html" hreflang="pl"/>
-        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/support/index.html" hreflang="en"/>
-        <lastmod>2018-09-18T15:56:16.321Z</lastmod>
-    </url>
-    <url>
-        <priority>1.0</priority>
         <loc>http://T3r1jj.github.io/pl/support/</loc>
-        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/support/index.html" hreflang="en"/>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/support/index.html" hreflang="pl"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/support/index.html" hreflang="en"/>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/support/index.html" hreflang="en"/>
         <lastmod>2018-09-18T15:56:16.321Z</lastmod>
     </url>
     <url>
         <priority>1.0</priority>
-        <loc>http://T3r1jj.github.io/pl/about/</loc>
-        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/about/index.html" hreflang="pl"/>
-        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/about/index.html" hreflang="en"/>
-        <lastmod>2018-09-18T15:56:16.320Z</lastmod>
+        <loc>http://T3r1jj.github.io/support/</loc>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/support/index.html" hreflang="pl"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/support/index.html" hreflang="en"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/support/index.html" hreflang="en"/>
+        <lastmod>2018-09-18T15:56:16.321Z</lastmod>
     </url>
     <url>
         <priority>1.0</priority>
@@ -67,9 +68,16 @@
     </url>
     <url>
         <priority>1.0</priority>
+        <loc>http://T3r1jj.github.io/pl/about/</loc>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/about/index.html" hreflang="pl"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/about/index.html" hreflang="en"/>
+        <lastmod>2018-09-18T15:56:16.320Z</lastmod>
+    </url>
+    <url>
+        <priority>1.0</priority>
         <loc>http://T3r1jj.github.io/en/support/</loc>
-        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/support/index.html" hreflang="en"/>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/support/index.html" hreflang="pl"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/support/index.html" hreflang="en"/>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/support/index.html" hreflang="en"/>
         <lastmod>2018-09-18T15:56:16.319Z</lastmod>
     </url>
@@ -96,11 +104,11 @@
         <lastmod>2018-09-18T15:56:16.317Z</lastmod>
     </url>
     <url>
-        <priority>0.5</priority><loc>http://T3r1jj.github.io/en/articles/latex-custom-fonts/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/latex-custom-fonts/" hreflang="pl"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/latex-custom-fonts/" hreflang="en"/>
+        <priority>0.5</priority><loc>http://T3r1jj.github.io/en/articles/hello-world/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/hello-world/" hreflang="pl"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/hello-world/" hreflang="en"/>
         <lastmod>2018-09-18T15:56:16.316Z</lastmod>
     </url>
     <url>
-        <priority>0.5</priority><loc>http://T3r1jj.github.io/en/articles/hello-world/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/hello-world/" hreflang="pl"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/hello-world/" hreflang="en"/>
+        <priority>0.5</priority><loc>http://T3r1jj.github.io/en/articles/latex-custom-fonts/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/latex-custom-fonts/" hreflang="pl"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/latex-custom-fonts/" hreflang="en"/>
         <lastmod>2018-09-18T15:56:16.316Z</lastmod>
     </url>
 </urlset>

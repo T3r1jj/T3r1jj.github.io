@@ -94,6 +94,48 @@ np. <code>\XeTeXdefaultencoding “cp1250”</code> (kodowanie używane przez Mi
     </entry>
     
     <entry>
+        <title>Splash! dokumentacja</title>
+        <link href="http://T3r1jj.github.io/pl/articles/splash/"/>
+        
+        <id>http://T3r1jj.github.io/pl/pl/articles/splash/</id>
+        
+        <published>2017-09-14T11:00:00.000Z</published>
+        <updated>2018-09-19T17:51:51.530Z</updated>
+        
+        <content type="html"><![CDATA[<p><strong>Splash!</strong> To wieloplatformowy, rastrowy edytor graficzny wzorowany na programach takich jak Photoshop, Gimp czy Microsoft Paint. Ideą przyświecającą aplikacji było wypełnienie luki pomiędzy prostym i intuicyjnym Paintem a zaawansowanym i topornym Gimpem. Aplikacja została napisana w języku Java przy użyciu biblioteki Swing. Głownym celem projektu była nauka i praktyczne wykorzystanie wielu wzorców projektowych.
+<a id="more"></a></p>
+<p>Poniżej znajduje się <strong>Przewodnik użytkownika</strong> oraz <strong>wybrane części dokumentacji</strong>. Głównym celem drugiego dokumentu jest opisanie użycia ponad 11 wzorców projektowych użytych w projekcie wraz  z diagramami UML - jaki wzorzec, dlaczego i gdzie został użyty w projekcie. Zastosowanie niektórych z nich może wydawać się wymuszone. Niemniej jednak w momencie projektowania ich wybór przyczynił się do procesu myślowego prowadzącego do wyciągnięcie wniosków na zakończenie projektu. </p>
+<p><a href="Splash-users-guide-PL.pdf">Splash! - Przewodnik użytkownika</a><br><a href="Splash-from-docs-PL.pdf">Splash! - Wybrane części z dokumentacji (wzorce projektowe)</a></p>
+]]></content>
+        
+        <summary type="html">
+            
+            &lt;p&gt;&lt;strong&gt;Splash!&lt;/strong&gt; To wieloplatformowy, rastrowy edytor graficzny wzorowany na programach takich jak Photoshop, Gimp czy Microsoft Paint. Ideą przyświecającą aplikacji było wypełnienie luki pomiędzy prostym i intuicyjnym Paintem a zaawansowanym i topornym Gimpem. Aplikacja została napisana w języku Java przy użyciu biblioteki Swing. Głownym celem projektu była nauka i praktyczne wykorzystanie wielu wzorców projektowych.
+            
+        </summary>
+        
+        
+        <category term="dokumentacja" scheme="http://T3r1jj.github.io/pl/categories/dokumentacja/"/>
+        
+        
+        <category term="desktop" scheme="http://T3r1jj.github.io/pl/tags/desktop/"/>
+        
+        <category term="UML" scheme="http://T3r1jj.github.io/pl/tags/UML/"/>
+        
+        <category term="grafika" scheme="http://T3r1jj.github.io/pl/tags/grafika/"/>
+        
+        <category term="dokumentacja" scheme="http://T3r1jj.github.io/pl/tags/dokumentacja/"/>
+        
+        <category term="aplikacja" scheme="http://T3r1jj.github.io/pl/tags/aplikacja/"/>
+        
+        <category term="przewodnik użytkownika" scheme="http://T3r1jj.github.io/pl/tags/przewodnik-uzytkownika/"/>
+        
+        <category term="wzorce projektowe" scheme="http://T3r1jj.github.io/pl/tags/wzorce-projektowe/"/>
+        
+        
+    </entry>
+    
+    <entry>
         <title>Witaj Świecie</title>
         <link href="http://T3r1jj.github.io/pl/articles/hello-world/"/>
         
