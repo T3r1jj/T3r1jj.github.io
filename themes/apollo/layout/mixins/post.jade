@@ -66,7 +66,7 @@ mixin postList()
             h2.archive-year
                 != __("categories")
             .post-item.post-content
-                != list_categories_i18n({show_count: false, depth: 2, class: 'nav-category', style: 'list', category_names: categories})
+                != list_categories_i18n({show_count: false, depth: 2, class: 'no-margin nav-category', style: 'list', category_names: categories})
             h2.archive-year
                 != __("tags")
             .all-tags.tag-content

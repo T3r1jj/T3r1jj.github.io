@@ -868,4 +868,7 @@ header .nav-list-item select.fa {
     text-align: justify;
     text-justify: inter-word;
 }
+.nav-category-list.no-margin {
+  margin: 0 0 0 -1.8em
+}
 /*# sourceMappingURL=apollo.css.map */

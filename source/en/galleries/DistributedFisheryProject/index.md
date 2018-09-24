@@ -1,7 +1,7 @@
 ---
 layout: gallery
 title: Distributed Fishery Project [2017]
-date: 2018-09-14
+date: 2017-12-06
 images:
     - url: "/images/DistributedFisheryProject/01.png"
       title: "Login page"

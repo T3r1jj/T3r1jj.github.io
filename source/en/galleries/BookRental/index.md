@@ -1,7 +1,7 @@
 ---
 layout: gallery
 title: BookRental [2015]
-date: 2018-11-21
+date: 2017-11-21
 images:
     - url: "/images/BookRental/guest-news.png"
       title: "Welcome page"
