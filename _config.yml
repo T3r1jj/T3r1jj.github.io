@@ -116,6 +116,7 @@ robots:
     - "*/page/"
     - "/support.html"
     - "/donate.html"
+    - "*/images/*"
 redirects:
   - from: "/support.html"
     to: "/support/"
@@ -127,6 +128,8 @@ redirects:
     to: "/en/galleries/DistributedFisheryProject/"
   - from: "/Splash/"
     to: "/en/articles/splash/"
+  - from: "/BookRental/"
+    to: "/en/articles/BookRental/"
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
