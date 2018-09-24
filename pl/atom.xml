@@ -94,15 +94,117 @@ np. <code>\XeTeXdefaultencoding “cp1250”</code> (kodowanie używane przez Mi
     </entry>
     
     <entry>
-        <title>Splash! dokumentacja</title>
+        <title>Projekt BookRental</title>
+        <link href="http://T3r1jj.github.io/pl/articles/BookRental/"/>
+        
+        <id>http://T3r1jj.github.io/pl/pl/articles/BookRental/</id>
+        
+        <published>2017-11-21T12:00:00.000Z</published>
+        <updated>2018-09-24T18:11:51.993Z</updated>
+        
+        <content type="html"><![CDATA[<p><a href="https://github.com/T3r1jj/BookRental" target="_blank" rel="external"><strong>BookRental</strong></a> to jeden ze starszych projektów obejmujących kilka zagadnień JEE. Jego celem było stworzenie systemu zarządzania biblioteką, a konkretniej: książkami, wypożyczeniami, rezerwacjami, użytkownikami oraz pracownikami. Aplikacja realizuje ponad 20 różnych funkcji biznesowych.
+Główne technologie użyte w projekcie to: <em>Java, JSTL, JSF, PrimeFaces, JPA, JDB</em>. Prezentację aplikacji można obejrzeć w <a href="/pl/galleries/BookRental/">galerii</a>. Momentami nie wygląda ona zbyt atrakcyjnie, gdyż była tworzona na początku nauki JEE i technologii internetowych [2015] (zobacz nowszą aplikację <a href="https://github.com/T3r1jj/Develog" target="_blank" rel="external">Develog</a> aby zauważyć różnice).
+<a id="more"></a></p>
+<p>Funkcjonalności zaimplementowane w aplikacji to:</p>
+<ol>
+<li>Wyświetlanie listy książek. Koszyk z możliwością dodawania i usuwania książek. Możliwość wypożyczenia książek.</li>
+<li>Zarządzanie książkami w panelu administracyjnym.</li>
+<li>Rejestracja czytelników. Potwierdzenie rejestracji w panelu administracyjnym. Możliwość zalogowania się na swoje konto. Tylko użytkownicy zalogowani mogą wypożyczać książki.</li>
+<li>Konta dla pracowników wypożyczalni. Pracownicy mogą zarządzać książkami, czytelnikami i wypożyczeniami. Pracownikami zarządza administrator.</li>
+<li>Kategorie książek. Kategorie tworzą wielopoziomowe drzewa. Każda książka należy do dokładnie jednej kategorii, Możliwość przeglądania książek według kategorii.</li>
+<li>Etykiety (tagi) dla książek. Każda książka może być opatrzona wieloma etykietami. Przeglądanie książek według etykiet.</li>
+<li>Dodatkowe pliki do pobrania przy opisie ksiąski, np.: kody źródłowe programów, próbki muzyki czy filmów. Każdy plik posiada swój opis. Liczba plików nie jest ograniczona.</li>
+<li>Wyszukiwanie książek na podstawie tytułu, nazwy autora, ISBNu i ewentualnie innych atrybutów.</li>
+<li>Operatory logiczne typu and, or i not przy wyszukiwaniu.</li>
+<li>Historia wyszukiwań. Każdy zalogowany użytkownik może zapisać wyniki wyszukiwania w bazie by w innym czasie móc je odtworzyć.</li>
+<li>Przeglądanie archiwum wypożyczeń czytelnika.</li>
+<li>Administracja wypożyczeniami. Stany wypożyczeń: książka w magazynie, oczekuje na odbiór (jest na półce czytelnika), wypożyczona. Zmiana stanu wypożyczenia przez pracownika.</li>
+<li>Stany magazynowe książek. Automatyczna aktualizacja stanów przy wypożyczeniu i zwrocie książki.</li>
+<li>Możliwość zapisania się do kolejki, gdy danej książki nie ma aktualnie w magazynie.</li>
+<li>Kary pieniężne za zbyt długie przetrzymywanie książek. Blokada wypożyczeń przy nie zwróceniu książek i niezapłaceniu kary. Maksymalny czas przetrzymywaniu ustawiany przez administratora.</li>
+<li>Wiadomości redagowane przez administratora i umieszczane na stronie głównej.</li>
+<li>Wyświetlanie nowości (kilku ostatnio dodanych książek) na stronie głównej.</li>
+<li>Wybór skórek dla interfejsu użytkownika.</li>
+<li>Dodatkowa wersja językowa interfejsu użytkownika.</li>
+</ol>
+<h2 id="Projekt"><a href="#Projekt" class="headerlink" title="Projekt"></a>Projekt</h2><p>Ze względu na wybrane technologie, wykorzystana została standardowa architektura aplikacji, którą prezentuje poniższy rysunek:<br><img src="/images/BookRental/arch.jpg" alt="Architektura aplikacji BookRental"></p>
+<center style="margin-top: -1em;"><small>Źródło: <a href="http://www.thejavageek.com" target="_blank" rel="external">http://www.thejavageek.com</a></small></center>
+
+<p>Aplikacja wykorzystuje wzorzec MVC, który dzieli się na trzy główne części:</p>
+<ul>
+<li>model <em>(JPA + EJB)</em> – reprezentuje dane z bazy danych w postaci logicznej, implementuje funkcje biznesowe;</li>
+<li>widok <em>(JSF page)</em> – wyświetla dane modelu;</li>
+<li>kontroler <em>(JSF bean)</em> – odbiera dane wejściowe od użytkownika przetwarza je, aktualizuje oraz odświeża model.</li>
+</ul>
+<p>Znormalizowany model bazy danych (<em>3NF</em> - niepełny, nieznaczna redundancja):
+<img src="/images/BookRental/db.jpg" alt="Model bazy danych"></p>
+<p>Pewne założenia, które mogłyby wymagać wyjaśnienia:</p>
+<ol>
+<li>Jeśli książka nie ma numeru ISBN (co się zdarza, choć bardzo rzadko) to należy nadać jej unikalną wartość gdyż książki rozróżniane są po polu ISBN.</li>
+<li>Egzemplarze tych samych książek nie różnią się numerem ISBN (różnią się numerem id).</li>
+<li>Do numeru ISBN przypisane są kategoria, tagi i zasoby (np. pliki) oraz rezerwacje w przypadku braku książek w magazynie.</li>
+<li>Do książki przypisywane są wypożyczenia oraz rezerwacje.</li>
+</ol>
+<h2 id="Struktura"><a href="#Struktura" class="headerlink" title="Struktura"></a>Struktura</h2><p>Strukturę projektu przedstawia poniższy rysunek:<br><img src="/images/BookRental/struct.jpg" alt="Struktura projektu"><br>Każdemu z pakietów odpowiada inne przeznaczenie:</p>
+<ul>
+<li>Klasy entity - POJO, opakowują dane pobierane z bazy danych w typy abstrakcyjne np. <em>Book</em>.</li>
+<li>Klasy session / facade – fasady EJB, pozwalają na komunikację z bazą danych na wyższym poziomie niż JDBC. Beany te działają po stronie serwera i mogą być wstrzykiwane do innych elementów. W tym przypadku adnotowane <code>@Stateless</code> oznaczane jako bezstanowe, pozwalają na implementację serwisów.</li>
+<li>Klasy controller / jsf – kontrolery widoków JSF, ziarna zarządzane <em>(ManagedBean)</em>, z deklarowanym zakresem np. <em>SessionScoped, ViewScoped, ApplicationScoped</em>, itp. Przechowują stan zgodnie z zakresem i zapewniają komunikację ze stronami JSF. Strony JSF mogą pobierać stan beana za pomocą wyrażenia <code>#{bean.field}</code> (przy założeniu, że zaimplementowano gettery i settery).</li>
+</ul>
+<p>Na strukturę ostatniej warstwy – widokowej składają się strony JSF. Do budowania stron JSF wykorzystywany jest system szablonów <em>Facelets</em>. W przypadku tego projektu wykorzystana została również open source’owa biblioteka komponentów UI – <em>PrimeFaces</em>. Dzięki temu frameworkowi możliwe jest tworzenie bogatszego interfejsu użytkownika.<br><img src="/images/BookRental/view.jpg" alt="Struktura widoków (1/2)"></p>
+<p><strong>WEB-INF</strong> to specjalny folder w strukturze aplikacji, który nie jest dostępny publicznie, nie jest częścią publicznego drzewa dokumentu. Wydzielony został podfolder „view” w folderze WEB-INF a w nim konkretne widoki. Elementy o charakterystycznych nazwach takich jak „Create”, „Edit” czy „View” reprezentują okna (dialog), które poprzez kompozycje włączane są do innych widoków (głównie list) i wyświetlane podczas kliknięcia przycisku. Dla użytkownika dostęp do okien jest sensowny jedynie poprzez widoki, dlatego też zostały one umieszczone w folderze WEB-INF.</p>
+<p>Kolejnymi elementami są <strong>szablony</strong>, które również korzystają z mechanizmu kompozycji i użytkownik nie powinien mieć do nich dostępu. Ostatnią częścią składową folderu WEB-INF są strony, do których użytkownik zostaje przekierowany po zalogowaniu się. Informują one między innymi o braku praw do przeglądania strony, zablokowanym czy nieaktywnym koncie, jak też o powodzeniu procesu logowania lub rejestracji.<br><img src="/images/BookRental/view2.jpg" alt="Struktura widoków (2/2)"></p>
+<p>Cztery różne szablony podpinane są do stron w zależności od praw dostępu zalogowanego (bądź nie) użytkownika. Wyświetlany format danych również się zmienia, dlatego utworzone zostały różne widoki wyświetlające dane w postaci list. Widoki te korzystają ze wspólnych okien zadeklarowanych w folderze WEB-INF.</p>
+<h2 id="Uwagi"><a href="#Uwagi" class="headerlink" title="Uwagi"></a>Uwagi</h2><p>Elementy warte zwrócenia uwagi:</p>
+<ul>
+<li>Hasła <strong>haszowane</strong> funkcją skrótu SHA-256, w kolejnych wersjach aplikacji mogłyby być uzupełnione o sól/sole (ang. salt).</li>
+<li><em>OptionsController</em> ładuje opcje serwisu z pliku na serwerze (np. dane związane z maksymalnym okresem wypożyczenia czy wartością kary za dzień spóźnienia).</li>
+<li><em>AuthorizationFilter</em> – <em>PhaseFilter</em> nadzorujący dostępen do stron wymagających określonych uprawnień. Odpowiada za przekierowania w przypadku, gdy nie jest aktywowane lub zostało zbanowane.</li>
+<li><em>ThemeSwitcherBean</em> oraz <em>LanguageSwitcherBean</em> zapisują do ciasteczek wybór preferencji dotyczących języka i skórki wybranych przez użytkownika.</li>
+</ul>
+<p>Zarządzaniem połączeniem z bazą danych zajmuje się server <em>Glassfish</em>. Typ bazy danych to <em>Java DB</em>. Typ transakcji to <em>JTA</em>, <em>EntityManager</em> jest wstrzykiwany poprzez <code>@PersistenceContext</code>.</p>
+<p>Po skonstruowaniu ziarna, a przed jego użyciem ustawiony zostanie język (na podstawie ciasteczka lub wcześniej zainicjowanej wartości w przypadku braku ciasteczka). Po zmianie języka tekst wczytywany będzie z odpowiedniego pliku <em>Bundle*</em> z katalogu resources.</p>
+<p><img src="/images/BookRental/view2.jpg" alt="Ciasteczka z wybranym motywem i językiem"></p>
+<p>Przy implementacji tego założenia wykorzystana została biblioteka <em>JSTL</em> a dokładniej z tagi <em>fmt</em>: <em>setLocale</em> i <em>setBundle</em>, dzięki którym następuje włączenie plików z tłumaczeniem do strony. Umożliwia to korzystanie z tagu message z parametrem <em>key</em> – odwzorowaniem z pliku na przetłumaczoną frazę.</p>
+<p>Jedną z wad tego projektu jest brak internacjonalizacji (i18n) wiadomości tworzonych przez administratorów. Funkcjonalność ta została przegapiona zarówno w fazie projektowania jak i implementacji. Serwis również nie wygląda zbyt nowocześnie gdyż jest to jeden ze starszych projektów.</p>
+]]></content>
+        
+        <summary type="html">
+            
+            &lt;p&gt;&lt;a href=&quot;https://github.com/T3r1jj/BookRental&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;BookRental&lt;/strong&gt;&lt;/a&gt; to jeden ze starszych projektów obejmujących kilka zagadnień JEE. Jego celem było stworzenie systemu zarządzania biblioteką, a konkretniej: książkami, wypożyczeniami, rezerwacjami, użytkownikami oraz pracownikami. Aplikacja realizuje ponad 20 różnych funkcji biznesowych.
+Główne technologie użyte w projekcie to: &lt;em&gt;Java, JSTL, JSF, PrimeFaces, JPA, JDB&lt;/em&gt;. Prezentację aplikacji można obejrzeć w &lt;a href=&quot;/pl/galleries/BookRental/&quot;&gt;galerii&lt;/a&gt;. Momentami nie wygląda ona zbyt atrakcyjnie, gdyż była tworzona na początku nauki JEE i technologii internetowych [2015] (zobacz nowszą aplikację &lt;a href=&quot;https://github.com/T3r1jj/Develog&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Develog&lt;/a&gt; aby zauważyć różnice).
+            
+        </summary>
+        
+        
+        <category term="Dokumentacja" scheme="http://T3r1jj.github.io/pl/categories/Dokumentacja/"/>
+        
+        
+        <category term="web" scheme="http://T3r1jj.github.io/pl/tags/web/"/>
+        
+        <category term="cms" scheme="http://T3r1jj.github.io/pl/tags/cms/"/>
+        
+        <category term="model" scheme="http://T3r1jj.github.io/pl/tags/model/"/>
+        
+        <category term="dokumentacja" scheme="http://T3r1jj.github.io/pl/tags/dokumentacja/"/>
+        
+        <category term="aplikacja" scheme="http://T3r1jj.github.io/pl/tags/aplikacja/"/>
+        
+        <category term="baza danych" scheme="http://T3r1jj.github.io/pl/tags/baza-danych/"/>
+        
+        
+    </entry>
+    
+    <entry>
+        <title>Dokumentacja Splash!</title>
         <link href="http://T3r1jj.github.io/pl/articles/splash/"/>
         
         <id>http://T3r1jj.github.io/pl/pl/articles/splash/</id>
         
-        <published>2017-09-14T11:00:00.000Z</published>
-        <updated>2018-09-19T17:51:51.530Z</updated>
+        <published>2017-10-14T11:00:00.000Z</published>
+        <updated>2018-09-24T13:57:04.496Z</updated>
         
-        <content type="html"><![CDATA[<p><strong>Splash!</strong> To wieloplatformowy, rastrowy edytor graficzny wzorowany na programach takich jak Photoshop, Gimp czy Microsoft Paint. Ideą przyświecającą aplikacji było wypełnienie luki pomiędzy prostym i intuicyjnym Paintem a zaawansowanym i topornym Gimpem. Aplikacja została napisana w języku Java przy użyciu biblioteki Swing. Głownym celem projektu była nauka i praktyczne wykorzystanie wielu wzorców projektowych.
+        <content type="html"><![CDATA[<p><a href="https://github.com/T3r1jj/Splash" target="_blank" rel="external"><strong>Splash!</strong></a> To wieloplatformowy, rastrowy edytor graficzny wzorowany na programach takich jak Photoshop, Gimp czy Microsoft Paint. Ideą przyświecającą aplikacji było wypełnienie luki pomiędzy prostym i intuicyjnym Paintem a zaawansowanym i topornym Gimpem. Aplikacja została napisana w języku Java przy użyciu biblioteki Swing. Głownym celem projektu była nauka i praktyczne wykorzystanie wielu wzorców projektowych.
 <a id="more"></a></p>
 <p>Poniżej znajduje się <strong>Przewodnik użytkownika</strong> oraz <strong>wybrane części dokumentacji</strong>. Głównym celem drugiego dokumentu jest opisanie użycia ponad 11 wzorców projektowych użytych w projekcie wraz  z diagramami UML - jaki wzorzec, dlaczego i gdzie został użyty w projekcie. Zastosowanie niektórych z nich może wydawać się wymuszone. Niemniej jednak w momencie projektowania ich wybór przyczynił się do procesu myślowego prowadzącego do wyciągnięcie wniosków na zakończenie projektu. </p>
 <p><a href="Splash-users-guide-PL.pdf">Splash! - Przewodnik użytkownika</a><br><a href="Splash-from-docs-PL.pdf">Splash! - Wybrane części z dokumentacji (wzorce projektowe)</a></p>
@@ -110,23 +212,23 @@ np. <code>\XeTeXdefaultencoding “cp1250”</code> (kodowanie używane przez Mi
         
         <summary type="html">
             
-            &lt;p&gt;&lt;strong&gt;Splash!&lt;/strong&gt; To wieloplatformowy, rastrowy edytor graficzny wzorowany na programach takich jak Photoshop, Gimp czy Microsoft Paint. Ideą przyświecającą aplikacji było wypełnienie luki pomiędzy prostym i intuicyjnym Paintem a zaawansowanym i topornym Gimpem. Aplikacja została napisana w języku Java przy użyciu biblioteki Swing. Głownym celem projektu była nauka i praktyczne wykorzystanie wielu wzorców projektowych.
+            &lt;p&gt;&lt;a href=&quot;https://github.com/T3r1jj/Splash&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;Splash!&lt;/strong&gt;&lt;/a&gt; To wieloplatformowy, rastrowy edytor graficzny wzorowany na programach takich jak Photoshop, Gimp czy Microsoft Paint. Ideą przyświecającą aplikacji było wypełnienie luki pomiędzy prostym i intuicyjnym Paintem a zaawansowanym i topornym Gimpem. Aplikacja została napisana w języku Java przy użyciu biblioteki Swing. Głownym celem projektu była nauka i praktyczne wykorzystanie wielu wzorców projektowych.
             
         </summary>
         
         
-        <category term="dokumentacja" scheme="http://T3r1jj.github.io/pl/categories/dokumentacja/"/>
+        <category term="Dokumentacja" scheme="http://T3r1jj.github.io/pl/categories/Dokumentacja/"/>
         
         
         <category term="desktop" scheme="http://T3r1jj.github.io/pl/tags/desktop/"/>
         
         <category term="UML" scheme="http://T3r1jj.github.io/pl/tags/UML/"/>
         
-        <category term="grafika" scheme="http://T3r1jj.github.io/pl/tags/grafika/"/>
-        
         <category term="dokumentacja" scheme="http://T3r1jj.github.io/pl/tags/dokumentacja/"/>
         
         <category term="aplikacja" scheme="http://T3r1jj.github.io/pl/tags/aplikacja/"/>
+        
+        <category term="grafika" scheme="http://T3r1jj.github.io/pl/tags/grafika/"/>
         
         <category term="przewodnik użytkownika" scheme="http://T3r1jj.github.io/pl/tags/przewodnik-uzytkownika/"/>
         

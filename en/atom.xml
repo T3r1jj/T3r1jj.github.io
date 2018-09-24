@@ -96,37 +96,140 @@ In practice, the process of generating a pdf file may be slightly longer. For ot
     </entry>
     
     <entry>
+        <title>BookRental project</title>
+        <link href="http://T3r1jj.github.io/en/articles/BookRental/"/>
+        
+        <id>http://T3r1jj.github.io/en/articles/BookRental/</id>
+        
+        <published>2017-11-21T11:00:00.000Z</published>
+        <updated>2018-09-24T17:52:11.185Z</updated>
+        
+        <content type="html"><![CDATA[<p><a href="https://github.com/T3r1jj/BookRental" target="_blank" rel="external"><strong>BookRental</strong></a> is one of the older projects covering several JEE aspects. Its aim was to create a library management system; namely, management of: books, loans, reservations, users and employees. The application implements more than 20 different business features.
+The main technologies used in the project are: Java, JSTL, JSF, PrimeFaces, JPA, JDB. The presentation of the application can be viewed in <a href="/en/galleries/BookRental/">the gallery</a>. At times, it does not look too attractive since it was created at the beginning of learning JEE and web technologies [2015] (check out <a href="https://github.com/T3r1jj/Develog" target="_blank" rel="external">Develog</a> to see the difference).
+<a id="more"></a></p>
+<p>The features implemented in the application are:</p>
+<ol>
+<li>Displaying the list of books. Books cart with the possibility of adding and removing books. Book borrow feature.</li>
+<li>Book management in the administration panel.</li>
+<li>Registration of readers. Confirmation of registration in the administration panel. The ability to log in to your account. Only logged in users can borrow books.</li>
+<li>Accounts for rental employees. Employees can manage books, readers and rentals. Employees are managed by an administrator.</li>
+<li>Book categories. Categories form multi-level trees. Each book belongs to exactly one category, the ability to browse books by category.</li>
+<li>Labels (tags) for books. Each book can be labeled with many labels. Browsing books by labels.</li>
+<li>Additional resources for the description of the book, e.g. source codes for programs, samples of music or movies. Each file has its own description. The number of files is not limited.</li>
+<li>Searching for books based on the title, author’s name, ISBN and possibly other attributes.</li>
+<li>Boolean operators: <em>and</em>, <em>or</em>, <em>not</em>; when searching.</li>
+<li>Search history. Each logged in user can save search results in the database to be able to rerun them at other times.</li>
+<li>Browsing the reader’s rental archives.</li>
+<li>Loan administration. Rental status: book in stock, waiting for pickup (is on the reader’s shelf), loaned out. Manual status change by an employee.</li>
+<li>Books stock - automatic status update for borrowing and returning the book.</li>
+<li>Ability to subscribe to the queue when the book is currently not in stock (reservation).</li>
+<li>Financial penalties for keeping books too long. Blocking rentals when books are not returned and no penalty is paid. The maximum retention time set by the administrator.</li>
+<li>Messages editable by the administrator and posted on the main page.</li>
+<li>Display of news (several recently added books) on the home page.</li>
+<li>Selecting skins (themes) for the user interface.</li>
+<li>Additional language version of the user interface.</li>
+</ol>
+<h2 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h2><p>Due to the selected technologies, the standard application architecture has been used, depicted by the picture below:<br><img src="/images/BookRental/arch.jpg" alt="BookRental architecture"></p>
+<center style="margin-top: -1em;"><small>Source: <a href="http://www.thejavageek.com" target="_blank" rel="external">http://www.thejavageek.com</a></small></center>
+
+<p>The application implements the MVC pattern, which is divided into three parts:</p>
+<ul>
+<li>model (JPA + EJB) - represents data from the database in a logical form, implements business functions;</li>
+<li>view (JSF page) - displays model data;</li>
+<li>controller (JSF bean) - receives input data from the user, processes it, updates and refreshes the model.</li>
+</ul>
+<p>Normalized database model (3NF - incomplete, slightly redundant):
+<img src="/images/BookRental/db.jpg" alt="Model bazy danych"></p>
+<p>Some assumptions that might require explanation:</p>
+<ol>
+<li>If the book does not have an ISBN number (which happens, but very rarely), it should be given a unique value because the books are distinguished by the ISBN field.</li>
+<li>The copies of the same books do not differ in the ISBN (they differ by an id number).</li>
+<li>Category, tags and resources (eg files) and reservations in the absence of books in the warehouse are assigned to the ISBN.</li>
+<li>Loans and reservations are assigned to the book.</li>
+</ol>
+<h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h2><p>The structure of the project is presented in the figure below:
+<img src="/images/BookRental/struct.jpg" alt="Project structure"><br>Each package has a different purpose:</p>
+<ul>
+<li>entity classes - POJO, pack data retrieved from the database into abstract types such as <em>Book</em>.</li>
+<li>session / facade classes - EJB facades, allow communication with a database at a higher level than JDBC. These beans operate on the server side and can be injected into other components. In this case, annotated <code>@Stateless</code>, allow the implementation of reusable services.</li>
+<li>controller / jsf classes - JSF view controllers, managed beans <em>(ManagedBean)</em>, with the declared scope, eg <em>SessionScoped, ViewScoped, ApplicationScoped</em>, etc. They store state according to the scope and ensure communication with JSF websites. JSF pages can retrieve the beana state using the expression <code>#{bean.field}</code> (assuming that getters and setters have been implemented).</li>
+</ul>
+<p>The JSF pages are part of the last layer - the view. The <em>Facelets</em> template system is used to build JSF pages. In the case of this project, an open source PrimeFaces has been chosen - an UI component library. Thanks to this framework, it is possible to easily create a rich user interface.<br><img src="/images/BookRental/view.jpg" alt="View structure (1/2)"></p>
+<p><strong>WEB-INF</strong> is a special folder in the application structure that is not publicly available, it is not part of the public document tree. The “view” subfolder in the WEB-INF folder has been separated and there are specific views. Elements with characteristic names such as “Create”, “Edit” or “View” represent windows (dialogs), which through compositions are included in other views (mainly lists) and displayed when the button is clicked. For the user, access to the windows is only available through the views, so they (dialogs) were placed in the WEB-INF folder.</p>
+<p>The next elements are <strong>templates</strong>, which also use the composition mechanism and the user should not have access to them. The last component of the WEB-INF folder are the pages to which the user is redirected after logging in. They inform, among others, about the lack of rights to browse the page; blocked or inactive account; as well as about the success of the login or registration process.<br><img src="/images/BookRental/view2.jpg" alt="View structure (2/2)"></p>
+<p>Four different templates are attached to pages depending on the logged in user’s (or guest’s) rights. The displayed data format also changes, therefore different views have been created that display data in the form of lists. These views use shared windows declared in the WEB-INF folder.</p>
+<h2 id="Additional-info"><a href="#Additional-info" class="headerlink" title="Additional info"></a>Additional info</h2><p>Parts worth attention:</p>
+<ul>
+<li>passwords <strong>hashed</strong> with SHA-256 hash function, in subsequent versions of the application could be supplemented with salt.</li>
+<li><em>OptionsController</em> loads application options from a file on the server (e.g. data related to the maximum rental period or penalty value for the day of delay).</li>
+<li><em>AuthorizationFilter</em> - <em>PhaseFilter</em> that supervises access to sites that require specific permissions. It is responsible for redirecting in case of user not being activated or being banned.</li>
+<li><em>ThemeSwitcherBean</em> and <em>LanguageSwitcherBean</em> manage selection of language and theme preferences selected by the user as a cookie.</li>
+</ul>
+<p>The management of the connection to the database is handled by <strong>Glassfish</strong> server. The database type is <strong>Java DB</strong>. Transaction type is <strong>JTA</strong>, <strong>EntityManager</strong> is injected via <code>@PersistenceContext</code>.</p>
+<p>After the bean has been constructed, but before its use, the language value will be set (based on a cookie or a previously initiated value if there is no cookie). After changing the language, the text will be loaded from the corresponding <em>Bundle*</em> file from the resources directory.</p>
+<p><img src="/images/BookRental/view2.jpg" alt="Cookies with a selected theme and language"></p>
+<p>During the implementation of this feature, the JSTL library was used, and more precisely the <em>fmt</em> tags: <em>setLocale</em> and <em>setBundle</em> were used, thanks to which the files with correct translation are connected with the page. This allows the use of the message tag with the <em>key</em> parameter - a mapping in the file to the translated phrase.</p>
+<p>One of the project’s flaws is missing i18n for admin news. This feature was missed out during the project and implementation phase. The design also looks a bit old, as this project is one of the older ones.</p>
+]]></content>
+        
+        <summary type="html">
+            
+            &lt;p&gt;&lt;a href=&quot;https://github.com/T3r1jj/BookRental&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;BookRental&lt;/strong&gt;&lt;/a&gt; is one of the older projects covering several JEE aspects. Its aim was to create a library management system; namely, management of: books, loans, reservations, users and employees. The application implements more than 20 different business features.
+The main technologies used in the project are: Java, JSTL, JSF, PrimeFaces, JPA, JDB. The presentation of the application can be viewed in &lt;a href=&quot;/en/galleries/BookRental/&quot;&gt;the gallery&lt;/a&gt;. At times, it does not look too attractive since it was created at the beginning of learning JEE and web technologies [2015] (check out &lt;a href=&quot;https://github.com/T3r1jj/Develog&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Develog&lt;/a&gt; to see the difference).
+            
+        </summary>
+        
+        
+        <category term="Documentation" scheme="http://T3r1jj.github.io/categories/Documentation/"/>
+        
+        
+        <category term="web" scheme="http://T3r1jj.github.io/tags/web/"/>
+        
+        <category term="cms" scheme="http://T3r1jj.github.io/tags/cms/"/>
+        
+        <category term="documentation" scheme="http://T3r1jj.github.io/tags/documentation/"/>
+        
+        <category term="application" scheme="http://T3r1jj.github.io/tags/application/"/>
+        
+        <category term="database" scheme="http://T3r1jj.github.io/tags/database/"/>
+        
+        <category term="model" scheme="http://T3r1jj.github.io/tags/model/"/>
+        
+        
+    </entry>
+    
+    <entry>
         <title>Splash! documentation</title>
         <link href="http://T3r1jj.github.io/en/articles/splash/"/>
         
         <id>http://T3r1jj.github.io/en/articles/splash/</id>
         
-        <published>2017-09-14T10:00:00.000Z</published>
-        <updated>2018-09-19T18:02:14.011Z</updated>
+        <published>2017-10-14T10:00:00.000Z</published>
+        <updated>2018-09-23T23:03:32.594Z</updated>
         
-        <content type="html"><![CDATA[<p><strong>Splash!</strong> is a multiplatform, raster graphics editor inspired by such programs as Photoshop, Gimp and Microsoft Paint. The idea while creating the application was to fill the gap between simple and intuitive Paint and advanced and crude Gimp. The application was written in Java using the Swing library. The main point though, was to learn and use in practice many different design patterns.
+        <content type="html"><![CDATA[<p><a href="https://github.com/T3r1jj/Splash" target="_blank" rel="external"><strong>Splash!</strong></a> is a multiplatform, raster graphics editor inspired by such programs as Photoshop, Gimp and Microsoft Paint. The idea while creating the application was to fill the gap between simple and intuitive Paint and advanced and crude Gimp. The application was written in Java using the Swing library. The main point though, was to learn and use in practice many different design patterns.
 <a id="more"></a></p>
 <p>Below you can check find an <strong>User’s guide</strong> and <strong>selected parts of documentation</strong>. The main point of the latter one is to describe the usage of over 11 design patterns used in the project with UML diagrams - what pattern, why and where has it been used in the project. Some of them might feel forced. Nevertheless, at the time of development their selection contributed to the thought process allowing to draw conclusions at the end of the project. </p>
-<p><a href="splash/Splash-users-guide-EN.pdf">Splash! - User’s guide</a><br><a href="splash/Splash-from-docs-EN.pdf">Splash! - From docs (design patterns)</a></p>
+<p><a href="Splash-users-guide-EN.pdf">Splash! - User’s guide</a><br><a href="Splash-from-docs-EN.pdf">Splash! - From docs (design patterns)</a></p>
 ]]></content>
         
         <summary type="html">
             
-            &lt;p&gt;&lt;strong&gt;Splash!&lt;/strong&gt; is a multiplatform, raster graphics editor inspired by such programs as Photoshop, Gimp and Microsoft Paint. The idea while creating the application was to fill the gap between simple and intuitive Paint and advanced and crude Gimp. The application was written in Java using the Swing library. The main point though, was to learn and use in practice many different design patterns.
+            &lt;p&gt;&lt;a href=&quot;https://github.com/T3r1jj/Splash&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;Splash!&lt;/strong&gt;&lt;/a&gt; is a multiplatform, raster graphics editor inspired by such programs as Photoshop, Gimp and Microsoft Paint. The idea while creating the application was to fill the gap between simple and intuitive Paint and advanced and crude Gimp. The application was written in Java using the Swing library. The main point though, was to learn and use in practice many different design patterns.
             
         </summary>
         
         
-        <category term="documentation" scheme="http://T3r1jj.github.io/categories/documentation/"/>
+        <category term="Documentation" scheme="http://T3r1jj.github.io/categories/Documentation/"/>
         
-        
-        <category term="desktop" scheme="http://T3r1jj.github.io/tags/desktop/"/>
-        
-        <category term="graphics" scheme="http://T3r1jj.github.io/tags/graphics/"/>
         
         <category term="documentation" scheme="http://T3r1jj.github.io/tags/documentation/"/>
         
         <category term="application" scheme="http://T3r1jj.github.io/tags/application/"/>
+        
+        <category term="desktop" scheme="http://T3r1jj.github.io/tags/desktop/"/>
+        
+        <category term="graphics" scheme="http://T3r1jj.github.io/tags/graphics/"/>
         
         <category term="user guide" scheme="http://T3r1jj.github.io/tags/user-guide/"/>
         

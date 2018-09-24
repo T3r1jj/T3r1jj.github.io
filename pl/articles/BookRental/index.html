@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="en,pl"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="T3r1jj"><meta property="og:site_name" content="T3r1jj"><meta property="og:title" content="Projekt BookRental"><meta property="og:type" content="article"><meta property="og:description" content="T3r1jj applications, games and tools"><meta property="og:url" content="http://T3r1jj.github.io/pl/articles/BookRental/"><meta property="og:image" content="http://T3r1jj.github.io/logo.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Projekt BookRental"><meta name="twitter:description" content="T3r1jj applications, games and tools"><meta name="twitter:url" content="http://T3r1jj.github.io/pl/articles/BookRental/"><meta name="twitter:image:src" content="http://T3r1jj.github.io/logo.png"><title>Projekt BookRental · T3r1jj</title><meta name="description" content="Projekt BookRental - T3r1jj"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="/packages/font-awesome-4.7.0/css/font-awesome.min.css"><link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet"><link rel="search" type="application/opensearchdescription+xml" href="http://T3r1jj.github.io/atom.xml" title="T3r1jj"><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "url": "http://T3r1jj.github.io/pl/articles/BookRental/",
+    "name": "Projekt BookRental",
+    "description": "T3r1jj applications, games and tools",
+    "author": {
+        "@type": "Person",
+        "name": "T3r1jj",
+        "url": "https://T3r1jj.github.io",
+        "sameAs": ["https://github.com/T3r1jj"],
+        "description": "Programmer, developer, freelancer"
+        "image": "https://github.com/T3r1jj.png"
+    }
+}</script></head><body><div class="wrap"><header><a href="/pl/" class="logo-link"><img src="/logo.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/pl/" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/pl/archives/" class="nav-list-link">ARCHIWUM</a></li><li class="nav-list-item"><a href="/pl/support/" class="nav-list-link">WSPARCIE</a></li><li class="nav-list-item"><a href="https://github.com/T3r1jj" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/pl/atom.xml" class="nav-list-link">RSS</a></li><li class="nav-list-item"><a href="/pl/search/" target="_self" class="nav-list-link search"><i class="fa fa-search" aria-hidden="true"></i></a></li><li class="nav-list-item"><select id="lang" onchange="this.options[this.selectedIndex].value &amp;&amp; (window.location = this.options[this.selectedIndex].value);" class="fa"><option value="/en/articles/BookRental/" lang="en">ENG</option><option value="/pl/articles/BookRental/" selected lang="pl">PL</option></select></li></ul></header></div><div class="wrap"><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">Projekt BookRental</h1><div class="post-info">21 lis 2017<span class="categories"><i class="fa fa-bookmark" aria-hidden="true"></i></span><a href="/pl/categories/Dokumentacja/" class="post-category">#Dokumentacja</a></div><div class="post-content"><p><a href="https://github.com/T3r1jj/BookRental" target="_blank" rel="external"><strong>BookRental</strong></a> to jeden ze starszych projektów obejmujących kilka zagadnień JEE. Jego celem było stworzenie systemu zarządzania biblioteką, a konkretniej: książkami, wypożyczeniami, rezerwacjami, użytkownikami oraz pracownikami. Aplikacja realizuje ponad 20 różnych funkcji biznesowych.
+Główne technologie użyte w projekcie to: <em>Java, JSTL, JSF, PrimeFaces, JPA, JDB</em>. Prezentację aplikacji można obejrzeć w <a href="/pl/galleries/BookRental/">galerii</a>. Momentami nie wygląda ona zbyt atrakcyjnie, gdyż była tworzona na początku nauki JEE i technologii internetowych [2015] (zobacz nowszą aplikację <a href="https://github.com/T3r1jj/Develog" target="_blank" rel="external">Develog</a> aby zauważyć różnice).
+<a id="more"></a></p>
+<p>Funkcjonalności zaimplementowane w aplikacji to:</p>
+<ol>
+<li>Wyświetlanie listy książek. Koszyk z możliwością dodawania i usuwania książek. Możliwość wypożyczenia książek.</li>
+<li>Zarządzanie książkami w panelu administracyjnym.</li>
+<li>Rejestracja czytelników. Potwierdzenie rejestracji w panelu administracyjnym. Możliwość zalogowania się na swoje konto. Tylko użytkownicy zalogowani mogą wypożyczać książki.</li>
+<li>Konta dla pracowników wypożyczalni. Pracownicy mogą zarządzać książkami, czytelnikami i wypożyczeniami. Pracownikami zarządza administrator.</li>
+<li>Kategorie książek. Kategorie tworzą wielopoziomowe drzewa. Każda książka należy do dokładnie jednej kategorii, Możliwość przeglądania książek według kategorii.</li>
+<li>Etykiety (tagi) dla książek. Każda książka może być opatrzona wieloma etykietami. Przeglądanie książek według etykiet.</li>
+<li>Dodatkowe pliki do pobrania przy opisie ksiąski, np.: kody źródłowe programów, próbki muzyki czy filmów. Każdy plik posiada swój opis. Liczba plików nie jest ograniczona.</li>
+<li>Wyszukiwanie książek na podstawie tytułu, nazwy autora, ISBNu i ewentualnie innych atrybutów.</li>
+<li>Operatory logiczne typu and, or i not przy wyszukiwaniu.</li>
+<li>Historia wyszukiwań. Każdy zalogowany użytkownik może zapisać wyniki wyszukiwania w bazie by w innym czasie móc je odtworzyć.</li>
+<li>Przeglądanie archiwum wypożyczeń czytelnika.</li>
+<li>Administracja wypożyczeniami. Stany wypożyczeń: książka w magazynie, oczekuje na odbiór (jest na półce czytelnika), wypożyczona. Zmiana stanu wypożyczenia przez pracownika.</li>
+<li>Stany magazynowe książek. Automatyczna aktualizacja stanów przy wypożyczeniu i zwrocie książki.</li>
+<li>Możliwość zapisania się do kolejki, gdy danej książki nie ma aktualnie w magazynie.</li>
+<li>Kary pieniężne za zbyt długie przetrzymywanie książek. Blokada wypożyczeń przy nie zwróceniu książek i niezapłaceniu kary. Maksymalny czas przetrzymywaniu ustawiany przez administratora.</li>
+<li>Wiadomości redagowane przez administratora i umieszczane na stronie głównej.</li>
+<li>Wyświetlanie nowości (kilku ostatnio dodanych książek) na stronie głównej.</li>
+<li>Wybór skórek dla interfejsu użytkownika.</li>
+<li>Dodatkowa wersja językowa interfejsu użytkownika.</li>
+</ol>
+<h2 id="Projekt"><a href="#Projekt" class="headerlink" title="Projekt"></a>Projekt</h2><p>Ze względu na wybrane technologie, wykorzystana została standardowa architektura aplikacji, którą prezentuje poniższy rysunek:<br><img src="/images/BookRental/arch.jpg" alt="Architektura aplikacji BookRental"></p>
+<center style="margin-top: -1em;"><small>Źródło: <a href="http://www.thejavageek.com" target="_blank" rel="external">http://www.thejavageek.com</a></small></center>
+
+<p>Aplikacja wykorzystuje wzorzec MVC, który dzieli się na trzy główne części:</p>
+<ul>
+<li>model <em>(JPA + EJB)</em> – reprezentuje dane z bazy danych w postaci logicznej, implementuje funkcje biznesowe;</li>
+<li>widok <em>(JSF page)</em> – wyświetla dane modelu;</li>
+<li>kontroler <em>(JSF bean)</em> – odbiera dane wejściowe od użytkownika przetwarza je, aktualizuje oraz odświeża model.</li>
+</ul>
+<p>Znormalizowany model bazy danych (<em>3NF</em> - niepełny, nieznaczna redundancja):
+<img src="/images/BookRental/db.jpg" alt="Model bazy danych"></p>
+<p>Pewne założenia, które mogłyby wymagać wyjaśnienia:</p>
+<ol>
+<li>Jeśli książka nie ma numeru ISBN (co się zdarza, choć bardzo rzadko) to należy nadać jej unikalną wartość gdyż książki rozróżniane są po polu ISBN.</li>
+<li>Egzemplarze tych samych książek nie różnią się numerem ISBN (różnią się numerem id).</li>
+<li>Do numeru ISBN przypisane są kategoria, tagi i zasoby (np. pliki) oraz rezerwacje w przypadku braku książek w magazynie.</li>
+<li>Do książki przypisywane są wypożyczenia oraz rezerwacje.</li>
+</ol>
+<h2 id="Struktura"><a href="#Struktura" class="headerlink" title="Struktura"></a>Struktura</h2><p>Strukturę projektu przedstawia poniższy rysunek:<br><img src="/images/BookRental/struct.jpg" alt="Struktura projektu"><br>Każdemu z pakietów odpowiada inne przeznaczenie:</p>
+<ul>
+<li>Klasy entity - POJO, opakowują dane pobierane z bazy danych w typy abstrakcyjne np. <em>Book</em>.</li>
+<li>Klasy session / facade – fasady EJB, pozwalają na komunikację z bazą danych na wyższym poziomie niż JDBC. Beany te działają po stronie serwera i mogą być wstrzykiwane do innych elementów. W tym przypadku adnotowane <code>@Stateless</code> oznaczane jako bezstanowe, pozwalają na implementację serwisów.</li>
+<li>Klasy controller / jsf – kontrolery widoków JSF, ziarna zarządzane <em>(ManagedBean)</em>, z deklarowanym zakresem np. <em>SessionScoped, ViewScoped, ApplicationScoped</em>, itp. Przechowują stan zgodnie z zakresem i zapewniają komunikację ze stronami JSF. Strony JSF mogą pobierać stan beana za pomocą wyrażenia <code>#{bean.field}</code> (przy założeniu, że zaimplementowano gettery i settery).</li>
+</ul>
+<p>Na strukturę ostatniej warstwy – widokowej składają się strony JSF. Do budowania stron JSF wykorzystywany jest system szablonów <em>Facelets</em>. W przypadku tego projektu wykorzystana została również open source’owa biblioteka komponentów UI – <em>PrimeFaces</em>. Dzięki temu frameworkowi możliwe jest tworzenie bogatszego interfejsu użytkownika.<br><img src="/images/BookRental/view.jpg" alt="Struktura widoków (1/2)"></p>
+<p><strong>WEB-INF</strong> to specjalny folder w strukturze aplikacji, który nie jest dostępny publicznie, nie jest częścią publicznego drzewa dokumentu. Wydzielony został podfolder „view” w folderze WEB-INF a w nim konkretne widoki. Elementy o charakterystycznych nazwach takich jak „Create”, „Edit” czy „View” reprezentują okna (dialog), które poprzez kompozycje włączane są do innych widoków (głównie list) i wyświetlane podczas kliknięcia przycisku. Dla użytkownika dostęp do okien jest sensowny jedynie poprzez widoki, dlatego też zostały one umieszczone w folderze WEB-INF.</p>
+<p>Kolejnymi elementami są <strong>szablony</strong>, które również korzystają z mechanizmu kompozycji i użytkownik nie powinien mieć do nich dostępu. Ostatnią częścią składową folderu WEB-INF są strony, do których użytkownik zostaje przekierowany po zalogowaniu się. Informują one między innymi o braku praw do przeglądania strony, zablokowanym czy nieaktywnym koncie, jak też o powodzeniu procesu logowania lub rejestracji.<br><img src="/images/BookRental/view2.jpg" alt="Struktura widoków (2/2)"></p>
+<p>Cztery różne szablony podpinane są do stron w zależności od praw dostępu zalogowanego (bądź nie) użytkownika. Wyświetlany format danych również się zmienia, dlatego utworzone zostały różne widoki wyświetlające dane w postaci list. Widoki te korzystają ze wspólnych okien zadeklarowanych w folderze WEB-INF.</p>
+<h2 id="Uwagi"><a href="#Uwagi" class="headerlink" title="Uwagi"></a>Uwagi</h2><p>Elementy warte zwrócenia uwagi:</p>
+<ul>
+<li>Hasła <strong>haszowane</strong> funkcją skrótu SHA-256, w kolejnych wersjach aplikacji mogłyby być uzupełnione o sól/sole (ang. salt).</li>
+<li><em>OptionsController</em> ładuje opcje serwisu z pliku na serwerze (np. dane związane z maksymalnym okresem wypożyczenia czy wartością kary za dzień spóźnienia).</li>
+<li><em>AuthorizationFilter</em> – <em>PhaseFilter</em> nadzorujący dostępen do stron wymagających określonych uprawnień. Odpowiada za przekierowania w przypadku, gdy nie jest aktywowane lub zostało zbanowane.</li>
+<li><em>ThemeSwitcherBean</em> oraz <em>LanguageSwitcherBean</em> zapisują do ciasteczek wybór preferencji dotyczących języka i skórki wybranych przez użytkownika.</li>
+</ul>
+<p>Zarządzaniem połączeniem z bazą danych zajmuje się server <em>Glassfish</em>. Typ bazy danych to <em>Java DB</em>. Typ transakcji to <em>JTA</em>, <em>EntityManager</em> jest wstrzykiwany poprzez <code>@PersistenceContext</code>.</p>
+<p>Po skonstruowaniu ziarna, a przed jego użyciem ustawiony zostanie język (na podstawie ciasteczka lub wcześniej zainicjowanej wartości w przypadku braku ciasteczka). Po zmianie języka tekst wczytywany będzie z odpowiedniego pliku <em>Bundle*</em> z katalogu resources.</p>
+<p><img src="/images/BookRental/view2.jpg" alt="Ciasteczka z wybranym motywem i językiem"></p>
+<p>Przy implementacji tego założenia wykorzystana została biblioteka <em>JSTL</em> a dokładniej z tagi <em>fmt</em>: <em>setLocale</em> i <em>setBundle</em>, dzięki którym następuje włączenie plików z tłumaczeniem do strony. Umożliwia to korzystanie z tagu message z parametrem <em>key</em> – odwzorowaniem z pliku na przetłumaczoną frazę.</p>
+<p>Jedną z wad tego projektu jest brak internacjonalizacji (i18n) wiadomości tworzonych przez administratorów. Funkcjonalność ta została przegapiona zarówno w fazie projektowania jak i implementacji. Serwis również nie wygląda zbyt nowocześnie gdyż jest to jeden ze starszych projektów.</p>
+</div><p class="post-tags"><i class="fa fa-tags" aria-hidden="true"></i><a href="/pl/tags/web/">#web</a><a href="/pl/tags/cms/">#cms</a><a href="/pl/tags/model/">#model</a><a href="/pl/tags/dokumentacja/">#dokumentacja</a><a href="/pl/tags/aplikacja/">#aplikacja</a><a href="/pl/tags/baza-danych/">#baza danych</a></p></article></div></main></div><div class="wrap"><footer><div class="paginator"><a href="/pl/articles/splash/" class="next">POPRZEDNI</a><a href="/pl/articles/latex-custom-fonts/" class="prev">NASTĘPNY</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 't3r1jj-blog';
+if ('pl' !== 'en,pl' && 'pl' !== 'en') {
+    disqus_shortname += '-pl'
+}
+var disqus_identifier = 'pl/articles/BookRental/';
+var disqus_title = 'Projekt BookRental';
+var disqus_url = 'http://T3r1jj.github.io/pl/articles/BookRental/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//t3r1jj-blog.disqus.com/count.js" async></script><div class="copyright"><p>© 2015 - 2018 <a href="http://T3r1jj.github.io">T3r1jj</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a>, <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a> and <a href="/pl/about/" target="_blank">others</a>.</p></div></footer></div><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-73928706-5",'auto');ga('send','pageview');</script></body></html>
