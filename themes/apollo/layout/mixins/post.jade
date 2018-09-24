@@ -40,16 +40,16 @@ mixin postList()
                     a.post-title-link(href= url_for_lang(item.path))
                         != item.title
         - })
-        h2.archive-year
-            != __("galleries")
-        - site.pages.each(function(localPage) {
-            if page.lang === localPage.lang && localPage.path.indexOf("galleries/") !== -1
-                .post-item
-                    +postInfo(localPage, false)
-                    a.post-title-link(href= path_for_lang(localPage.path))
-                        != localPage.title
-        - })
         if !page.category && !page.tag
+            h2.archive-year
+                != __("galleries")
+            - site.pages.each(function(localPage) {
+                if page.lang === localPage.lang && localPage.path.indexOf("galleries/") !== -1
+                    .post-item
+                        +postInfo(localPage, false)
+                        a.post-title-link(href= path_for_lang(localPage.path))
+                            != localPage.title
+            - })
             - var categories = []
             - var tags = []
             - page.posts.each(function (post) {

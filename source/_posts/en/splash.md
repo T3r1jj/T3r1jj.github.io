@@ -9,7 +9,7 @@ tags:
     - application
     - user guide
     - design patterns
-    - UML
+    - uml
 lang: en
 date: 2017-10-14 12:00:00
 ---

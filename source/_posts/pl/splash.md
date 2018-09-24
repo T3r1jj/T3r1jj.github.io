@@ -9,7 +9,7 @@ tags:
     - aplikacja
     - przewodnik użytkownika
     - wzorce projektowe
-    - UML
+    - uml
 lang: pl
 date: 2017-10-14 13:00:00
 ---
