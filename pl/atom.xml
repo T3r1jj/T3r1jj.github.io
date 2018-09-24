@@ -202,7 +202,7 @@ Główne technologie użyte w projekcie to: &lt;em&gt;Java, JSTL, JSF, PrimeFace
         <id>http://T3r1jj.github.io/pl/pl/articles/splash/</id>
         
         <published>2017-10-14T11:00:00.000Z</published>
-        <updated>2018-09-24T13:57:04.496Z</updated>
+        <updated>2018-09-24T21:32:30.150Z</updated>
         
         <content type="html"><![CDATA[<p><a href="https://github.com/T3r1jj/Splash" target="_blank" rel="external"><strong>Splash!</strong></a> To wieloplatformowy, rastrowy edytor graficzny wzorowany na programach takich jak Photoshop, Gimp czy Microsoft Paint. Ideą przyświecającą aplikacji było wypełnienie luki pomiędzy prostym i intuicyjnym Paintem a zaawansowanym i topornym Gimpem. Aplikacja została napisana w języku Java przy użyciu biblioteki Swing. Głownym celem projektu była nauka i praktyczne wykorzystanie wielu wzorców projektowych.
 <a id="more"></a></p>
@@ -222,7 +222,7 @@ Główne technologie użyte w projekcie to: &lt;em&gt;Java, JSTL, JSF, PrimeFace
         
         <category term="desktop" scheme="http://T3r1jj.github.io/pl/tags/desktop/"/>
         
-        <category term="UML" scheme="http://T3r1jj.github.io/pl/tags/UML/"/>
+        <category term="uml" scheme="http://T3r1jj.github.io/pl/tags/uml/"/>
         
         <category term="dokumentacja" scheme="http://T3r1jj.github.io/pl/tags/dokumentacja/"/>
         

@@ -12,39 +12,68 @@
         <loc>http://T3r1jj.github.io/pl/archives/</loc>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/archives/index.html" hreflang="pl"/>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/archives/index.html" hreflang="en"/>
-        <lastmod>2018-11-20T23:00:00.000Z</lastmod>
+        <lastmod>2018-09-24T21:32:30.150Z</lastmod>
     </url>
     <url>
         <priority>1.0</priority>
         <loc>http://T3r1jj.github.io/en/archives/</loc>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/archives/index.html" hreflang="pl"/>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/archives/index.html" hreflang="en"/>
-        <lastmod>2018-11-20T23:00:00.000Z</lastmod>
+        <lastmod>2018-09-24T21:32:24.123Z</lastmod>
     </url>
     <url>
-        <priority>0.5</priority><loc>http://T3r1jj.github.io/pl/articles/BookRental/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/BookRental/" hreflang="pl"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/BookRental/" hreflang="en"/>
-        <lastmod>2018-09-24T18:11:51.993Z</lastmod>
+        <priority>0.5</priority><loc>http://T3r1jj.github.io/pl/articles/splash/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/splash/" hreflang="pl"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/splash/" hreflang="en"/>
+        <lastmod>2018-09-24T21:32:30.150Z</lastmod>
+    </url>
+    <url>
+        <priority>0.5</priority><loc>http://T3r1jj.github.io/en/articles/splash/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/splash/" hreflang="pl"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/splash/" hreflang="en"/>
+        <lastmod>2018-09-24T21:32:24.123Z</lastmod>
+    </url>
+    <url>
+        <priority>1.0</priority>
+        <loc>http://T3r1jj.github.io/en/galleries/Develog/</loc>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/galleries/Develog/index.html" hreflang="en"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/galleries/Develog/index.html" hreflang="pl"/>
+        <lastmod>2018-09-24T20:39:03.159Z</lastmod>
+    </url>
+    <url>
+        <priority>1.0</priority>
+        <loc>http://T3r1jj.github.io/pl/galleries/Develog/</loc>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/galleries/Develog/index.html" hreflang="en"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/galleries/Develog/index.html" hreflang="pl"/>
+        <lastmod>2018-09-24T20:30:00.629Z</lastmod>
     </url>
     <url>
         <priority>1.0</priority>
         <loc>http://T3r1jj.github.io/pl/galleries/BookRental/</loc>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/galleries/BookRental/index.html" hreflang="pl"/>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/galleries/BookRental/index.html" hreflang="en"/>
-        <lastmod>2018-09-24T18:11:51.928Z</lastmod>
+        <lastmod>2018-09-24T20:08:45.418Z</lastmod>
+    </url>
+    <url>
+        <priority>1.0</priority>
+        <loc>http://T3r1jj.github.io/pl/galleries/DistributedFisheryProject/</loc>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/galleries/DistributedFisheryProject/index.html" hreflang="pl"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/galleries/DistributedFisheryProject/index.html" hreflang="en"/>
+        <lastmod>2018-09-24T20:08:38.833Z</lastmod>
     </url>
     <url>
         <priority>1.0</priority>
         <loc>http://T3r1jj.github.io/en/galleries/BookRental/</loc>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/galleries/BookRental/index.html" hreflang="pl"/>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/galleries/BookRental/index.html" hreflang="en"/>
-        <lastmod>2018-09-24T18:02:38.324Z</lastmod>
+        <lastmod>2018-09-24T20:08:10.520Z</lastmod>
     </url>
     <url>
         <priority>1.0</priority>
         <loc>http://T3r1jj.github.io/en/galleries/DistributedFisheryProject/</loc>
-        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/galleries/DistributedFisheryProject/index.html" hreflang="en"/>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/galleries/DistributedFisheryProject/index.html" hreflang="pl"/>
-        <lastmod>2018-09-24T17:52:11.457Z</lastmod>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/galleries/DistributedFisheryProject/index.html" hreflang="en"/>
+        <lastmod>2018-09-24T20:07:54.517Z</lastmod>
+    </url>
+    <url>
+        <priority>0.5</priority><loc>http://T3r1jj.github.io/pl/articles/BookRental/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/BookRental/" hreflang="pl"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/BookRental/" hreflang="en"/>
+        <lastmod>2018-09-24T18:11:51.993Z</lastmod>
     </url>
     <url>
         <priority>0.5</priority><loc>http://T3r1jj.github.io/en/articles/BookRental/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/BookRental/" hreflang="pl"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/BookRental/" hreflang="en"/>
@@ -52,32 +81,17 @@
     </url>
     <url>
         <priority>1.0</priority>
-        <loc>http://T3r1jj.github.io/pl/galleries/DistributedFisheryProject/</loc>
-        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/galleries/DistributedFisheryProject/index.html" hreflang="en"/>
-        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/galleries/DistributedFisheryProject/index.html" hreflang="pl"/>
-        <lastmod>2018-09-24T17:49:46.002Z</lastmod>
-    </url>
-    <url>
-        <priority>0.5</priority><loc>http://T3r1jj.github.io/pl/articles/splash/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/splash/" hreflang="pl"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/splash/" hreflang="en"/>
-        <lastmod>2018-09-24T13:57:04.496Z</lastmod>
-    </url>
-    <url>
-        <priority>0.5</priority><loc>http://T3r1jj.github.io/en/articles/splash/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/splash/" hreflang="pl"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/splash/" hreflang="en"/>
-        <lastmod>2018-09-23T23:03:32.594Z</lastmod>
-    </url>
-    <url>
-        <priority>1.0</priority>
-        <loc>http://T3r1jj.github.io/support/</loc>
-        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/support/index.html" hreflang="en"/>
+        <loc>http://T3r1jj.github.io/pl/support/</loc>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/support/index.html" hreflang="pl"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/support/index.html" hreflang="en"/>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/support/index.html" hreflang="en"/>
         <lastmod>2018-09-18T15:56:16.321Z</lastmod>
     </url>
     <url>
         <priority>1.0</priority>
-        <loc>http://T3r1jj.github.io/pl/support/</loc>
-        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/support/index.html" hreflang="en"/>
+        <loc>http://T3r1jj.github.io/support/</loc>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/support/index.html" hreflang="pl"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/support/index.html" hreflang="en"/>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/support/index.html" hreflang="en"/>
         <lastmod>2018-09-18T15:56:16.321Z</lastmod>
     </url>
@@ -98,8 +112,8 @@
     <url>
         <priority>1.0</priority>
         <loc>http://T3r1jj.github.io/en/support/</loc>
-        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/support/index.html" hreflang="en"/>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/support/index.html" hreflang="pl"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/support/index.html" hreflang="en"/>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/support/index.html" hreflang="en"/>
         <lastmod>2018-09-18T15:56:16.319Z</lastmod>
     </url>
