@@ -130,6 +130,8 @@ redirects:
     to: "/en/articles/splash/"
   - from: "/BookRental/"
     to: "/en/articles/BookRental/"
+  - from: "/Develog/"
+    to: "/en/galleries/Develog/"
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
