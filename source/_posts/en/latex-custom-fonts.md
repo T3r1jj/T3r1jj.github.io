@@ -35,15 +35,15 @@ Such configuration usually suffices assuming that the files are encoded in the U
 To solve this problem, you can use a different font - TeX Gyre Termes: <code>\usepackage{tgtermes}</code>. You can read more about other fonts in the [ShareLaTeX](https://www.sharelatex.com/learn/Font_typefaces) knowledge base.
 ## Original Times New Roman font
 The easiest way to load fonts on Ubuntu known from Windows consists of three steps:
-1. Installation of TrueType Microsoft fonts:
+1. Install TrueType Microsoft fonts:
 <code>sudo apt-get install ttf-mscorefonts-installer</code>
 During the installation process you will be asked to accept Microsoft EULA. The fonts have been made available for free but they are not open-source.
-2. Replacement *inputenc* and *fontenc* packages with the following commands:
+2. Replace *inputenc* and *fontenc* packages with the following commands:
 <pre class="tip">
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
 </pre>
-3. Program change from pdflatex to xelatex:
+3. Swap *pdflatex* with *xelatex*:
 <pre class="tip">
 xelatex main.tex
 bibtex main
@@ -51,8 +51,6 @@ xelatex main.tex
 xelatex main.tex
 </pre>
 
-W praktyce proces generowania pliku pdf może się nieco wydłużyć. W przypadku innego kodowania plików należy zastosować polecenia <code>\XeTeXinputencoding</code> dla poprzedzającego tekstu bądź <code>\XeTeXdefaultencoding</code> standardowo dla wszystkich plików,
-np. <code>\XeTeXdefaultencoding "cp1250"</code> (kodowanie używane przez Microsoft Windows dla języków środkowoeuropejskich, w tym polskiego).
 In practice, the process of generating a pdf file may be slightly longer. For other file endocings use the <code>\XeTeXinputencoding</code> command for the preceding text or <code>\XeTeXdefaultencoding</code> as a standard for all files, e.g. <code>\XeTeXdefaultencoding "cp1250"</code> (coding used by Microsoft Windows for Central European languages).
 
 ## Custom fonts

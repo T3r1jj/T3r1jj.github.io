@@ -45,7 +45,7 @@ open-source.
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
 </pre>
-3. Zmiana programu pdflatex na xelatex:
+3. Zmiana programu *pdflatex* na *xelatex*:
 <pre class="tip">
 xelatex main.tex
 bibtex main
