@@ -12,14 +12,22 @@
         <loc>http://T3r1jj.github.io/pl/archives/</loc>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/archives/index.html" hreflang="pl"/>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/archives/index.html" hreflang="en"/>
-        <lastmod>2018-09-24T21:32:30.150Z</lastmod>
+        <lastmod>2018-10-01T16:53:14.670Z</lastmod>
     </url>
     <url>
         <priority>1.0</priority>
         <loc>http://T3r1jj.github.io/en/archives/</loc>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/archives/index.html" hreflang="pl"/>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/archives/index.html" hreflang="en"/>
-        <lastmod>2018-09-24T21:32:24.123Z</lastmod>
+        <lastmod>2018-10-01T16:52:51.059Z</lastmod>
+    </url>
+    <url>
+        <priority>0.5</priority><loc>http://T3r1jj.github.io/pl/articles/latex-custom-fonts/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/latex-custom-fonts/" hreflang="pl"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/latex-custom-fonts/" hreflang="en"/>
+        <lastmod>2018-10-01T16:53:14.670Z</lastmod>
+    </url>
+    <url>
+        <priority>0.5</priority><loc>http://T3r1jj.github.io/en/articles/latex-custom-fonts/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/latex-custom-fonts/" hreflang="pl"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/latex-custom-fonts/" hreflang="en"/>
+        <lastmod>2018-10-01T16:52:51.059Z</lastmod>
     </url>
     <url>
         <priority>0.5</priority><loc>http://T3r1jj.github.io/pl/articles/splash/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/splash/" hreflang="pl"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/splash/" hreflang="en"/>
@@ -97,16 +105,16 @@
     </url>
     <url>
         <priority>1.0</priority>
-        <loc>http://T3r1jj.github.io/pl/about/</loc>
-        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/about/index.html" hreflang="pl"/>
-        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/about/index.html" hreflang="en"/>
+        <loc>http://T3r1jj.github.io/pl/search/</loc>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/search/index.html" hreflang="pl"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/search/index.html" hreflang="en"/>
         <lastmod>2018-09-18T15:56:16.320Z</lastmod>
     </url>
     <url>
         <priority>1.0</priority>
-        <loc>http://T3r1jj.github.io/pl/search/</loc>
-        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/search/index.html" hreflang="pl"/>
-        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/search/index.html" hreflang="en"/>
+        <loc>http://T3r1jj.github.io/pl/about/</loc>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/about/index.html" hreflang="pl"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/about/index.html" hreflang="en"/>
         <lastmod>2018-09-18T15:56:16.320Z</lastmod>
     </url>
     <url>
@@ -119,29 +127,21 @@
     </url>
     <url>
         <priority>1.0</priority>
-        <loc>http://T3r1jj.github.io/en/about/</loc>
-        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/about/index.html" hreflang="pl"/>
-        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/about/index.html" hreflang="en"/>
-        <lastmod>2018-09-18T15:56:16.318Z</lastmod>
-    </url>
-    <url>
-        <priority>1.0</priority>
         <loc>http://T3r1jj.github.io/en/search/</loc>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/search/index.html" hreflang="pl"/>
         <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/search/index.html" hreflang="en"/>
         <lastmod>2018-09-18T15:56:16.318Z</lastmod>
     </url>
     <url>
-        <priority>0.5</priority><loc>http://T3r1jj.github.io/pl/articles/latex-custom-fonts/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/latex-custom-fonts/" hreflang="pl"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/latex-custom-fonts/" hreflang="en"/>
-        <lastmod>2018-09-18T15:56:16.317Z</lastmod>
+        <priority>1.0</priority>
+        <loc>http://T3r1jj.github.io/en/about/</loc>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/about/index.html" hreflang="pl"/>
+        <xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/about/index.html" hreflang="en"/>
+        <lastmod>2018-09-18T15:56:16.318Z</lastmod>
     </url>
     <url>
         <priority>0.5</priority><loc>http://T3r1jj.github.io/pl/articles/hello-world/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/hello-world/" hreflang="pl"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/hello-world/" hreflang="en"/>
         <lastmod>2018-09-18T15:56:16.317Z</lastmod>
-    </url>
-    <url>
-        <priority>0.5</priority><loc>http://T3r1jj.github.io/en/articles/latex-custom-fonts/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/latex-custom-fonts/" hreflang="pl"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/latex-custom-fonts/" hreflang="en"/>
-        <lastmod>2018-09-18T15:56:16.316Z</lastmod>
     </url>
     <url>
         <priority>0.5</priority><loc>http://T3r1jj.github.io/en/articles/hello-world/</loc><xhtml:link rel="alternate" href="http://T3r1jj.github.io/pl/articles/hello-world/" hreflang="pl"/><xhtml:link rel="alternate" href="http://T3r1jj.github.io/en/articles/hello-world/" hreflang="en"/>

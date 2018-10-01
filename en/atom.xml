@@ -5,7 +5,7 @@
     <link href="/en/atom.xml" rel="self"/>
     
     <link href="http://T3r1jj.github.io/"/>
-    <updated>2018-09-18T15:56:16.316Z</updated>
+    <updated>2018-10-01T16:52:51.059Z</updated>
     <id>http://T3r1jj.github.io/</id>
     
     <author>
@@ -22,7 +22,7 @@
         <id>http://T3r1jj.github.io/en/articles/latex-custom-fonts/</id>
         
         <published>2018-05-11T10:00:00.000Z</published>
-        <updated>2018-09-18T15:56:16.316Z</updated>
+        <updated>2018-10-01T16:52:51.059Z</updated>
         
         <content type="html"><![CDATA[<p>LaTeX is a free typesetting system. It is valued for many properties such as automated processing (generating bibliographies, links, mathematical equations). It allows you to focus on the text instead of its appearance by using files with styles (e.g. bibliography) suitable for a given journal. Foremostly, it is also available for various Linux distributions.
 <a id="more"></a></p>
@@ -44,14 +44,14 @@ Such configuration usually suffices assuming that the files are encoded in the U
 <p>To solve this problem, you can use a different font - TeX Gyre Termes: <code>\usepackage{tgtermes}</code>. You can read more about other fonts in the <a href="https://www.sharelatex.com/learn/Font_typefaces" target="_blank" rel="external">ShareLaTeX</a> knowledge base.</p>
 <h2 id="Original-Times-New-Roman-font"><a href="#Original-Times-New-Roman-font" class="headerlink" title="Original Times New Roman font"></a>Original Times New Roman font</h2><p>The easiest way to load fonts on Ubuntu known from Windows consists of three steps:</p>
 <ol>
-<li>Installation of TrueType Microsoft fonts:
+<li>Install TrueType Microsoft fonts:
 <code>sudo apt-get install ttf-mscorefonts-installer</code>
 During the installation process you will be asked to accept Microsoft EULA. The fonts have been made available for free but they are not open-source.</li>
-<li>Replacement <em>inputenc</em> and <em>fontenc</em> packages with the following commands:<pre class="tip">
+<li>Replace <em>inputenc</em> and <em>fontenc</em> packages with the following commands:<pre class="tip">
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
 </pre></li>
-<li>Program change from pdflatex to xelatex:<pre class="tip">
+<li>Swap <em>pdflatex</em> with <em>xelatex</em>:<pre class="tip">
 xelatex main.tex
 bibtex main
 xelatex main.tex
@@ -60,9 +60,7 @@ xelatex main.tex
 
 </li>
 </ol>
-<p>W praktyce proces generowania pliku pdf może się nieco wydłużyć. W przypadku innego kodowania plików należy zastosować polecenia <code>\XeTeXinputencoding</code> dla poprzedzającego tekstu bądź <code>\XeTeXdefaultencoding</code> standardowo dla wszystkich plików,
-np. <code>\XeTeXdefaultencoding “cp1250”</code> (kodowanie używane przez Microsoft Windows dla języków środkowoeuropejskich, w tym polskiego).
-In practice, the process of generating a pdf file may be slightly longer. For other file endocings use the <code>\XeTeXinputencoding</code> command for the preceding text or <code>\XeTeXdefaultencoding</code> as a standard for all files, e.g. <code>\XeTeXdefaultencoding “cp1250”</code> (coding used by Microsoft Windows for Central European languages).</p>
+<p>In practice, the process of generating a pdf file may be slightly longer. For other file endocings use the <code>\XeTeXinputencoding</code> command for the preceding text or <code>\XeTeXdefaultencoding</code> as a standard for all files, e.g. <code>\XeTeXdefaultencoding “cp1250”</code> (coding used by Microsoft Windows for Central European languages).</p>
 <h2 id="Custom-fonts"><a href="#Custom-fonts" class="headerlink" title="Custom fonts"></a>Custom fonts</h2><p>If you want to use custom fonts like Arial Narrow, just place them (ttf extension for TrueType fonts) in a directory created under <code>/usr/share/fonts/</code>.</p>
 ]]></content>
         
@@ -183,13 +181,13 @@ The main technologies used in the project are: Java, JSTL, JSF, PrimeFaces, JPA,
         <category term="Documentation" scheme="http://T3r1jj.github.io/categories/Documentation/"/>
         
         
-        <category term="documentation" scheme="http://T3r1jj.github.io/tags/documentation/"/>
-        
-        <category term="application" scheme="http://T3r1jj.github.io/tags/application/"/>
-        
         <category term="web" scheme="http://T3r1jj.github.io/tags/web/"/>
         
         <category term="cms" scheme="http://T3r1jj.github.io/tags/cms/"/>
+        
+        <category term="documentation" scheme="http://T3r1jj.github.io/tags/documentation/"/>
+        
+        <category term="application" scheme="http://T3r1jj.github.io/tags/application/"/>
         
         <category term="database" scheme="http://T3r1jj.github.io/tags/database/"/>
         
@@ -223,13 +221,13 @@ The main technologies used in the project are: Java, JSTL, JSF, PrimeFaces, JPA,
         <category term="Documentation" scheme="http://T3r1jj.github.io/categories/Documentation/"/>
         
         
-        <category term="desktop" scheme="http://T3r1jj.github.io/tags/desktop/"/>
-        
-        <category term="graphics" scheme="http://T3r1jj.github.io/tags/graphics/"/>
-        
         <category term="documentation" scheme="http://T3r1jj.github.io/tags/documentation/"/>
         
         <category term="application" scheme="http://T3r1jj.github.io/tags/application/"/>
+        
+        <category term="desktop" scheme="http://T3r1jj.github.io/tags/desktop/"/>
+        
+        <category term="graphics" scheme="http://T3r1jj.github.io/tags/graphics/"/>
         
         <category term="user guide" scheme="http://T3r1jj.github.io/tags/user-guide/"/>
         

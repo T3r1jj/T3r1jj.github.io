@@ -32,14 +32,14 @@ Such configuration usually suffices assuming that the files are encoded in the U
 <p>To solve this problem, you can use a different font - TeX Gyre Termes: <code>\usepackage{tgtermes}</code>. You can read more about other fonts in the <a href="https://www.sharelatex.com/learn/Font_typefaces" target="_blank" rel="external">ShareLaTeX</a> knowledge base.</p>
 <h2 id="Original-Times-New-Roman-font"><a href="#Original-Times-New-Roman-font" class="headerlink" title="Original Times New Roman font"></a>Original Times New Roman font</h2><p>The easiest way to load fonts on Ubuntu known from Windows consists of three steps:</p>
 <ol>
-<li>Installation of TrueType Microsoft fonts:
+<li>Install TrueType Microsoft fonts:
 <code>sudo apt-get install ttf-mscorefonts-installer</code>
 During the installation process you will be asked to accept Microsoft EULA. The fonts have been made available for free but they are not open-source.</li>
-<li>Replacement <em>inputenc</em> and <em>fontenc</em> packages with the following commands:<pre class="tip">
+<li>Replace <em>inputenc</em> and <em>fontenc</em> packages with the following commands:<pre class="tip">
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
 </pre></li>
-<li>Program change from pdflatex to xelatex:<pre class="tip">
+<li>Swap <em>pdflatex</em> with <em>xelatex</em>:<pre class="tip">
 xelatex main.tex
 bibtex main
 xelatex main.tex
@@ -48,9 +48,7 @@ xelatex main.tex
 
 </li>
 </ol>
-<p>W praktyce proces generowania pliku pdf może się nieco wydłużyć. W przypadku innego kodowania plików należy zastosować polecenia <code>\XeTeXinputencoding</code> dla poprzedzającego tekstu bądź <code>\XeTeXdefaultencoding</code> standardowo dla wszystkich plików,
-np. <code>\XeTeXdefaultencoding “cp1250”</code> (kodowanie używane przez Microsoft Windows dla języków środkowoeuropejskich, w tym polskiego).
-In practice, the process of generating a pdf file may be slightly longer. For other file endocings use the <code>\XeTeXinputencoding</code> command for the preceding text or <code>\XeTeXdefaultencoding</code> as a standard for all files, e.g. <code>\XeTeXdefaultencoding “cp1250”</code> (coding used by Microsoft Windows for Central European languages).</p>
+<p>In practice, the process of generating a pdf file may be slightly longer. For other file endocings use the <code>\XeTeXinputencoding</code> command for the preceding text or <code>\XeTeXdefaultencoding</code> as a standard for all files, e.g. <code>\XeTeXdefaultencoding “cp1250”</code> (coding used by Microsoft Windows for Central European languages).</p>
 <h2 id="Custom-fonts"><a href="#Custom-fonts" class="headerlink" title="Custom fonts"></a>Custom fonts</h2><p>If you want to use custom fonts like Arial Narrow, just place them (ttf extension for TrueType fonts) in a directory created under <code>/usr/share/fonts/</code>.</p>
 </div><p class="post-tags"><i class="fa fa-tags" aria-hidden="true"></i><a href="/en/tags/latex/">#latex</a><a href="/en/tags/fonts/">#fonts</a><a href="/en/tags/accents/">#accents</a><a href="/en/tags/special-characters/">#special characters</a><a href="/en/tags/diacritics/">#diacritics</a><a href="/en/tags/linux/">#linux</a><a href="/en/tags/ubuntu/">#ubuntu</a><a href="/en/tags/times-new-roman/">#times new roman</a></p></article></div></main></div><div class="wrap"><footer><div class="paginator"><a href="/en/articles/BookRental/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 't3r1jj-blog';
 if ('en' !== 'en,pl' && 'en' !== 'en') {
