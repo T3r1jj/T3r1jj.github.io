@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Redirection to the T3r1jj</title>
+    <meta name="description" content="T3r1jj">
+    <meta name="author" content="T3r1jj"/>
+    <meta http-equiv="refresh" content="2;URL='/en/galleries/Develog/'"/>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+          rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background: #42b983;
+        }
+
+        .circle {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            line-height: 500px;
+            text-align: center;
+            position: relative;
+        }
+
+        .pixel {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: #000;
+            z-index: 100;
+        }
+
+        .circle-open {
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            width: 0;
+            height: 0;
+            -webkit-transition: all 2s ease-in-out;
+            -moz-transition: all 2s ease-in-out;
+            -o-transition: all 2s ease-in-out;
+            -ms-transition: all 2s ease-in-out;
+            transition: all 2s ease-in-out;
+            background: #9400D3;
+            border-radius: 100%;
+        }
+
+        .circle.inner {
+            background: black;
+        }
+
+        .circle#circle-bg {
+            width: 400px;
+            height: 400px;
+            top: 50px;
+            left: 50px;
+            background: #42b983;
+        }
+
+        .circle#circle-secondary-bg {
+            top: 250px;
+            left: 250px;
+            width: 0;
+            height: 0;
+            background: #9400D3;
+            position: absolute;
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            -o-transition: all 0.5s ease-in-out;
+            -ms-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .circle-text {
+            top: 0;
+            left: 0;
+            width: 510px;
+            height: 500px;
+            position: absolute;
+            border: #ffa500 solid 0;
+            margin: 0;
+            -webkit-transition: all 0.25s ease-in-out;
+            -moz-transition: all 0.25s ease-in-out;
+            -o-transition: all 0.25s ease-in-out;
+            -ms-transition: all 0.25s ease-in-out;
+            transition: all 0.25s ease-in-out;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .animation {
+            animation: blink 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes blink {
+            100% {
+                background: #fff;
+                box-shadow: 0 0 25px 5px #fff;
+            }
+        }
+
+        .circle-text:hover {
+            animation: none;
+            border-width: 1px 25px 1px 25px;
+            margin: -1px -25px -1px -25px;
+            background: #fff;
+        }
+
+        .circle-text:active {
+            background: #f1df9c;
+        }
+
+        .outer {
+            display: table;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        .middle {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .inner {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .circle-open-container {
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<div class="outer">
+    <div class="circle-open-container">
+        <div id="circle-open" class="circle-open"></div>
+    </div>
+    <div id="container" class="middle" style="z-index: 200">
+        <div id="circle" class="inner circle">
+            <div id="circle-bg" class="circle" style="z-index: 300">
+            </div>
+            <div id="circle-secondary-bg" class="circle" style="z-index: 400">
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" id="circle-svg" class="circle circle-text" style="z-index: 500"
+                 onclick="window.location.href='/en/galleries/Develog/'">
+                <mask id="cutouttext">
+                    <rect class="circle-text" fill="white"></rect>
+                    <text x="50%" y="55%" text-anchor="middle" font-size="48">T3r1jj</text>
+                </mask>
+                <circle cx="250" cy="250" r="300" fill="black" mask="url(#cutouttext)"></circle>
+            </svg>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+        </div>
+    </div>
+</div>
+<script>
+    function overlayTextBackground() {
+        var circle = document.getElementById("circle-bg");
+        var overlayCircle = document.getElementById("circle-secondary-bg");
+        overlayCircle.style.width = circle.clientWidth + "px";
+        overlayCircle.style.height = circle.clientHeight + "px";
+        overlayCircle.style.top = 50 + "px";
+        overlayCircle.style.left = 50 + "px";
+    }
+
+    function overlayBackground() {
+        var container = document.getElementById("container");
+        var bgCircle = document.getElementById("circle-open");
+        size = container.clientHeight > container.clientWidth ? container.clientHeight : container.clientWidth;
+        bgCircle.style.top = -(size / 2) + "px";
+        bgCircle.style.left = -(size / 2) + "px";
+        bgCircle.style.width = size * 2 + "px";
+        bgCircle.style.height = size * 2 + "px";
+    }
+
+    function initializePixels() {
+        var pixels = Array.from(document.getElementsByClassName("pixel"));
+        var circle = document.getElementById("circle");
+        var radius = 1.5;
+        pixels.forEach(function (pixel) {
+            function randomPositionCoeff(radius, previousCoeff) {
+                radius = radius || 1;
+                var number = Math.random();
+                if (previousCoeff === undefined || previousCoeff < 0.25 || previousCoeff > 0.75) {
+                    return number
+                }
+                return number < 0.25 / radius || number > 0.75 / radius ? number : randomPositionCoeff(radius, previousCoeff);
+            }
+
+            function randomSizeCoeff(radius) {
+                radius = radius || 1;
+                var number = Math.random();
+                return number > 0.25 ? number : randomSizeCoeff(radius);
+            }
+
+            var width = radius * randomSizeCoeff(radius) * pixel.clientWidth;
+            var height = radius * randomSizeCoeff(radius) * pixel.clientHeight;
+            pixel.style.width = width + "px";
+            pixel.style.height = height + "px";
+            var positionCoeff = randomPositionCoeff(radius);
+            var top = (radius * positionCoeff - radius / 2 + 0.5) * (circle.clientHeight - width);
+            pixel.style.top = top + "px";
+            var left = (radius * randomPositionCoeff(radius, positionCoeff) - radius / 2 + 0.5) * (circle.clientWidth - height);
+            pixel.style.left = left + "px";
+            var dy = (circle.clientHeight / 2 - top - height / 2);
+            var dx = (circle.clientWidth / 2 - left - width / 2);
+            var ddy = (circle.clientHeight / 2);
+            var ddx = (circle.clientWidth / 2);
+            var distanceCoeff = Math.sqrt(dy * dy + dx * dx) / Math.sqrt(ddy * ddy + ddx * ddx) / radius;
+            pixel.style.background = "#" + Math.round(distanceCoeff * 2.5) + Math.round(distanceCoeff * 2.5) + Math.round(distanceCoeff * 2.5);
+        });
+    }
+
+    function startUXAnimation() {
+        document.getElementById("circle-svg").classList.add("animation")
+    }
+
+    initializePixels();
+    setTimeout(function () {
+        overlayTextBackground();
+        overlayBackground();
+    }, 500);
+    setTimeout(function () {
+        startUXAnimation();
+    }, 1500);
+</script>
+</body>
+</html>

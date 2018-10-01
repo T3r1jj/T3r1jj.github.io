@@ -183,13 +183,13 @@ The main technologies used in the project are: Java, JSTL, JSF, PrimeFaces, JPA,
         <category term="Documentation" scheme="http://T3r1jj.github.io/categories/Documentation/"/>
         
         
-        <category term="web" scheme="http://T3r1jj.github.io/tags/web/"/>
-        
-        <category term="cms" scheme="http://T3r1jj.github.io/tags/cms/"/>
-        
         <category term="documentation" scheme="http://T3r1jj.github.io/tags/documentation/"/>
         
         <category term="application" scheme="http://T3r1jj.github.io/tags/application/"/>
+        
+        <category term="web" scheme="http://T3r1jj.github.io/tags/web/"/>
+        
+        <category term="cms" scheme="http://T3r1jj.github.io/tags/cms/"/>
         
         <category term="database" scheme="http://T3r1jj.github.io/tags/database/"/>
         
@@ -223,13 +223,13 @@ The main technologies used in the project are: Java, JSTL, JSF, PrimeFaces, JPA,
         <category term="Documentation" scheme="http://T3r1jj.github.io/categories/Documentation/"/>
         
         
-        <category term="documentation" scheme="http://T3r1jj.github.io/tags/documentation/"/>
-        
-        <category term="application" scheme="http://T3r1jj.github.io/tags/application/"/>
-        
         <category term="desktop" scheme="http://T3r1jj.github.io/tags/desktop/"/>
         
         <category term="graphics" scheme="http://T3r1jj.github.io/tags/graphics/"/>
+        
+        <category term="documentation" scheme="http://T3r1jj.github.io/tags/documentation/"/>
+        
+        <category term="application" scheme="http://T3r1jj.github.io/tags/application/"/>
         
         <category term="user guide" scheme="http://T3r1jj.github.io/tags/user-guide/"/>
         
